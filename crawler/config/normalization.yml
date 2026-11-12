@@ -1,0 +1,73 @@
+timezone: Europe/Helsinki
+
+max_description_length: 50000
+
+negation:
+  window_chars: 25
+  after_window_chars: 10
+  words: ["ei", "eikä", "no", "not", "without", "ilman", "inte", "utan"]
+
+remote_type:
+  hybrid:
+    - '\bhybrid\w*'
+    - '\bosittai\w*\s+etä\w*'
+    - '\betä-?\s*ja\s+lähityö\w*'
+  remote:
+    - '\b(100\s*%\s*)?etä(työ\w*|nä)\b'
+    - '\bfully\s+remote\b'
+    - '\bremote\b'
+    - '\bdistans(arbete)?\b'
+  onsite:
+    - '\blähityö\w*'
+    - '\bon[\s-]?site\b'
+    - '\bpaikan\s+päällä\b'
+
+employment_type:
+  internship:
+    - '\bharjoittel\w*'
+    - '\btrainee\w*'
+    - '\binternship\w*'
+    - '\bpraktik\w*'
+  part_time:
+    - '\bosa-?aikai\w*'
+    - '\btuntityö\w*'
+    - '\bpart[\s-]?time\b'
+    - '\bdeltid\w*'
+  temporary:
+    - '\bmääräaikai\w*'
+    - '\bsijai(nen|suu\w*)'
+    - '\bkesätyö\w*'
+    - '\bkeikkatyö\w*'
+    - '\bfixed[\s-]?term\b'
+    - '\btemporary\b'
+    - '\bvisstid\w*'
+  contract:
+    - '\bfreelanc\w*'
+    - '\btoimeksiant\w*'
+    - '\bcontractor\b'
+    - '\byrittäjä\w*'
+  full_time:
+    - '\bkokoaikai\w*'
+    - '\bkokopäiväi\w*'
+    - '\bfull[\s-]?time\b'
+    - '\bheltid\w*'
+    - '\bvakitui\w*'
+    - '\bpermanent\b'
+
+language:
+  min_hits: 3
+  stopwords:
+    fi: ["ja", "on", "että", "sinä", "sinulla", "olet", "meillä", "työ", "tehtävä", "kanssa", "sekä", "myös", "tai", "joka", "voit"]
+    en: ["and", "the", "you", "with", "our", "for", "are", "will", "your", "team", "we", "of", "to", "is"]
+    sv: ["och", "att", "det", "som", "för", "med", "du", "vi", "är", "på", "av", "har", "inte"]
+
+
+salary:
+  default_currency: EUR
+  periods:
+    month: ['/\s*kk\b', '\bkk\b', 'kuukau\w*', '\bmonth\w*', '/\s*mo\b', 'kuukausipalk\w*', '\bmånad\w*']
+    hour: ['/\s*h\b', '€\s*/\s*h', '\btunni\w*', '\btunti\w*', '\bhour\w*', '/\s*hr\b', '\btim(me|lön)\w*']
+    year: ['/\s*v\b', '\bvuo(si|de)\w*', '\byear\w*', '\bannual\w*', '\bår\b']
+  heuristic:
+    hour_below: 100
+    year_above: 15000
