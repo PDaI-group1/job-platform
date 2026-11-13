@@ -1,1 +1,8 @@
 source-check.csv
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+idea/

@@ -19,5 +19,14 @@ job-platform/
 
 ## Getting started
 
-> Setup instructions coming soon.
+### Database
+Requires Docker Desktop
 
+Run: docker compose up -d db
+
+On the first start of an empty volume the container applies all files in _migrations/_ in
+filename order and, if _SEED_DB=true_, loads example data from _seeds/_.
+
+Connect URI: **postgresql://jobplatform-admin:jobplatform-password@localhost:5432/jobplatform-db**
+
+Connect via Docker: **docker compose exec db psql -U jobplatform-admin -d jobplatform-db**
