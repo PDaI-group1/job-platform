@@ -20,7 +20,7 @@ from matching.schemas import JobRequirements
 
 load_dotenv()
 
-DEFAULT_MODEL = "gemini-2.0-flash"
+DEFAULT_MODEL = "gemini-3.8-flash"
 
 _SYSTEM = """\
 You are a job ad parser. Extract the following from the job ad the user provides.
