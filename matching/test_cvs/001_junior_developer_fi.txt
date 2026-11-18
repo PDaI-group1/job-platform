@@ -1,0 +1,26 @@
+Mikko Virtanen
+mikko.virtanen@example.com | Helsinki, Finland
+
+KOULUTUS
+Tietojenkäsittelytieteen kandidaatti, Helsingin yliopisto, 2021–2024
+
+TYÖKOKEMUS
+
+Junior-ohjelmistokehittäjä — Testiyritys Oy, Helsinki (2024–nykyinen, 1 vuosi)
+- Kehitän web-sovelluksia React- ja TypeScript-teknologioilla
+- Osallistun koodikatselmoinneihin ja sprint-suunnitteluun
+- Kirjoitan yksikkötestejä Jest-kirjastolla
+
+Harjoittelija — Digitaaliset Ratkaisut Oy, Espoo (2023, 3 kuukautta)
+- Toteutin REST API -rajapintoja Node.js:llä
+- Ylläpidin PostgreSQL-tietokantoja
+
+TAIDOT
+Ohjelmointikielet: JavaScript, TypeScript, Python
+Frameworkit: React, Node.js, Express
+Tietokannat: PostgreSQL, MongoDB
+Työkalut: Git, Docker, Jira
+Testaus: Jest, Cypress
+
+KIELET
+Suomi (äidinkieli), englanti (hyvä), ruotsi (perustaso)

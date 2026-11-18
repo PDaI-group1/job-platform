@@ -1,0 +1,31 @@
+James Korhonen
+james.korhonen@example.com | Oulu, Finland
+
+EXPERIENCE
+
+Senior DevOps Engineer — CloudSystems (fictitious), Oulu (2021–present, 4 years)
+- Designed and maintained CI/CD pipelines using GitHub Actions and Jenkins
+- Managed Kubernetes clusters on Microsoft Azure (AKS)
+- Wrote infrastructure as code with Terraform and Ansible
+- Implemented monitoring and alerting with Prometheus and Grafana
+- Reduced deployment time by 60% through pipeline optimisation
+
+DevOps Engineer — IT Services Co (fictitious), Oulu (2018–2021, 3 years)
+- Migrated on-premise workloads to AWS
+- Maintained Docker-based containerised environments
+- Automated repetitive tasks with Bash and Python scripts
+
+EDUCATION
+B.Eng. in Information Technology, University of Oulu, 2018
+
+SKILLS
+Cloud: Microsoft Azure, Amazon Web Services
+Container orchestration: Kubernetes, Docker
+IaC: Terraform, Ansible
+CI/CD: GitHub Actions, Jenkins, GitLab CI
+Monitoring: Prometheus, Grafana, ELK stack
+Scripting: Bash, Python
+Version control: Git
+
+LANGUAGES
+English (fluent), Finnish (native)
