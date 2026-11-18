@@ -1,0 +1,45 @@
+Title: Member of Technical Staff (Data Science)
+Company: The Upright Project
+Location: Helsinki, Uusimaa
+Source: lever
+
+Are you an experienced Data Scientist eager to make a significant impact? We're looking for a Data Scientist to join us and help shape the future of our cutting-edge impact data products.
+
+At Upright, you get to work on a product that actually matters: the world's largest open-access database on company impact, used by 300+ institutional investors and corporations to make real capital allocation decisions. We quantify companies' impact from the ground up, based on peer-reviewed science and what companies actually produce and sell. The raw material is their product data, which we collect and classify automatically at scale.
+A few things our team has built recently:
+Our impact data engine pairs a vertically trained LLM with an algorithm that runs thousands of impact-size comparisons per product, producing estimates that are internally coherent and grounded in scientific evidence. Patent pending on the core training technique (US application 19/629,694, filed March 2026).
+An agentic company-mapping pipeline that ingests messy product descriptions, annual reports, and websites, and produces structured, comparable impact-relevant product sets at the scale of tens of thousands of companies and 150 000+ different products
+An LLM-assisted Double Materiality Assessment engine that automates a process consultants currently charge €50–200k for, with structured outputs, retrieval over peer-reviewed evidence, and a custom eval harness keeping quality measurable.
+As a Data Scientist, you'll own larger projects and product areas end-to-end, set technical direction in key areas, mentor others, and ship results that show up directly in how institutional capital flows. Your specific responsibilities will be tailored during the recruitment process to your background, skill level, and interests. If you're ready to grow your career while building a platform that matters and to do it in an AI-forward data science environment, we'd love to hear from you!
+
+At least 6 years of professional experience in data science and/or software development. 
+ Demonstrated ability to execute data science work and provide technical direction. 
+ Strong output orientation and common sense thinking to enable solving hard-to-define problems. 
+ Strong analytical and mathematical thinking. You reach for the right tool (Bayesian inference, convex optimization, classical ML, an LLM, or just a well-placed SQL query) instead of defaulting to one. 
+ Track record in implementing production-quality data pipelines and models, especially in Python and TypeScript. 
+ Agentic development is your default mode: you already work with coding agents (Claude Code, Cursor, etc.) day to day, and you're excited to build the architecture, tools, evals, and guardrails that make agentic workflows reliable at scale, including for data and ML pipelines. 
+ Ability to work both autonomously and as part of a team. 
+ Ability to see the big picture and prioritize work accordingly. 
+ Ability to communicate clearly both verbally and in writing. 
+ Solid track record of internal passion for excellence: you have gotten things done clearly better than what was required, because you enjoy doing things well. Extensive practical experience in predictive modeling, Bayesian inference, and/or convex optimization. 
+ 
+ 
+ Hands-on experience with LLM-assisted data processing: prompt design, structured outputs, retrieval, agentic tool use, and — especially — building evals that actually catch regressions. 
+ 
+ 
+ Experience designing and operating ETL pipelines at a non-trivial scale. 
+ 
+ 
+ Expertise in cloud technologies such as AWS Sagemaker, Glue, ECR, and Fargate (or equivalents in GCP / Azure). A chance to join a quickly growing and highly ambitious impact SaaS company with a mission that matters — real capital allocation decisions at 300+ institutional investors and corporations rest on the data we build. 
+ 
+ 
+ A team of exceptional people who are kind, direct, and care deeply about doing the work well. 
+ 
+ 
+ An unusually AI-forward engineering environment — first-class tooling, in-house agents, and the freedom to keep pushing what "AI-native development" actually means in practice. You'll be shaping the workflow, not inheriting it. 
+ 
+ 
+ Substantial autonomy and ownership from day one, with lots of room to grow. 
+ 
+ 
+ Competitive compensation, including stock options and a comprehensive healthcare package.

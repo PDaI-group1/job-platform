@@ -1,0 +1,43 @@
+Title: AI Full-Stack Developer
+Company: Solita
+Location: Helsinki, Lahti, Tampere, Turku, Oulu
+Source: greenhouse
+
+{"lang": "en","role": ["AI","Software development"],"country": ["Finland"], "image": "https://www.solita.fi/wp-content/uploads/2023/06/Solita-open-positions-36.jpg","intro": "We at Solita have helped leading Nordic companies turn early AI experiments into scalable, secure, and value-driven AI programs. With hundreds of projects and 2,000+ experts in the areas of software development, data, AI, cloud and design, we bridge the gap between ideas and impact. Join us to build tomorrow’s technical solutions! "} 
+ We are expanding our expertise in AI development&nbsp; 
+ Currently, we’re on a mission to build intelligent systems for our customers that unlock and harness the value of data and AI. Also, AI is transforming how we build software: automating routine work, amplifying creativity, and letting developers focus on solving real problems.&nbsp; 
+ We are now looking for AI Full-Stack Developers to join our growing community of experts and help shape the future of intelligent software. In this role, you can work in the Helsinki, Lahti, Oulu, Tampere, or Turku regions with hybrid working options. &nbsp;&nbsp; 
+ At Solita, you’ll find a community that values both technical excellence and human connection. We believe in autonomy, continuous learning, and building together things that matter. You’ll have the chance to work on impactful projects with meaningful use of AI, collaborate with top experts across data, cloud, and design.&nbsp; 
+ Read more of our thoughts on AI from our website, and get to know our very own LLM platform FunctionAI that our experts use in project deliveries. &nbsp; 
+ Your role in a nutshell&nbsp; 
+ As an AI Developer, you get to develop various agent-based and data-driven software solutions that have a real impact on our customers in various industries, both in private and public sectors. In addition to utilizing modern software development toolkits in your daily work, you will be working hands-on with various AI tools and frameworks, such as AWS Bedrock, Google AI, LangChain, MCP or AI Foundry &nbsp;to build secure, scalable and maintanable AI-powered software solutions that help our customers make better decisions, automate intelligently, and create real business value. You’ll work closely with a team of other software developers, AI/Data Scientists and Engineers, participating in the entire software development cycle. &nbsp; 
+ We are a technology-agnostic company, always choosing the modern frameworks and platforms that best support the customer’s needs. The diversity of our projects offers excellent opportunities for learning, skill development, and rotation. You can find more information about our work on our Dev blog and in the results of our Developer Survey .&nbsp; 
+ Here’s how our developer Miska describes his experience working on AI-based projects:&nbsp; 
+ “I’ve had the opportunity to work on two AI-based projects at Solita and have been involved in both design and implementation. In both projects, it became clear that truly leveraging AI requires a pragmatic approach, continuous measurement, and above all, a deep understanding of the problem being solved.&nbsp; 
+ During the projects, I’ve worked with tools such as Cursor, LangGraph, Copilot, Claude, and ChatGPT. Developing AI solutions has been one of the most rewarding experiences of my career: it’s rare to work on something that simultaneously feels like exploring something entirely new and building the future.”&nbsp; 
+ Read more of our developers’ thoughts on ‘ How AI is reshaping software projects ’ from our website, and get to know our very own LLM platform FunctionAI that our experts use in project deliveries.&nbsp; 
+ What we are looking for&nbsp; 
+ We hope you share our passion for writing high-quality code and collaborating in cross-functional teams. You don’t need to have worked under the title “AI Developer” before: what matters most is your curiosity towards AI, strong technical skills, and the ability to bridge software development and AI in your daily work.&nbsp; 
+ We expect you to have: &nbsp; 
+ 
+ A strong background in software development: at least 5 years of professional experience in full-stack software development using Java, TypeScript, C# or Python.&nbsp; 
+ Experience using agentic coding assistants as part of your daily work (like Github Copilot or Claude Code)&nbsp; 
+ An understanding of AI agent architectures and modern AI frameworks (e.g. AWS Bedrock, Google AI, LangChain, MCP, or AI Foundry) is considered an advantage.&nbsp; 
+ Experience with cloud-based AI services (AWS or Azure) and bringing AI solutions into production using DevOps and IaC practices is considered an advantage.&nbsp; 
+ Fluent English language skills. fluent Finnish skills are considered as an advantage.&nbsp; 
+ Strong problem-solving skills and a consultative mindset.&nbsp; 
+ 
+ Why Solita is a great place to work&nbsp; 
+ 
+ An expert community: Join our Dev community of over 400 top-tier software professionals in Finland. You’ll also get to collaborate with colleagues across our organization with other +2,000 Solitans.&nbsp; 
+ Rotations and growth: At Solita, your career path doesn’t have to be linear. Many of our people have explored different roles and projects within the company, supported by our internal rotation opportunities, mentoring, and the Solita Growth Academy.&nbsp; 
+ Freedom and flexibility: We know there is more to life than work. That is why we value flexibility and support a healthy work–life balance through trust, autonomy, and a culture that puts people first.&nbsp; 
+ People first: Your wellbeing matters to us as much as your skills. We offer flexible ways of working, comprehensive employee benefits, and dedicated People Leads who provide support in all kinds of everyday situations.&nbsp; 
+ Benefits for every need: Pick the devices that suit you best, enjoy extensive occupational healthcare, relax with regular massages, work with our in-house coaches, or recharge through our hobby clubs and community activities.&nbsp; 
+ Fair and transparent pay: We believe great teamwork happens when there’s no pressure from billing-based salary models: that is why we offer a fixed monthly salary and encourage collaboration and shared success.&nbsp; 
+ 
+ Got interested? &nbsp; &nbsp; 
+ Let’s find out together if this could be the next step in your career at Solita! Please send us your CV, or link to your LinkedIn profile. &nbsp; 
+ Our recruitment consists of two rounds of interviews where you will meet our team and learn more about working at Solita. You will be given the opportunity to show your skills and ask us questions. The purpose is to get to know each other better.&nbsp; 
+ Any thoughts or questions, please reach out to our recruiter Julia Oksa / julia.oksa@solita.fi&nbsp;&nbsp; 
+ As a key technology, data, and design partner, Solita’s business is built on trust and responsibility. For this reason, the selected candidate’s identity and employment background will be verified. These checks are carried out in accordance with and within the limits of the Act on the Protection of Privacy in Working Life.​ In addition, some of our customers may carry out a separate security clearance vetting made by the Finnish Security and Intelligence Service, for example in case you start working for a customer operating in critical infrastructure sector.

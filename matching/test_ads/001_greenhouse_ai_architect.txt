@@ -1,0 +1,56 @@
+Title: AI Architect 
+Company: Solita
+Location: Helsinki, Lahti, Oulu, Tampere, Turku
+Source: greenhouse
+
+{"lang": "fi","role": ["AI","Data, AI &amp; Analytics"],"country": ["Finland"], "image": "https://www.solita.fi/wp-content/uploads/2023/11/Belgium-open-positions-7.jpg","intro": "Etsimme AI arkkitehtia osaksi AI, Analytics &amp; Agents -liiketoimintayksikköämme!"} 
+ Location: Finland &nbsp; Experience level: Senior&nbsp; 
+ Solitan Data Science, Machine Learning &amp; AI -yhteisössä tuemme asiakkaitamme koko tekoälymatkan läpi – ideoinnin alusta aina tekoälyn hyödyntämisen skaalaamiseen koko organisaatiossa. Uskomme, että vaikuttavat tekoälyratkaisut syntyvät monialaisessa yhteistyössä – yhdistäen liiketoiminta- ja prosessiosaamisen, huipputeknologian sekä ihmislähtöisen suunnittelun. Erityisesti generatiivinen tekoäly (GenAI) ja suurten kielimallien (LLM) soveltaminen ovat koko ajan kasvava osa ratkaisujamme.&nbsp; 
+ Otamme kokonaisvaltaisen näkökulman asiakkaidemme haasteisiin ja autamme heitä rakentamaan kestäviä, tuotantokelpoisia AI-ratkaisuja, jotka tuottavat arvoa oikeissa käyttökohteissa. 
+ Työsi pähkinänkuoressa&nbsp; AI arkkitehtina vastaat asiakkaidemme tuotantotasoisten tekoälyratkaisujen suunnittelusta, kehittämisestä ja kokonaisarkkitehtuurista. Toimit teknisenä vastuuhenkilönä ja johdat ratkaisuja koko elinkaaren ajan ideoinnista toteutukseen, käyttöönottoon ja jatkuvaan kehittämiseen. Työskentelet tiiviissä yhteistyössä asiakkaiden, kehitystiimien ja muiden arkkitehtien kanssa varmistaaksesi, että ratkaisut ovat liiketoiminnan tavoitteita tukevia, turvallisia, skaalautuvia ja tuotantovalmiita.&nbsp; 
+ Roolissa painottuvat generatiiviseen tekoälyyn (GenAI) ja suuriin kielimalleihin (LLM) perustuvat ratkaisut, jotka integroidaan osaksi asiakkaiden liiketoimintaprosesseja. Toimit teknisenä suunnannäyttäjänä projekteissa, tuet myynnin ja ratkaisusuunnittelun vaiheita sekä osallistut Solitan tekoälyosaamisen kehittämiseen yhdessä muiden asiantuntijoiden kanssa. 
+ Työsi pitää sisällään muun muassa 
+ 
+ Suunnittelet ja kehität LLM-pohjaisia ja generatiivisen tekoälyn ratkaisuja, kuten tiedonhakuratkaisuja, agenttipohjaisia työnkulkuja, prosessien automatisointiratkaisuja sekä dokumentinkäsittelyjärjestelmiä. 
+ Määrittelet tekoälyratkaisujen kokonaisarkkitehtuurin sisältäen datavirrat, mallien orkestroinnin, integraatiot, evaluoinnin, guardrail-ratkaisut sekä ihmisen ja tekoälyn välisen vuorovaikutuksen. 
+ Suunnittelet pilvipohjaisia AI- ja LLM-alustoja hyödyntäen esimerkiksi Azure AI/ML -palveluita, Databricksiä sekä pilvinatiivia infrastruktuuria. 
+ Ohjaat arkkitehtuurivalintoja liittyen skaalautuvuuteen, tietoturvaan, luotettavuuteen, kustannustehokkuuteen ja vastuulliseen tekoälyyn. 
+ Tuet asiakkaita ja myyntiä ratkaisujen määrittelyssä, teknisten ehdotusten valmistelussa sekä uusien tekoälyratkaisujen suunnittelussa. 
+ 
+ Keskustelemme kanssasi roolin tarkemmasta vastuusta ja painotuksista aiemman kokemuksesi, osaamisesi ja kiinnostuksesi perusteella. Riippuen lopullisen roolisi kokemus- ja vastuutasosta, kuukausipalkkasi on noin 5 800–7 200 euroa. 
+ Toivomme sinulta 
+ 
+ Käytännön kokemusta AI/ML-ratkaisujen suunnittelusta ja toteutuksesta tuotantoympäristöissä – erityisesti generatiivisen tekoälyn ja LLM-teknologian parista.
+ 
+ GenAI- ja agenttiarkkitehtuurit: LLM-teknologiat (esim. Azure OpenAI / Foundry, Databricks Agent Bricks, LangChain, Semantic Kernel), RAG-menetelmät ja multi-agent -arkkitehtuurit. 
+ 
+ 
+ Kokemusta teknisten ratkaisujen suunnittelusta, arkkitehtuurivalinnoista ja niiden perustelemisesta eri sidosryhmille. 
+ Kokemusta pilvipalveluista (Azure / AWS / GCP) ja pilvi-infrastruktuurin rakentamisesta AI/ML-ratkaisujen tarpeisiin IaC-työkaluilla. 
+ Kokemusta tuotantoympäristöissä toimivien AI-ratkaisujen kehittämisestä, operoinnista ja jatkuvasta kehittämisestä hyödyntäen mm. Azure AI/ML Services, Databricks, MLOps/LLMOps, evaluointi- ja guardrail-työkalut. 
+ Kokemusta CI/CD-prosesseista ja DevOps-työskentelystä. 
+ Ohjelmointiosaamista erityisesti Python, mutta myös Java ja C#-osaaminen katsotaan eduksi. 
+ Intohimoa asiakkaiden liiketoimintahaasteiden ratkaisemiseen ja heidän AI transformaation tukemiseen, uusien teknologioiden hyödyntämiseen sekä yhteistyöhön eri sidosryhmien kanssa. 
+ Sujuvaa suomen ja englannin kielen taitoa.&nbsp; 
+ 
+ Mitä tarjoamme? 
+ 
+ Mahdollisuuden suunnitella ja toteuttaa laajoja, liiketoimintakriittisiä tekoälyratkaisuja sekä AI-transformaatioita Suomen johtaville yrityksille ja julkisen sektorin organisaatioille. 
+ Roolin, jossa pääset yhdistämään strategisen arkkitehtuurityön ja käytännön tekemisen sekä vaikuttamaan asiakkaidemme teknologisiin valintoihin ja tulevaisuuden ratkaisuihin. 
+ Yhteisön kokeneita AI-, data-, pilvi- ja ohjelmistokehityksen asiantuntijoita, jotka jakavat osaamistaan, sparraavat toisiaan ja tukevat toistensa onnistumista. 
+ Mentorointia, jatkuvia oppimismahdollisuuksia ja joustavia urapolkuja, joiden avulla voit syventää teknistä osaamistasi, vahvistaa arkkitehtiosaamistasi tai kasvattaa rooliasi teknisenä suunnannäyttäjänä. 
+ Rennon, välittävän ja luottamukseen perustuvan kulttuurin, jossa yhdistyvät vapaus, vastuu ja mahdollisuus tehdä työsi omalla tavallasi. 
+ Joustavat työskentelymahdollisuudet etänä Suomesta käsin, asiakkaiden kanssa tai Solitan toimistoilta eri puolilla Suomea. 
+ 
+ Lue lisää projekteistamme ja asiantuntijoidemme näkemyksistä Solitalla työskentelee useita kymmeniä data science- ja AI/ML-osaajia kotimaisissa ja kansainvälisissä projekteissa Suomessa ja muualla Pohjoismaissa. Asiantuntijamme toimivat omien osaamisalueidensa syväosaajina erilaisissa asiakastoimeksiannoissa, esim. Integrata helps HR professionals begin a productive AI journey - Solita ja Predictive maintenance gets more intelligent with advanced analytics - Solita . 
+ "Kehitämme yhdessä KONE:n kanssa älykästä kunnossapitopalvelua nimeltä KONE 24/7 Connected Services. Kyseessä on mielenkiintoinen projekti, jossa hyödynnetään koneoppimista sekä yli 150 000 hissin sensoridataa ennakoivan kunnossapidon kehittämiseksi." – Mikael Ruohonen, AI, Analytics &amp; Agents Business Lead 
+ On a journey towards AI-driven HR service solutions across 50 countries - Solita &nbsp; 
+ Significant opportunities for Kela through AI&nbsp; – Solita &nbsp; &nbsp; 
+ Driving AI solutions in sustainable stainless steel production – new digital innovation hub – Solita &nbsp; &nbsp; 
+ Data and AI strategy helps YIT boost productivity - Solita &nbsp; 
+ Breaking new ground in software development with AI-powered collaboration&nbsp; – Solita &nbsp; 
+ Jutellaanko lisää?&nbsp; Lähetä meille CV:si tai linkki LinkedIn-profiilisi, niin olemme sinuun pian yhteydessä. Jos haluat kertoa meille lisää toiveistasi, voit myös kirjoittaa hakemuskirjeen. &nbsp; 
+ Mikäli halua lisätietoja tehtävästä, otathan yhteyttä rekrytoijaamme Neea Turuseen sähköpostitse, sähköpostiosoitteemme ovat muotoa etunimi.sukunimi (at) solita.fi. Huomioithan, että emme vastaanota hakemuksia sähköpostitse. &nbsp; 
+ Keskeisenä teknologia-, data- ja designkumppanina Solitan liiketoiminta perustuu luottamukseen ja vastuullisuuteen. Tästä syystä valitun hakijan henkilöllisyys ja työhistoria tarkistetaan. Nämä tarkastukset suoritetaan työelämän yksityisyyden suojasta annetun lain mukaisesti ja sen rajoissa. Lisäksi osa kriittisen infrastruktuurin toimialalla toimivista asiakkaistamme edellyttää erillisen Suojelupoliisin tekemän turvallisuusselvityksen läpäisyä.&nbsp; 
+ &nbsp; 
+ &nbsp;

@@ -1,0 +1,32 @@
+Title: (Senior) Design Verification Engineer
+Company: Alif Semiconductor
+Location: Oulu, Finland
+Source: lever
+
+The future of intelligent microcontrollers is here! 
+ Alif established its first European R&D site to Oulu with the vision to build a center of expertise to complement the staff in the US and India. Our office is in the Technology park and we currently employ more than 30 employees. 
+ Our local team consists of very experienced experts as well as young talents ready to grow in their careers. We have an open, supportive, and relaxed culture and we enjoy coming to the office and collaborating with one another. 
+ We are looking for a motivated and experienced (Senior) Design Verification Engineer to join our Digital IC Design team responsible for Peripheral verification. 
+ What can you expect to focus on as you onboard? 
+ During your first six months, you will focus on building context, forming new relationships, and beginning to build your impact. Your focus will be on becoming familiar with the assigned block or IP and taking ownership of test development. The role includes debugging verification failures as well as understanding and debugging gate-level simulations (GLS). You will work as part of a highly skilled verification team, with opportunities to learn from experienced colleagues around you. The role offers a variety of tasks that can evolve based on your skills and professional development. 
+ It would be great if you could tick some of the boxes below: 
+ 
+ University degree in Electrical Engineering, Information Technology, Embedded Systems or other similar degree 
+ Skilled in UVM and System Verilog 
+ Programming skills, Proficiency in C 
+ Testbench architecture design 
+ Knowledge of RTL design fundamentals 
+ Clock domain Crossing (CDC) 
+ Knowledge of most generic serial protocols 
+ Constrained random verification 
+ Knowledge of microcontrollers with embedded arm processor cores 
+ Knowledge or skills in GLS is plus 
+ Team working and collaboration skills 
+ Enthusiasm to learn and a can-do attitude 
+ 
+   
+ What can you expect from us? 
+   
+ You’ll be joining a close and collaborative team where people care about both; the work and each other. We provide a unique opportunity to work with cutting-edge technology and complex technical challenges. Our technology is built by our teams that openly share knowledge, support one another, and tackle challenges together. 
+ The position is located in Oulu, Finland.
+
