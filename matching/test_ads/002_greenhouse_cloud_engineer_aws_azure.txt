@@ -1,0 +1,45 @@
+Title: Cloud Engineer (AWS/Azure)
+Company: Solita
+Location: Finland
+Source: greenhouse
+
+{"lang": "fi","role": ["Cloud platforms"],"country": ["Finland"], "image": "https://www.solita.fi/wp-content/uploads/2023/06/Solita-open-positions-33.jpg","intro": "Solitan kasvavassa yli 100 asiantuntijan pilviyhteisössä on nyt töitä tarjolla kokeneille pilviosaajille. Tarjoamme sinulle mahdollisuuden päästä rakentamaan huippuluokan pilvipalveluita asiakkaillemme rennon mutkattomassa työyhteisössä Cloud Platforms -yksikössämme!"}&nbsp; 
+ Solita on moniosaajayhteisö, jossa rakennetaan kokonaisia toimialoja muuttavia ratkaisuja. Kehitämme innovaatioita, jotka saavat asiakkaidemme liiketoiminnan suunnan muuttumaan. Meillä pääset hiomaan taitojasi huipputasolle, ja urapolkusi kehittyy vaativien projektien ja Solita Growth Academyn kautta. &nbsp; 
+ Toimimme Azuren, AWS:n, sekä Google Cloudin kanssa ja pilviasiantuntijan roolissa pääset keskittymään yhden alustan parissa työskentelyyn ja syventämään osaamistasi lisää kyseisellä alueella. Kokeneellekin tekijälle tämä on mieletön paikka ja mahdollisuus oppia huippuosaajista koostuvassa työyhteisöstämme . &nbsp; 
+ Ilman turhaa sähläystä: näin me teemme konsultointia&nbsp; 
+ Työskentelet osana Solitan pilvitiimiä, jossa ratkaisuja rakennetaan yhdessä asiakkaan tarpeiden, tavoitteiden ja toimintaympäristön pohjalta. Arki on sujuvaa ja tekeminen keskittyy olennaiseen: laadukkaiden, turvallisten ja skaalautuvien pilviratkaisujen suunnitteluun ja toteutukseen.&nbsp; 
+ Tuot mukanasi vahvaa teknistä näkemystä ja kokemusta, sekä toteutat arjessa hyväksi havaittuja käytäntöjä. Saat tueksesi Solitan laajan pilviosaajayhteisön, valmiit toimintamallit, sekä kokeneet kollegat, joiden kanssa sparrata ja kehittää ratkaisuja yhdessä. Et joudu aloittamaan tyhjästä, vaan pääset hyödyntämään olemassa olevaa osaamista ja viemään sitä seuraavalle tasolle.&nbsp; 
+ Cloud Engineerin rooli on meillä asiantuntijarooli, jossa yhdistyvät käytännön tekeminen, tekninen vastuu ja jatkuva kehittyminen. Et jää irralliseksi toteuttajaksi, vaan olet aktiivinen osa projektitiimiä ja asiakkaan arkea.&nbsp; 
+ Toimit tyypillisesti yhdessä tai kahdessa asiakkuudessa kerrallaan. Asiakkuuden sisällä voi olla useampi projekti samanaikaisesti, mutta kokonaisuus pidetään hallittavana, jotta tekeminen pysyy sujuvana. Pääset vaikuttamaan siihen, millaisissa asiakkuuksissa työskentelet ja mihin pilvialustoihin haluat syventyä (AWS tai Azure).&nbsp; 
+ Saat aidon vapauden päättää, missä ja milloin työskentelet asiakastarpeet huomioiden. Me mittaamme lopputulosta ja laatua, emme kalenterimerkintöjä.&nbsp; 
+ Mitä Cloud Engineer tekee Solitalla?&nbsp; 
+ Cloud Engineerina olet keskeisessä roolissa pilvipohjaisten ratkaisujen suunnittelussa, toteuttamisessa ja kehittämisessä. Työskentelet erilaisissa pilviympäristöissä, kuten AWS- ja Azure-ympäristöissä ja autat asiakkaitamme hyödyntämään pilveä tehokkaasti, turvallisesti ja kestävästi.&nbsp; 
+ Rooli muotoutuu kokemuksesi, osaamisesi ja kiinnostuksesi mukaan. Yhteistä kaikille pilvirooleillemme on vahva hands-on-tekeminen, sekä tiivis yhteistyö tiimin ja asiakkaiden kanssa.&nbsp; 
+ Urapolku ja roolin painotukset&nbsp; 
+ Tarjoamme Cloud Engineereille selkeän, mutta joustavan urapolun, joka rakentuu kokemuksesi ja vastuutasosi mukaan. Tässä roolissa pääset vaikuttamaan myös siihen, miten Solitan pilvitekeminen ja toimintamallit kehittyvät.&nbsp; 
+ Vastaat muun muassa seuraavista kokonaisuuksista:&nbsp; 
+ 
+ Pilvi-infrastruktuurien suunnittelu ja toteutus infrastruktuuri koodina -periaatteilla. 
+ Automaatioiden ja CI/CD-putkien kehittäminen. 
+ Tietoturvan, skaalautuvuuden ja kustannustehokkuuden varmistaminen. 
+ Monitorointi- ja lokitusratkaisujen rakentaminen ja kehittäminen. 
+ Yhteistyö projektitiimin kanssa sekä hyvien käytäntöjen jalkauttaminen arjen tekemiseen.&nbsp; 
+ 
+ Kokemuksen karttuessa vastuu laajenee kohti laajempien kokonaisuuksien suunnittelua ja toteutusta. Pääset suunnittelemaan kestäviä ja turvallisia pilviympäristöjä, varmistamaan tietoturva- ja operatiivisten vaatimusten toteutumisen, sekä toimimaan teknisenä suunnannäyttäjänä. Teet tiivistä yhteistyötä arkkitehtien ja muiden asiantuntijoiden kanssa ja vaikutat siihen, miten Solitan pilvitarjoamaa ja yhteisiä toimintamalleja kehitetään. Halutessasi voit osallistua myös ratkaisukuvausten ja tarjousten rakentamiseen.&nbsp; 
+ Urapolkumme ei rajoitu yhteen muottiin. Riippumatta siitä, missä vaiheessa urallasi olet, tarjoamme ympäristön, jossa pääset sekä kehittämään osaamistasi, että rakentamaan yhdessä muiden huippuosaajien kanssa.&nbsp; 
+ Tällä osaamisella onnistut roolissa 
+ 
+ Useamman vuoden kokemus pilvi-infrastruktuurien suunnittelusta ja toteuttamisesta (AWS ja/tai Azure). 
+ Kyky rakentaa infrastruktuuria koodilla (esim. Terraform, AWS CDK). 
+ Osaaminen CI/CD-automaatiosta (esim. GitHub Actions, Jenkins tai vastaavat). 
+ Kokemus monitorointi- ja lokitusratkaisuista. 
+ Kokemus asiakasrajapinnassa työskentelystä ja kykyä ratkaista asiakkaan todellisia haasteita. 
+ Sujuva suomen ja englannin kielen taito. 
+ Yhteistyökykyinen ja ratkaisuhakuinen työote.&nbsp; 
+ 
+ Plussaa on kokemus konsultointi- tai toimittajaympäristöistä sekä halu syventää osaamista pilviteknologioiden parissa.&nbsp; 
+ Keskustelemme kanssasi roolin tarkemmista painotuksista ja vastuun laajuudesta kokemuksesi ja kiinnostuksesi perusteella. Riippuen kokonaisuudesta kuukausipalkkasi sijoittuu tyypillisesti 4600–5600 euron välille. Palkka on kiinteä, eikä perustu laskutukseen. Lisäksi käytössäsi ovat Solitan kattavat luontoisedut ja joustavat työskentelytavat.&nbsp; 
+ Kiinnostuitko?&nbsp; 
+ Jos tämä kokonaisuus kuulostaa siltä, mitä haluat tehdä seuraavaksi urallasi, lähetä meille CV:si, tai linkki LinkedIn-profiiliisi verkkosivujemme kautta. Lisätietoja tehtävästä antaa rekrytoijamme Odia Pekkalin, odia.pekkalin(at)solita.fi.&nbsp; 
+ Huom. GDPR-syistä emme ota vastaan hakemuksia sähköpostitse.&nbsp; 
+ Keskeisenä teknologia-, data- ja designkumppanina Solitan liiketoiminta perustuu luottamukseen ja vastuullisuuteen. Valitun hakijan henkilöllisyys ja työhistoria tarkistetaan työelämän yksityisyyden suojan mukaisesti. Lisäksi osa asiakkaista edellyttää erillisen turvallisuusselvityksen.

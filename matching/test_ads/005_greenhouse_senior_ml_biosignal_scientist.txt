@@ -1,0 +1,51 @@
+Title: Senior ML & Biosignal Scientist
+Company: Oura
+Location: Hybrid - Helsinki, Uusimaa; Hybrid - Oulu, North Ostrobothnia
+Source: greenhouse
+
+Our mission at ŌURA is to empower every person to own their inner potential. Our award-winning products help our global community gain a deeper knowledge of their readiness, activity, and sleep quality by using their Oura Ring and its connected app. We've helped millions of people understand and improve their health by providing daily insights and practical steps to inspire healthy lifestyles. 
+ Empowering the world starts with living our values and empowering our team. As a quickly growing company focused on helping people live healthier and happier lives, we ensure that our team members have what they need to do their best work — both in and out of the office.&nbsp; We are seeking a Senior ML &amp; Biosignal Scientist to join our Future Physiology team in Finland. This is a high-impact role for a deeply technical, hands-on expert who excels at bridging human physiology, machine learning, and real-world biosignal R&amp;D. Working directly alongside our world-class hardware, firmware, software and science teams, you will play a pivotal role in shaping Oura’s next-generation features. You will turn noisy, multimodal sensor data (including PPG, motion, and temperature) into robust, scalable, and actionable health insights delivered to millions of members worldwide. 
+ What You Will Do: 
+ 
+ Take full technical ownership of the algorithm lifecycle, from physiological background and signal processing to model architecture design, evaluation, and scaling for production. 
+ Develop and deploy state-of-the-art ML algorithms leveraging deep learning (e.g., Transformers, RNNs, probabilistic models) to extract meaningful physiological metrics across diverse user populations, effectively solving real-world challenges such as motion artifacts and environmental noise. 
+ Leverage Oura’s large-scale cloud datasets and work hands-on with prototypes, hardware evaluation kits, and benchtop testing setups. 
+ Translate complex algorithmic results and physiological insights into clear technical strategies and strategic narratives for senior leadership to help guide Oura’s future product roadmap. 
+ 
+ This is a hybrid role out of our Oulu or Helsinki office. 
+ What you'll bring 
+ 
+ 5–7+ years of hands-on experience in machine learning, biosignal processing, sensor fusion, and analyzing real-world, multimodal time-series data. 
+ Expertise with modern ML frameworks (PyTorch) alongside the scientific computing stack (NumPy, SciPy, pandas, scikit-learn). 
+ Strong domain knowledge of human physiological systems underlying wearable biosignals, paired with the engineering intuition needed to extract clean signals from noisy data. 
+ Familiarity with modern data infrastructure, scalable cloud systems, and a proven track record of moving ML models from experimental research into production software. 
+ Master’s or PhD in Computer Science, Machine Learning, Biomedical Engineering, Signal Processing, Applied Mathematics, Physics, or a closely related field (or equivalent practical track record). 
+ Comfortable working in an agile environment with high autonomy, taking complete ownership of algorithm development from early-stage concept testing to deployment. 
+ 
+ Nice to have: 
+ 
+ Direct experience in consumer health tech, wearable hardware or digital health applications. 
+ Prior experience working within cross-disciplinary teams spanning software engineering, hardware development, and clinical research. 
+ 
+ Benefits 
+ At Ōura, we care about you and your well-being. Everyone here at Ōura has a ring of their own and we are continually looking to improve employee health. 
+ What we offer: 
+ 
+ Competitive salary 
+ Lunch benefit 
+ Wellness benefit 
+ Flexible working hours 
+ Collaborative, smart teammates 
+ An Ōura ring of your own 
+ Wellness Time Off 
+ 
+ ŌURA is proud to be an equal opportunity workplace. We celebrate diversity and are committed to creating an inclusive environment for all employees. Individuals seeking employment at ŌURA are considered without regard to age, ancestry, color, gender (including pregnancy, childbirth, or related medical conditions), gender identity or expression, genetic information, marital status, medical condition, mental or physical disability, national origin, protected family care or medical leave status, race, religion (including beliefs and practices or the absence thereof), sexual orientation, military or veteran status, or any other characteristic protected by federal, state, or local laws. We will not tolerate discrimination or harassment based on any of these characteristics. 
+ We will work to ensure individuals with disabilities are provided reasonable accommodation to participate in the interview process, to perform essential job functions, and to receive other benefits and privileges of employment. 
+ Disclaimer: Beware of fake job offers! We’ve been alerted to scammers posing as ŌURA recruiters, especially for remote roles. Please note: 
+ 
+ Our jobs are listed only on the ŌURA Careers page and trusted job boards. 
+ We will never ask for personal information like ID or payment for equipment upfront. 
+ Official offers are sent through Docusign after a verbal offer, not via text or email. 
+ 
+ Stay cautious and protect your personal details. 
+ To all recruitment agencies: ŌURA does not accept agency resumes. Please do not forward resumes to our jobs alias, ŌURA employees, or any other organization's location. ŌURA is not responsible for any fees related to unsolicited resumes.
