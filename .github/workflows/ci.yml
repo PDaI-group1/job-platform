@@ -1,0 +1,256 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "24"
+  PYTHON_VERSION: "3.12"
+  RUFF_VERSION: "0.17.3"
+
+jobs:
+  changes:
+    name: Detect changes
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      frontend: ${{ steps.filter.outputs.frontend == 'true' || steps.filter.outputs.ci == 'true' || github.event_name != 'pull_request' }}
+      backend: ${{ steps.filter.outputs.backend == 'true' || steps.filter.outputs.ci == 'true' || github.event_name != 'pull_request' }}
+      crawler: ${{ steps.filter.outputs.crawler == 'true' || steps.filter.outputs.ci == 'true' || github.event_name != 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dorny/paths-filter@v4
+        id: filter
+        with:
+          filters: |
+            ci:
+              - '.github/**'
+            frontend:
+              - 'frontend/**'
+            backend:
+              - 'backend/**'
+              - 'migrations/**'
+              - 'seeds/**'
+            crawler:
+              - 'crawler/**'
+              - 'migrations/**'
+
+  # ------------------------------------------------------------------------------------------ Frontend
+
+  frontend:
+    name: Frontend
+    needs: changes
+    if: needs.changes.outputs.frontend == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Find the project
+        id: project
+        run: bash .github/scripts/node-project.sh frontend
+
+      - uses: actions/setup-node@v7
+        if: steps.project.outputs.dir != ''
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: ${{ steps.project.outputs.dir }}/package-lock.json
+
+      - name: Install dependencies
+        if: steps.project.outputs.dir != ''
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: npm ci
+
+      - name: Lint
+        if: steps.project.outputs.dir != ''
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: npm run lint
+
+      - name: Tests
+        if: steps.project.outputs.tests == 'true'
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: npm test
+
+      - name: Build
+        if: steps.project.outputs.dir != ''
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: npm run build
+
+  # ------------------------------------------------------------------------------------------ Backend
+
+  backend:
+    name: Backend
+    needs: changes
+    if: needs.changes.outputs.backend == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci
+          POSTGRES_DB: ci
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U ci -d ci"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      CI: "true"
+      PGHOST: localhost
+      PGUSER: ci
+      PGPASSWORD: ci
+      PGDATABASE: ci
+      DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Find the project
+        id: project
+        run: bash .github/scripts/node-project.sh backend
+
+      - uses: actions/setup-node@v7
+        if: steps.project.outputs.dir != ''
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: ${{ steps.project.outputs.dir }}/package-lock.json
+
+      - name: Install dependencies
+        if: steps.project.outputs.dir != ''
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: npm ci
+
+      - name: Lint
+        if: steps.project.outputs.dir != ''
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: npm run lint
+
+      - name: Prepare database (migrations + seeds)
+        if: steps.project.outputs.tests == 'true'
+        run: bash .github/scripts/apply-sql.sh migrations seeds
+
+      - name: Tests
+        if: steps.project.outputs.tests == 'true'
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: npm test
+
+      - name: Build
+        if: steps.project.outputs.dir != ''
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: npm run build
+
+  # ------------------------------------------------------------------------------------------ Crawler
+
+  crawler:
+    name: Crawler
+    needs: changes
+    if: needs.changes.outputs.crawler == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci
+          POSTGRES_DB: ci
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U ci -d ci"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGUSER: ci
+      PGPASSWORD: ci
+      PGDATABASE: ci
+      TEST_DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Find the project
+        id: project
+        run: |
+          if [ ! -f crawler/requirements.txt ]; then
+            echo "::notice title=Crawler::crawler/ is not in this branch, nothing to check"
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "present=true" >> "$GITHUB_OUTPUT"
+          if [ -d crawler/tests ] && compgen -G "crawler/tests/test_*.py" > /dev/null; then
+            echo "tests=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice title=Crawler::No tests yet (crawler/tests/test_*.py not found) — only lint runs"
+            echo "tests=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-python@v7
+        if: steps.project.outputs.present == 'true'
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: crawler/requirements*.txt
+
+      - name: Install dependencies
+        if: steps.project.outputs.present == 'true'
+        run: |
+          if [ -f crawler/requirements-dev.txt ]; then
+            pip install -r crawler/requirements-dev.txt
+          else
+            pip install -r crawler/requirements.txt pytest
+          fi
+          # ruff from requirements-dev.txt if pinned there, otherwise the CI version
+          python -m ruff --version 2>/dev/null || pip install "ruff==${RUFF_VERSION}"
+
+      - name: Lint (ruff)
+        if: steps.project.outputs.present == 'true'
+        run: python -m ruff check crawler --output-format=github
+
+      - name: Prepare database (migrations)
+        if: steps.project.outputs.tests == 'true'
+        run: bash .github/scripts/apply-sql.sh migrations
+
+      - name: Tests
+        if: steps.project.outputs.tests == 'true'
+        run: python -m pytest crawler/tests -ra
+
+  # ------------------------------------------------------------------------------------------ Result
+
+  ci-result:
+    name: CI result
+    if: always()
+    needs: [changes, frontend, backend, crawler]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Summary
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          {
+            echo "## CI result"
+            echo "| Check | Result |"
+            echo "|---|---|"
+            echo "$RESULTS" | jq -r 'to_entries[] | "| \(.key) | \(
+              {success: "passed", skipped: "not changed", failure: "failed", cancelled: "cancelled"}[.value.result] // .value.result
+            ) |"'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail if any check failed
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: |
+          echo "::error::Some checks failed — open the failed job above for details."
+          exit 1
