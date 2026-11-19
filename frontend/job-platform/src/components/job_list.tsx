@@ -1,32 +1,8 @@
+import { Link } from "react-router-dom";
 import type { job } from "../types/job";
 
 type job_list_props = {
   jobs: job[];
-};
-
-const format_date = (date: string | null) => {
-  if (!date) return "Unknown";
-
-  return new Intl.DateTimeFormat("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  }).format(new Date(date));
-};
-
-const format_salary = (job: job) => {
-  if (job.salary_min === null && job.salary_max === null) {
-    return "Not specified";
-  }
-
-  const amount =
-    job.salary_min === job.salary_max
-      ? `${job.salary_min}`
-      : `${job.salary_min ?? "?"} - ${job.salary_max ?? "?"}`;
-
-  const period = job.salary_period ? ` / ${job.salary_period}` : "";
-
-  return `${amount} ${job.salary_currency}${period}`;
 };
 
 export default function job_list({ jobs }: job_list_props) {
@@ -37,16 +13,11 @@ export default function job_list({ jobs }: job_list_props) {
   return (
     <div className="job_list">
       {jobs.map((job) => (
-        <a
-          className="job_card"
-          href={job.url}
-          target="_blank"
-          rel="noreferrer"
-          key={job.id}
-        >
+        <Link className="job_card" to={`/jobs/${job.id}`} key={job.id}>
           <div className="job_main">
             <div className="job_heading">
               <h3>{job.title}</h3>
+
               <span className="job_status">
                 {job.is_active ? "Active" : "Inactive"}
               </span>
@@ -57,7 +28,7 @@ export default function job_list({ jobs }: job_list_props) {
             </p>
 
             <div className="job_details">
-              <span>📍 {job.location ?? "Location unknown"}</span>
+              <span>{job.location ?? "Location unknown"}</span>
               <span>
                 {job.employment_type?.replaceAll("_", " ") ?? "Not specified"}
               </span>
@@ -74,11 +45,15 @@ export default function job_list({ jobs }: job_list_props) {
           </div>
 
           <div className="job_meta">
-            <strong>{format_salary(job)}</strong>
-            <span>Published: {format_date(job.published_at)}</span>
-            <span>Source: {job.source}</span>
+            <strong>
+              {job.salary_min !== null || job.salary_max !== null
+                ? `${job.salary_min ?? "?"} - ${job.salary_max ?? "?"} ${job.salary_currency}`
+                : "Salary not specified"}
+            </strong>
+
+            <span>{job.source}</span>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
