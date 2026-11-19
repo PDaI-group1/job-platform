@@ -20,7 +20,7 @@ from matching.schemas import JobRequirements
 
 load_dotenv()
 
-DEFAULT_MODEL = "gemini-3.8-flash"
+DEFAULT_MODEL = "gemini-3.5-flash-lite"
 
 _SYSTEM = """\
 You are a job ad parser. Extract the following from the job ad the user provides.
@@ -53,7 +53,10 @@ def extract_requirements(text: str, model: str = DEFAULT_MODEL) -> JobRequiremen
     if not api_key:
         raise ValueError("GEMINI_API_KEY is not set")
 
-    client = genai.Client(api_key=api_key)
+    client = genai.Client(
+        api_key=api_key,
+        http_options=types.HttpOptions(timeout=60_000),
+    )
     response = client.models.generate_content(
         model=model,
         contents=text,
