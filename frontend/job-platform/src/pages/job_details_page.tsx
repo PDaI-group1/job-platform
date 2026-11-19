@@ -27,7 +27,7 @@ function format_salary(job: (typeof mock_jobs)[number]) {
   }`;
 }
 
-export default function job_details_page() {
+export default function JobDetailsPage() {
   const { id } = useParams();
 
   const job = mock_jobs.find((item) => item.id === Number(id));

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import type { job } from "../types/job";
 
-type job_list_props = {
+type JobListProps = {
   jobs: job[];
 };
 
-export default function job_list({ jobs }: job_list_props) {
+export default function JobList({ jobs }: JobListProps) {
   if (jobs.length === 0) {
     return <div className="empty_state">No jobs found.</div>;
   }
