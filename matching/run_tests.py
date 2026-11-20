@@ -11,7 +11,13 @@ import json
 import time
 from pathlib import Path
 
+import httpx
+from google.genai.errors import ServerError
+
 from matching.extract import extract_requirements
+
+_MAX_RETRIES = 3
+_RETRY_DELAY = 30  # seconds between retries on 503/timeout
 
 RESULTS_FILE = Path("matching/test_results.json")
 ADS_DIR = Path("matching/test_ads")
@@ -44,7 +50,19 @@ def main() -> None:
     for i, ad in enumerate(pending):
         print(f"[{len(results)+1}/{len(ads)}] {ad.name}", flush=True)
         text = ad.read_text(encoding="utf-8")
-        result = extract_requirements(text)
+        for attempt in range(1, _MAX_RETRIES + 1):
+            try:
+                result = extract_requirements(text)
+                break
+            except (ServerError, httpx.RequestError) as e:
+                if attempt == _MAX_RETRIES:
+                    print(f"  SKIP after {_MAX_RETRIES} attempts: {e}", flush=True)
+                    result = None
+                    break
+                print(f"  attempt {attempt} failed ({type(e).__name__}), retrying in {_RETRY_DELAY}s...", flush=True)
+                time.sleep(_RETRY_DELAY)
+        if result is None:
+            continue
         results[ad.name] = result.model_dump()
         save_results(results)
         print(f"  seniority={result.seniority} must={len(result.must_have_skills)} "
