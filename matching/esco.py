@@ -19,6 +19,8 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from sentence_transformers.util import cos_sim
 
+from matching.cv_schemas import SkillMatch
+
 _DEFAULT_SKILLS_FILE = Path(__file__).parent / "data" / "esco_it_skills.txt"
 _MODEL_NAME = "all-MiniLM-L6-v2"
 _SIMILARITY_THRESHOLD = 0.75
@@ -53,10 +55,11 @@ def normalise_skills(
     skills: list[str],
     esco_path: Path | None = None,
     threshold: float = _SIMILARITY_THRESHOLD,
-) -> list[str]:
+) -> list[SkillMatch]:
     """Map raw skill strings to the closest ESCO preferred label.
 
-    Skills with no match above the similarity threshold are dropped.
+    Every skill is returned. Skills with a match above the threshold get an
+    esco_label; others get esco_label=None. No skill is ever dropped.
 
     Args:
         skills: Raw skill strings extracted from a CV.
@@ -64,7 +67,7 @@ def normalise_skills(
         threshold: Minimum cosine similarity to accept a match (0–1).
 
     Returns:
-        Deduplicated list of ESCO preferred labels.
+        One SkillMatch per unique raw skill, preserving input order.
     """
     if not skills:
         return []
@@ -77,11 +80,13 @@ def normalise_skills(
 
     similarities = cos_sim(skill_vecs, esco_vecs).numpy()
 
-    seen: dict[str, None] = {}
+    seen: dict[str, SkillMatch] = {}
     for i, raw in enumerate(skills):
+        if raw in seen:
+            continue
         best_idx = int(np.argmax(similarities[i]))
-        if similarities[i][best_idx] >= threshold:
-            label = esco_labels[best_idx]
-            seen.setdefault(label, None)
+        score = round(float(similarities[i][best_idx]), 3)
+        esco_label = esco_labels[best_idx] if score >= threshold else None
+        seen[raw] = SkillMatch(raw=raw, esco_label=esco_label, score=score)
 
-    return list(seen)
+    return list(seen.values())

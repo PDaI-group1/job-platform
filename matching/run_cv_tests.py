@@ -38,6 +38,7 @@ def save_results(results: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--delay", type=float, default=13.0, help="seconds between requests")
+    parser.add_argument("--model", default=None, help="Gemini model ID (default: cv_extract.DEFAULT_MODEL)")
     args = parser.parse_args()
 
     results = load_results()
@@ -55,7 +56,7 @@ def main() -> None:
 
         for attempt in range(1, _MAX_RETRIES + 1):
             try:
-                profile = extract_cv_profile(text)
+                profile = extract_cv_profile(text, **({} if args.model is None else {"model": args.model}))
                 break
             except (ServerError, httpx.RequestError) as e:
                 if attempt == _MAX_RETRIES:
@@ -68,12 +69,13 @@ def main() -> None:
             continue
 
         print(f"  Normalising {len(profile.skills)} skills with ESCO...", flush=True)
-        profile.skills_esco = normalise_skills(profile.skills)
+        profile.skill_matches = normalise_skills(profile.skills)
 
         results[cv.name] = profile.model_dump()
         save_results(results)
+        matched = sum(1 for s in profile.skill_matches if s.esco_label is not None)
         print(
-            f"  skills={len(profile.skills)} esco={len(profile.skills_esco)} "
+            f"  skills={len(profile.skill_matches)} esco_matched={matched}/{len(profile.skill_matches)} "
             f"exp={len(profile.experience)} lang={profile.languages}",
             flush=True,
         )

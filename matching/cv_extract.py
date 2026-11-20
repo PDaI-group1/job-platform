@@ -16,11 +16,11 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-from matching.cv_schemas import CVProfile
+from matching.cv_schemas import CVExtraction, CVProfile
 
 load_dotenv()
 
-DEFAULT_MODEL = "gemini-3.8-flash"
+DEFAULT_MODEL = "gemini-3.5-flash-lite"
 
 _SYSTEM = """\
 You are a CV parser. Extract the following from the CV the user provides.
@@ -31,8 +31,7 @@ The CV may be written in Finnish, English, Swedish, or a mix.
 - education: degrees, qualifications or fields of study
 - languages: human languages the candidate speaks or mentions
 
-Do not infer or add anything not stated in the CV.
-Leave skills_esco as an empty list — it will be filled in separately.\
+Do not infer or add anything not stated in the CV.\
 """
 
 
@@ -65,11 +64,12 @@ def extract_cv_profile(text: str, model: str = DEFAULT_MODEL) -> CVProfile:
         config=types.GenerateContentConfig(
             system_instruction=_SYSTEM,
             response_mime_type="application/json",
-            response_schema=CVProfile,
+            response_schema=CVExtraction,
         ),
     )
 
-    return CVProfile.model_validate_json(response.text)
+    extraction = CVExtraction.model_validate_json(response.text)
+    return CVProfile(**extraction.model_dump())
 
 
 if __name__ == "__main__":
