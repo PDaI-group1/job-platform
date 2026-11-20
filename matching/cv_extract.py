@@ -55,7 +55,10 @@ def extract_cv_profile(text: str, model: str = DEFAULT_MODEL) -> CVProfile:
     if not api_key:
         raise ValueError("GEMINI_API_KEY is not set")
 
-    client = genai.Client(api_key=api_key)
+    client = genai.Client(
+        api_key=api_key,
+        http_options=types.HttpOptions(timeout=60_000),
+    )
     response = client.models.generate_content(
         model=model,
         contents=text,

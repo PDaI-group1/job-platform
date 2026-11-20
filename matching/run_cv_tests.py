@@ -12,8 +12,14 @@ import json
 import time
 from pathlib import Path
 
+import httpx
+from google.genai.errors import ServerError
+
 from matching.cv_extract import extract_cv_profile
 from matching.esco import normalise_skills
+
+_MAX_RETRIES = 3
+_RETRY_DELAY = 30
 
 RESULTS_FILE = Path("matching/cv_test_results.json")
 CVS_DIR = Path("matching/test_cvs")
@@ -47,7 +53,19 @@ def main() -> None:
         print(f"[{len(results)+1}/{len(cvs)}] {cv.name}", flush=True)
         text = cv.read_text(encoding="utf-8")
 
-        profile = extract_cv_profile(text)
+        for attempt in range(1, _MAX_RETRIES + 1):
+            try:
+                profile = extract_cv_profile(text)
+                break
+            except (ServerError, httpx.RequestError) as e:
+                if attempt == _MAX_RETRIES:
+                    print(f"  SKIP after {_MAX_RETRIES} attempts: {e}", flush=True)
+                    profile = None
+                    break
+                print(f"  attempt {attempt} failed ({type(e).__name__}), retrying in {_RETRY_DELAY}s...", flush=True)
+                time.sleep(_RETRY_DELAY)
+        if profile is None:
+            continue
 
         print(f"  Normalising {len(profile.skills)} skills with ESCO...", flush=True)
         profile.skills_esco = normalise_skills(profile.skills)
