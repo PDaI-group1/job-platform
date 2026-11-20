@@ -1,0 +1,252 @@
+{
+  "001_junior_developer_fi.txt": {
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "React",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "MongoDB",
+      "Git",
+      "Docker",
+      "Jira",
+      "Jest",
+      "Cypress"
+    ],
+    "skills_esco": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Git",
+      "Docker"
+    ],
+    "experience": [
+      {
+        "title": "Junior-ohjelmistokehittäjä",
+        "years": 1.0
+      },
+      {
+        "title": "Harjoittelija",
+        "years": 0.25
+      }
+    ],
+    "education": [
+      "Tietojenkäsittelytieteen kandidaatti"
+    ],
+    "languages": [
+      "Suomi",
+      "englanti",
+      "ruotsi"
+    ]
+  },
+  "002_senior_data_scientist_en.txt": {
+    "skills": [
+      "Python",
+      "R",
+      "SQL",
+      "scikit-learn",
+      "TensorFlow",
+      "PyTorch",
+      "XGBoost",
+      "Apache Spark",
+      "Apache Kafka",
+      "dbt",
+      "Amazon Web Services (S3, SageMaker, Redshift)",
+      "Google Cloud Platform",
+      "Git",
+      "Docker",
+      "Jupyter",
+      "Airflow",
+      "Tableau",
+      "Matplotlib",
+      "Seaborn"
+    ],
+    "skills_esco": [
+      "Python",
+      "R",
+      "SQL",
+      "Apache Spark",
+      "Apache Kafka",
+      "Google Cloud Platform",
+      "Git",
+      "Docker"
+    ],
+    "experience": [
+      {
+        "title": "Senior Data Scientist",
+        "years": 5.0
+      },
+      {
+        "title": "Data Scientist",
+        "years": 3.0
+      }
+    ],
+    "education": [
+      "M.Sc. in Computer Science (Machine Learning)",
+      "B.Sc. in Mathematics"
+    ],
+    "languages": [
+      "English",
+      "Finnish",
+      "Mandarin"
+    ]
+  },
+  "003_devops_engineer_en.txt": {
+    "skills": [
+      "Microsoft Azure",
+      "Amazon Web Services",
+      "Kubernetes",
+      "Docker",
+      "Terraform",
+      "Ansible",
+      "GitHub Actions",
+      "Jenkins",
+      "GitLab CI",
+      "Prometheus",
+      "Grafana",
+      "ELK stack",
+      "Bash",
+      "Python",
+      "Git"
+    ],
+    "skills_esco": [
+      "Microsoft Azure",
+      "Amazon Web Services",
+      "Kubernetes",
+      "Docker",
+      "Terraform",
+      "Ansible",
+      "Bash",
+      "Python",
+      "Git"
+    ],
+    "experience": [
+      {
+        "title": "Senior DevOps Engineer",
+        "years": 4.0
+      },
+      {
+        "title": "DevOps Engineer",
+        "years": 3.0
+      }
+    ],
+    "education": [
+      "B.Eng. in Information Technology"
+    ],
+    "languages": [
+      "English",
+      "Finnish"
+    ]
+  },
+  "004_fullstack_developer_mixed.txt": {
+    "skills": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "Express",
+      "GraphQL",
+      "REST API design",
+      "PostgreSQL",
+      "Redis",
+      "MongoDB",
+      "Google Cloud Platform",
+      "Git",
+      "Docker",
+      "Figma",
+      "Jest",
+      "Vitest",
+      "Playwright"
+    ],
+    "skills_esco": [
+      "React",
+      "Vue.js",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "GraphQL",
+      "REST API design",
+      "PostgreSQL",
+      "Redis",
+      "MongoDB",
+      "Google Cloud Platform",
+      "Git",
+      "Docker"
+    ],
+    "experience": [
+      {
+        "title": "Full Stack Developer",
+        "years": 3.0
+      },
+      {
+        "title": "Junior Developer",
+        "years": 2.0
+      }
+    ],
+    "education": [
+      "Tieto- ja viestintätekniikan insinööri (AMK)"
+    ],
+    "languages": [
+      "Finnish",
+      "English",
+      "Swedish"
+    ]
+  },
+  "005_embedded_engineer_en.txt": {
+    "skills": [
+      "C",
+      "C++",
+      "Python",
+      "FreeRTOS",
+      "Zephyr",
+      "SPI",
+      "I2C",
+      "UART",
+      "CAN bus",
+      "BLE",
+      "ARM Cortex-M",
+      "STM32",
+      "nRF52",
+      "Git",
+      "GDB",
+      "CMake",
+      "Docker",
+      "Unity",
+      "pytest"
+    ],
+    "skills_esco": [
+      "C",
+      "C++",
+      "Python",
+      "Git",
+      "Docker"
+    ],
+    "experience": [
+      {
+        "title": "Senior Embedded Software Engineer",
+        "years": 6.0
+      },
+      {
+        "title": "Embedded Software Engineer",
+        "years": 3.0
+      }
+    ],
+    "education": [
+      "M.Sc. in Electrical Engineering (Embedded Systems)"
+    ],
+    "languages": [
+      "Finnish",
+      "English"
+    ]
+  }
+}
