@@ -1,6 +1,6 @@
 import type { db_client } from "../db.ts";
 import type { job } from "../types/job.ts";
-import type { job_list_filters, job_list_params } from "./job_query.ts";
+import type { job_list_filters, job_list_params, job_sort } from "./job_query.ts";
 
 // Public fields from docs/data-model.md, in the documented order.
 // content_hash and raw_data are internal to the crawler and never returned.
@@ -31,9 +31,18 @@ const job_columns = [
   "updated_at",
 ].join(", ");
 
-// Newest first. Jobs without a publish date go last; id keeps the order stable
-// between pages when dates are equal.
-const default_order = "published_at DESC NULLS LAST, id DESC";
+// ORDER BY for each sort value. Only these fixed strings ever reach the SQL.
+// Every order ends with newest first and id, so it is stable between pages.
+// newest: jobs without a publish date go last.
+// company: case-insensitive A–Z, jobs without a company go last.
+const job_orders: Record<job_sort, string> = {
+  newest: "published_at DESC NULLS LAST, id DESC",
+  company: "lower(company_name) ASC NULLS LAST, published_at DESC NULLS LAST, id DESC",
+};
+
+export function build_job_order(sort: job_sort): string {
+  return job_orders[sort];
+}
 
 export type job_list_result = {
   jobs: job[];
@@ -56,11 +65,18 @@ export function build_job_filters(filters: job_list_filters): sql_where {
   };
 
   if (filters.q !== undefined) {
-    // Same fields the mock-data search in the frontend looked at.
+    // Title and description (#13) plus company and location, which the
+    // frontend search box also promises ("Search jobs, companies, locations").
     add(
-      (p) => `(title ILIKE ${p} OR company_name ILIKE ${p} OR location ILIKE ${p})`,
+      (p) =>
+        `(title ILIKE ${p} OR description ILIKE ${p}` +
+        ` OR company_name ILIKE ${p} OR location ILIKE ${p})`,
       `%${escape_like(filters.q)}%`,
     );
+  }
+  if (filters.location !== undefined) {
+    // location is free text, e.g. "Helsinki, Espoo", so match a part of it.
+    add((p) => `location ILIKE ${p}`, `%${escape_like(filters.location)}%`);
   }
   if (filters.employment_type !== undefined) {
     add((p) => `employment_type = ${p}`, filters.employment_type);
@@ -85,7 +101,7 @@ export function escape_like(value: string): string {
 
 export async function list_jobs(
   db: db_client,
-  { page, page_size, filters }: job_list_params,
+  { page, page_size, sort, filters }: job_list_params,
 ): Promise<job_list_result> {
   const offset = (page - 1) * page_size;
   const { where, values } = build_job_filters(filters);
@@ -99,7 +115,7 @@ export async function list_jobs(
     ),
     db.query<job>(
       `SELECT ${job_columns} FROM jobs ${where} ` +
-        `ORDER BY ${default_order} LIMIT ${limit_placeholder} OFFSET ${offset_placeholder}`,
+        `ORDER BY ${build_job_order(sort)} LIMIT ${limit_placeholder} OFFSET ${offset_placeholder}`,
       [...values, page_size, offset],
     ),
   ]);

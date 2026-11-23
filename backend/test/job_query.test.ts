@@ -26,8 +26,10 @@ describe("parse_job_list_params", () => {
     expect(parse_job_list_params({})).toEqual({
       page: 1,
       page_size: default_page_size,
+      sort: "newest",
       filters: {
         q: undefined,
+        location: undefined,
         employment_type: undefined,
         remote_type: undefined,
         is_active: undefined,
@@ -39,7 +41,9 @@ describe("parse_job_list_params", () => {
     const params = parse_job_list_params({
       page: "2",
       page_size: "50",
+      sort: "company",
       q: "  react  ",
+      location: " Oulu ",
       employment_type: "internship",
       remote_type: "remote",
       is_active: "false",
@@ -48,8 +52,10 @@ describe("parse_job_list_params", () => {
     expect(params).toEqual({
       page: 2,
       page_size: 50,
+      sort: "company",
       filters: {
         q: "react",
+        location: "Oulu",
         employment_type: "internship",
         remote_type: "remote",
         is_active: false,
@@ -93,8 +99,20 @@ describe("parse_job_list_params", () => {
     expect_invalid(() => parse_job_list_params({ is_active: value }), "is_active");
   });
 
+  it("rejects location longer than 100 characters", () => {
+    expect_invalid(() => parse_job_list_params({ location: "a".repeat(101) }), "location");
+  });
+
+  it.each(["newest", "company"])("accepts sort=%s", (sort) => {
+    expect(parse_job_list_params({ sort }).sort).toBe(sort);
+  });
+
+  it.each(["title", "Company", "-newest"])("rejects sort=%s", (sort) => {
+    expect_invalid(() => parse_job_list_params({ sort }), "sort");
+  });
+
   it("ignores unknown parameters", () => {
-    expect(parse_job_list_params({ sort: "title" }).page).toBe(1);
+    expect(parse_job_list_params({ order: "asc", foo: "bar" }).page).toBe(1);
   });
 });
 

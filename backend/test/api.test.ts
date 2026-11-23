@@ -26,6 +26,8 @@ describe("request validation", () => {
     ["/jobs?page_size=1000", "page_size"],
     ["/jobs?employment_type=all", "employment_type"],
     ["/jobs?is_active=yes", "is_active"],
+    ["/jobs?sort=title", "sort"],
+    [`/jobs?location=${"a".repeat(101)}`, "location"],
     ["/jobs/abc", "id"],
     ["/jobs/99999999999999999999", "id"],
   ])("GET %s -> 400 for %s", async (url, parameter) => {
