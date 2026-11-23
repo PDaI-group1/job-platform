@@ -1,0 +1,27 @@
+name: teamtailor
+display_name: Teamtailor
+base_url: https://www.teamtailor.com
+
+http:
+  user_agent: "SkillMarketBot/0.1 (+https://github.com/PDaI-group1/job-platform; student project)"
+  accept: application/rss+xml, application/xml;q=0.9, text/xml;q=0.8
+  timeout_seconds: 30
+  delay_seconds: 2
+  jitter_seconds: 0.5
+  max_retries: 3
+  backoff_seconds: 2.0
+  respect_robots_txt: true
+
+feed:
+  format: rss
+  urls:
+    - "{url}/jobs.rss"
+
+employers:
+  - { name: Futurice, url: "https://careers.futurice.com" }
+  - { name: Visma Finland, url: "https://vismafinland.teamtailor.com" }
+  - { name: Huawei Finland R&D, url: "https://huaweifinlandrnd.teamtailor.com" }
+  - { name: Codento, url: "https://codento.teamtailor.com" }
+  - { name: Vincit, url: "https://vincitoyj.teamtailor.com" }
+  - { name: Siili Solutions, url: "https://siili.teamtailor.com" }
+  - { name: Eficode, url: "https://career.eficode.com" }

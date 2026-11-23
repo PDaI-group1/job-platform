@@ -1,0 +1,23 @@
+name: lever
+display_name: Lever
+base_url: https://api.lever.co
+
+http:
+  user_agent: "SkillMarketBot/0.1 (+https://github.com/PDaI-group1/job-platform; student project)"
+  accept: application/json
+  timeout_seconds: 30
+  delay_seconds: 2
+  jitter_seconds: 0.5
+  max_retries: 3
+  backoff_seconds: 2.0
+  respect_robots_txt: true
+
+feed:
+  format: json
+  urls:
+    - https://api.lever.co/v0/postings/{token}?mode=json
+    - https://api.eu.lever.co/v0/postings/{token}?mode=json
+
+employers:
+  - { name: Alif Semiconductor, token: alifsemi }
+  - { name: The Upright Project, token: uprightproject }

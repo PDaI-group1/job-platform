@@ -1,5 +1,6 @@
 import re
 from datetime import date, datetime, time, timezone
+from email.utils import parsedate_to_datetime
 from typing import Literal
 from zoneinfo import ZoneInfo
 
@@ -10,6 +11,8 @@ _EU = re.compile(
     re.IGNORECASE,
 )
 
+_RFC2822 = re.compile(r"^\s*(?:[A-Z][a-z]{2},\s*)?\d{1,2}\s+[A-Z][a-z]{2}\s+\d{4}\s+\d{1,2}:\d{2}")
+
 Kind = Literal["start", "end"]
 
 
@@ -17,6 +20,12 @@ def parse_datetime(value: str | None, tz: str = "Europe/Helsinki", kind: Kind = 
     if not value:
         return None
     local = ZoneInfo(tz)
+    if _RFC2822.match(value):
+        try:
+            dt = parsedate_to_datetime(value)
+        except (TypeError, ValueError):
+            return None
+        return (dt if dt.tzinfo else dt.replace(tzinfo=local)).astimezone(timezone.utc)
     try:
         if m := _ISO.search(value):
             y, mo, d, hh, mm, ss, offset = m.groups()

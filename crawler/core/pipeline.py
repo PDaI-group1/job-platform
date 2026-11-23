@@ -119,6 +119,8 @@ class Pipeline:
             stats.add_error(str(exc))
             log.error("%s — stopping", exc)
         finally:
+            for error in getattr(self.source, "errors", []):
+                stats.add_error(error)
             self._flush(batch, options, stats)
             self._finish(options, stats, started_at)
             stats.requests = getattr(self.source.fetcher, "requests_made", 0)
@@ -131,6 +133,8 @@ class Pipeline:
             return raw
         if options.mode == Mode.INCREMENTAL and raw.source_job_id in known:
             stats.details_skipped_known += 1
+            return raw
+        if raw.detail_fetched:
             return raw
         try:
             raw = self.source.fetch_detail(raw)
@@ -186,7 +190,10 @@ class Pipeline:
         if not options.is_complete_crawl:
             log.warning("--deactivate-missing ignored: only valid for a complete crawl (no limit / page range)")
             return
-        if stats.interrupted or (stats.errors and stats.listed == 0):
+        if getattr(self.source, "partial_run", False):
+            log.warning("--deactivate-missing ignored: only some employers of %s were crawled", self.source.name)
+            return
+        if stats.interrupted or getattr(self.source, "errors", None) or (stats.errors and stats.listed == 0):
             log.warning("run did not finish cleanly, NOT deactivating missing jobs")
             return
         stats.deactivated = self.storage.deactivate_missing(self.source.name, started_at)

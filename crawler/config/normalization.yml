@@ -9,7 +9,12 @@ negation:
 
 remote_type:
   hybrid:
-    - '\bhybrid\w*'
+    - '^\s*hybrid\b'
+    - '\bhybrid\s*$'
+    - '\(\s*hybrid[^)]*\)'
+    - '[-–|/,]\s*hybrid\b'
+    - '\bhybrid[\s-]+(?:work\w*|role|position|model|setup|office)\b'
+    - '\bhybridi(?:työ|työskentel|malli)\w*'
     - '\bosittai\w*\s+etä\w*'
     - '\betä-?\s*ja\s+lähityö\w*'
   remote:
@@ -21,6 +26,28 @@ remote_type:
     - '\blähityö\w*'
     - '\bon[\s-]?site\b'
     - '\bpaikan\s+päällä\b'
+
+remote_type_description:
+  hybrid:
+    - '\bhybrid[\s-]+(?:work\w*|role|position|model|setup|arrangement|schedule|office)\b'
+    - '\bhybridi(?:työ|työskentel|malli(?:lla|ssa|n)?\b)\w*'
+    - '\bosittai\w*\s+etä\w*'
+    - '\betä-?\s*ja\s+lähityö\w*'
+    - '\b(?:toimisto\w*|office|on[\s-]?site)\b.{0,120}\b(?:etä\w*|remote\w*)'
+    - '\b(?:etä\w*|remote\w*)\b.{0,120}\b(?:toimisto\w*|office|on[\s-]?site)\b'
+    - '\b(?:joustav\w*|flexib\w*)\b.{0,60}\b(?:etä\w*|remote\w*)'
+    - '\b(?:etä\w*|remote\w*)\b.{0,60}\b(?:joustav\w*|flexib\w*)'
+    - '\btapauskohtaisesti\b.{0,30}\betä\w*'
+  remote:
+    - '\b(?:fully|100\s*%|completely|entirely)\s+remote\b'
+    - '\bremote[\s-]+(?:first|only|position|role|job)\b'
+    - '\btäysin\s+etä\w*'
+    - '\b100\s*%\s*etä\w*'
+    - '\bhelt\s+på\s+distans\b'
+  onsite:
+    - '\blähityö\w*'
+    - '\bon[\s-]?site\s+(?:role|position|job|work)\b'
+    - '\bno\s+remote\s+work\b'
 
 employment_type:
   internship:
@@ -71,3 +98,13 @@ salary:
   heuristic:
     hour_below: 100
     year_above: 15000
+
+feed_filters:
+  finland_pattern: '\b(Finland|Suomi|Helsin(ki|gfors)|Espoo|Esbo|Vantaa|Vanda|Kauniainen|Oulu|Uleåborg|Tampere|Tammerfors|Turku|Åbo|Jyväskylä|Kuopio|Lahti|Joensuu|Seinäjoki|Lappeenranta|Vaasa|Vasa|Pori|Kotka|Hämeenlinna|Rovaniemi|Uusimaa|Pirkanmaa|Etätyö)\b'
+  skip_title_patterns:
+    - '\bopen\s+applications?\b'
+    - '\bgeneral\s+applications?\b'
+    - '\bspontaneous\s+applications?\b'
+    - '\bavoin\s+(työ)?hakemus\b'
+    - '\bavoimet\s+hakemukset\b'
+    - '\böppen\s+ansökan\b'

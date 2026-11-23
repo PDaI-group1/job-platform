@@ -51,7 +51,7 @@ class HttpFetcher:
         self._client = client or httpx.Client(
             headers={
                 "User-Agent": config.user_agent,
-                "Accept": "text/html,application/xhtml+xml",
+                "Accept": config.accept,
                 "Accept-Language": "fi,en;q=0.8",
             },
             timeout=config.timeout_seconds,
