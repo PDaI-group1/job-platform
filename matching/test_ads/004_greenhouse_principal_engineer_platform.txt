@@ -1,0 +1,62 @@
+Title: Principal Engineer, Platform
+Company: Smartly.io
+Location: Helsinki, Uusimaa, Finland
+Source: greenhouse
+
+We are looking for a Principal Engineer to join our Platform Group. As a leading technical expert, you will play a pivotal role in guiding our teams through some of the most complex technical challenges at Smartly. Your influence will be crucial in shaping the technical direction of our platform, identifying critical areas for future investment, and driving execution on initiatives that improve scalability, reliability, and developer productivity. 
+ The Platform Group owns the foundational systems that power Smartly's products and engineering organization. This includes large-scale databases, distributed systems, infrastructure capabilities, and platform services that enable our teams to build and operate reliably at scale. 
+ The Principal Engineer reports to the Chief Architect and works closely with engineering teams, product leaders, and other stakeholders across the organization. 
+ What You Will Do 
+ Examples of initiatives you will work on 
+ 
+ Define how AI agents can safely and effectively interact with Smartly's platform, data, and internal systems. 
+ Shape the technical vision and architecture of Smartly's automation platform, enabling teams to build and operate automations reliably at scale 
+ Partner with teams building our next-generation data products, helping define the architecture for combining multiple large-scale datasets into a unified and accessible data foundation 
+ Evolve the architecture and operational model of our largest databases, including sharding, replication, and scaling strategies 
+ 
+ With the team of other Principal Engineers, you will also have a substantial impact on shaping Smartly's technical direction and engineering culture. We expect you to utilize your strengths to the benefit of the development teams you're working with. 
+ Responsibilities 
+ 
+ Be a strong engineering voice alongside other leaders by advising and driving Smartly's technical vision and strategy, setting and upholding high standards for technical quality, scalability, and operational excellence 
+ Drive execution through architecture, design, and hands-on technical contributions, taking responsibility for delivering large-scale technical initiatives to customers 
+ Expected to remain actively involved in design reviews, prototyping, incident analysis, and implementation of critical technical components. 
+ Lead complex cross-team projects that advance our platform architecture and long-term technical vision 
+ Identify and address scalability, reliability, observability and performance bottlenecks across critical systems 
+ Contribute to sharing learnings and knowledge across the organization, mentoring engineers and raising engineering standards 
+ Participate in our recruitment process and help maintain consistently high engineering standards across teams 
+ 
+ What We Are Looking For 
+ Requirements 
+ 
+ 3+ years operating at Staff, Principal, Lead Engineer, or equivalent level, driving technical strategy across multiple teams. 
+ Proven track record leading multi-quarter technical initiatives spanning 3+ engineering teams and delivering measurable improvements in scalability, reliability, developer productivity, or operational efficiency. 
+ 5+ years operating production systems where relational database architecture, scalability, reliability, and performance were critical concerns. (e.g. 99.9%+ availability targets) 
+ Strong understanding of distributed systems and experience making architectural decisions involving consistency, availability, partition tolerance, replication and sharding 
+ Demonstrated success influencing technical direction without direct managerial authority. 
+ A high bar for quality of code, testing, and quality of user experience 
+ Ability to communicate complex technical topics clearly to a wide range of stakeholders 
+ Ability to listen well and internalize the best ideas from across the organization while also setting a vision that others are excited to get behind 
+ 
+ Bonus points if you have 
+ 
+ Experience with analytical databases such as ClickHouse, BigQuery, Snowflake, or similar technologies 
+ Strong infrastructure and cloud platform knowledge 
+ Experience designing systems that safely expose capabilities, data, and workflows to AI agents or autonomous systems. 
+ Experience leading reliability, observability, or performance engineering initiatives 
+ 
+ What We Offer You 
+ At Smartly, we offer a place where you can advance your career. Here, you'll find: 
+ 
+ An Inclusive Global Culture: Join a team of over 750 Smartlies, representing more than 60 nationalities across 24 locations in 13 countries. We cultivate a culture built on trust, transparency, and open feedback, where diverse perspectives are valued and encouraged. 
+ Global Impact: Contribute to a company making a global impact, directly influencing our customers' success and business growth. 
+ Focus on Wellbeing: We prioritize your health with healthcare packages, mental health services, and a commitment to work-life balance through paid holidays and family leave. 
+ Comprehensive Rewards: Benefit from equity options, performance-based rewards, competitive compensation, and career development opportunities. 
+ Flexible Hybrid Workplace: Experience a hybrid work model, balancing office collaboration with remote work, and the option to work abroad for up to 30 days annually. 
+ 
+ Apply Now and Build Your Future with Smartly! 
+ Curious what it's like to work at Smartly? Visit our Careers page to see how we grow, collaborate, and make impact together. 
+ #LI-HYBRID 
+ &nbsp; About Smartly 
+ Smartly is the AI-powered advertising technology company transforming ad experiences for brands and their consumers. Our comprehensive advertising platform seamlessly integrates the capabilities of media, creative, and intelligence to power more than 800 billion impressions and generate more than 300 billion creatives annually, delivering tangible business outcomes for brands and advertisers. 
+ Smartly is the only company in the industry recognized as a Leader in The Forrester Wave: Creative Advertising Technologies with PwC validating the results it delivers for brands. We manage creative and media for 700+ brands worldwide and $6B in ad spend across the largest media platforms, including Facebook, Google, Instagram, Pinterest, Snap, and TikTok. Our end-to-end technology, unmatched access to media platforms and exceptional customer service help Fortune 500 brands to reach and engage consumers and learn what performs best.Smartly is a multinational and diverse team of 750+ Smartlies from 60+ nationalities, working in 13 countries. Together, we want to create and maintain an inclusive environment where everyone feels respected and heard. Our Diversity, Equity &amp; Inclusion approach is at the heart of it. 
+ Visit Smartly to learn more. The processing of your information is described in our Candidate Privacy Notice .

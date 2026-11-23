@@ -1,0 +1,191 @@
+{
+  "001_greenhouse_ai_architect.txt": {
+    "must_have_skills": [
+      "AI/ML",
+      "Generative AI",
+      "LLM",
+      "RAG",
+      "Multi-agent architectures",
+      "Azure / AWS / GCP",
+      "Infrastructure as Code (IaC)",
+      "MLOps / LLMOps",
+      "CI/CD",
+      "DevOps",
+      "Python"
+    ],
+    "nice_to_have_skills": [
+      "Java",
+      "C#"
+    ],
+    "seniority": "senior",
+    "required_languages": [
+      "Finnish",
+      "English"
+    ]
+  },
+  "002_greenhouse_cloud_engineer_aws_azure.txt": {
+    "must_have_skills": [
+      "Useamman vuoden kokemus pilvi-infrastruktuurien suunnittelusta ja toteuttamisesta (AWS ja/tai Azure)",
+      "Kyky rakentaa infrastruktuuria koodilla (esim. Terraform, AWS CDK)",
+      "Osaaminen CI/CD-automaatiosta (esim. GitHub Actions, Jenkins tai vastaavat)",
+      "Kokemus monitorointi- ja lokitusratkaisuista",
+      "Kokemus asiakasrajapinnassa työskentelystä ja kykyä ratkaista asiakkaan todellisia haasteita",
+      "Yhteistyökykyinen ja ratkaisuhakuinen työote"
+    ],
+    "nice_to_have_skills": [
+      "Kokemus konsultointi- tai toimittajaympäristöistä",
+      "Halu syventää osaamista pilviteknologioiden parissa"
+    ],
+    "seniority": "senior",
+    "required_languages": [
+      "Suomi",
+      "Englanti"
+    ]
+  },
+  "003_greenhouse_ai_full_stack_developer.txt": {
+    "must_have_skills": [
+      "full-stack software development",
+      "Java, TypeScript, C# or Python",
+      "agentic coding assistants (like Github Copilot or Claude Code)",
+      "problem-solving skills and a consultative mindset"
+    ],
+    "nice_to_have_skills": [
+      "AI agent architectures and modern AI frameworks (e.g. AWS Bedrock, Google AI, LangChain, MCP, or AI Foundry)",
+      "cloud-based AI services (AWS or Azure)",
+      "bringing AI solutions into production using DevOps and IaC practices",
+      "fluent Finnish skills"
+    ],
+    "seniority": "senior",
+    "required_languages": [
+      "English"
+    ]
+  },
+  "004_greenhouse_principal_engineer_platform.txt": {
+    "must_have_skills": [
+      "Experience operating at Staff, Principal, Lead Engineer, or equivalent level, driving technical strategy across multiple teams",
+      "Proven track record leading multi-quarter technical initiatives spanning 3+ engineering teams",
+      "Experience operating production systems where relational database architecture, scalability, reliability, and performance were critical concerns",
+      "Understanding of distributed systems and experience making architectural decisions involving consistency, availability, partition tolerance, replication and sharding",
+      "Experience influencing technical direction without direct managerial authority"
+    ],
+    "nice_to_have_skills": [
+      "Experience with analytical databases such as ClickHouse, BigQuery, Snowflake, or similar technologies",
+      "Strong infrastructure and cloud platform knowledge",
+      "Experience designing systems that safely expose capabilities, data, and workflows to AI agents or autonomous systems",
+      "Experience leading reliability, observability, or performance engineering initiatives"
+    ],
+    "seniority": "lead",
+    "required_languages": []
+  },
+  "005_greenhouse_senior_ml_biosignal_scientist.txt": {
+    "must_have_skills": [
+      "machine learning",
+      "biosignal processing",
+      "sensor fusion",
+      "analyzing real-world, multimodal time-series data",
+      "PyTorch",
+      "NumPy",
+      "SciPy",
+      "pandas",
+      "scikit-learn",
+      "human physiological systems knowledge",
+      "data infrastructure",
+      "scalable cloud systems",
+      "moving ML models from experimental research into production software"
+    ],
+    "nice_to_have_skills": [
+      "consumer health tech",
+      "wearable hardware",
+      "digital health applications"
+    ],
+    "seniority": "senior",
+    "required_languages": []
+  },
+  "006_greenhouse_internal_communications_employer_br.txt": {
+    "must_have_skills": [
+      "Curiosity about AI and automation",
+      "Organised, proactive and reliable with recurring tasks"
+    ],
+    "nice_to_have_skills": [
+      "Communications exposure",
+      "Familiarity with Office 365, SharePoint or OneDrive"
+    ],
+    "seniority": "junior",
+    "required_languages": []
+  },
+  "007_greenhouse_engineering_manager_chat_platform.txt": {
+    "must_have_skills": [
+      "leadership experience",
+      "software development experience in backend",
+      "experience with rollouts and fast-paced production environments"
+    ],
+    "nice_to_have_skills": [
+      "flexible and comfortable working with various languages and technologies",
+      "experience with modern AI tools",
+      "Kubernetes",
+      "AWS"
+    ],
+    "seniority": "lead",
+    "required_languages": []
+  },
+  "008_lever_senior_design_verification_enginee.txt": {
+    "must_have_skills": [
+      "UVM",
+      "System Verilog",
+      "Programming skills",
+      "C",
+      "Testbench architecture design",
+      "RTL design fundamentals",
+      "Clock domain Crossing (CDC)",
+      "Generic serial protocols",
+      "Constrained random verification",
+      "Microcontrollers with embedded arm processor cores",
+      "Team working and collaboration skills"
+    ],
+    "nice_to_have_skills": [
+      "GLS"
+    ],
+    "seniority": "senior",
+    "required_languages": []
+  },
+  "009_lever_member_of_technical_staff_data_scie.txt": {
+    "must_have_skills": [
+      "At least 6 years of professional experience in data science and/or software development",
+      "Demonstrated ability to execute data science work and provide technical direction",
+      "Strong output orientation and common sense thinking",
+      "Strong analytical and mathematical thinking",
+      "Track record in implementing production-quality data pipelines and models",
+      "Python",
+      "TypeScript",
+      "Agentic development experience with coding agents (Claude Code, Cursor, etc.)",
+      "Ability to work both autonomously and as part of a team",
+      "Ability to see the big picture and prioritize work accordingly",
+      "Ability to communicate clearly both verbally and in writing",
+      "Predictive modeling",
+      "Bayesian inference",
+      "Convex optimization"
+    ],
+    "nice_to_have_skills": [
+      "Hands-on experience with LLM-assisted data processing: prompt design, structured outputs, retrieval, agentic tool use, and building evals",
+      "Experience designing and operating ETL pipelines at a non-trivial scale",
+      "Expertise in cloud technologies such as AWS Sagemaker, Glue, ECR, and Fargate (or equivalents in GCP / Azure)"
+    ],
+    "seniority": "senior",
+    "required_languages": []
+  },
+  "010_teamtailor_senior_cloud_devops_engineer.txt": {
+    "must_have_skills": [
+      "Deep public cloud experience (AWS, Azure or GCP)",
+      "Strong IaC & CI/CD mastery (Terraform or Bicep)",
+      "Software & scripting skills (Python, TypeScript, or Go)",
+      "Operational mindset (observability, log aggregation, monitoring)"
+    ],
+    "nice_to_have_skills": [
+      "Curiosity for modern AI tooling (Azure OpenAI, API Management, RAG pipelines, LLM observability frameworks)"
+    ],
+    "seniority": "senior",
+    "required_languages": [
+      "English"
+    ]
+  }
+}

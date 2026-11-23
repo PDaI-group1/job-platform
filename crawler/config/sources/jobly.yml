@@ -1,0 +1,59 @@
+name: jobly
+display_name: Jobly
+base_url: https://www.jobly.fi
+fetcher: http
+html_parser: html5lib
+
+http:
+  user_agent: "SkillMarketBot/0.1 (+https://github.com/PDaI-group1/job-platform; student project)"
+  timeout_seconds: 20
+  delay_seconds: 1.5
+  jitter_seconds: 0.5
+  max_retries: 3
+  backoff_seconds: 2.0
+  respect_robots_txt: true
+
+listing:
+  start_url: https://www.jobly.fi/tyopaikat
+  page_param: page
+  first_page: 0
+  selectors:
+    item: "article.node-job"
+    link: "h2.node__title a"
+    date: ".description .date"
+    company: ".description .recruiter-company-profile-job-organization"
+    meta: ".description"
+    salary: ".job-salary-range-teaser"
+    location: ".location"
+    next_page: ".pager-next a, li.pager__item--next a, a[rel=next]"
+  id_patterns:
+    - attr: id
+      regex: '^node-(\d+)$'
+    - attr: href
+      regex: '-(\d+)/?(?:\?.*)?$'
+
+detail:
+  selectors:
+    title: ".pane-node-title h1"
+    body: ".field--name-body .field__item"
+  use_json_ld: true
+
+  field_labels:
+    deadline: ["haku päättyy", "hakuaika päättyy", "hakuaika", "viimeinen hakupäivä", "application deadline", "deadline", "apply by"]
+    salary: ["palkka", "palkkaus", "palkkaus ja edut", "peruspalkka", "tuntipalkka", "kuukausipalkka", "salary", "lön"]
+    salary_period: ["palkkakausi"]
+    employment_type: ["sopimustyyppi", "työsuhde", "työsuhteen tyyppi", "työsuhteen muoto", "employment type", "contract type"]
+    work_time: ["työaika", "työaikamuoto", "working hours"]
+    work_mode: ["etätyö", "työskentelymuoto", "työn tekemisen tapa", "remote work", "work mode"]
+    address: ["työpaikan osoite", "osoite", "address"]
+    start_date: ["aloitus", "työ alkaa", "työn alkamisaika", "palvelussuhde", "start date"]
+    reference: ["työavain", "viite", "reference"]
+    application_start: ["haku alkaa", "hakuaika alkaa"]
+    duration: ["työn kesto", "työsuhteen kesto", "kesto", "duration"]
+    work_location: ["työn sijainti", "työpaikan sijainti", "sijainti", "location"]
+    education: ["koulutus", "education"]
+    experience: ["työkokemus", "experience"]
+    language_skills: ["kielitaito", "language skills"]
+
+  strip_patterns:
+    - 'Tiivistelmä työpaikkailmoituksesta:?.*?Tämä tiivistelmä on luotu tekoälyn avulla\.?'
