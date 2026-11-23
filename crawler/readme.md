@@ -100,6 +100,50 @@ python -m crawler run jobly --start-page 10 --limit 5 --dry-run --stats-json out
 Get-Content out\stats.json
 ```
 
+## Job board feeds (Greenhouse, Lever, Teamtailor)
+
+Greenhouse and Lever publish a JSON API, Teamtailor an RSS feed. One request per employer returns all its jobs
+with descriptions, so there are no detail pages and every mode makes the same requests.
+Employers are listed in _config/sources/<board>.yml_; the list and the terms of use are in _docs/job-sources.md_.
+
+**1. Dry run - all 15 employers into a file** _~1 min_
+
+```
+python -m crawler run feeds --dry-run --output out/feeds.jsonl
+```
+
+The log shows every employer: Oura: 95 jobs, 5 kept (Finland, no open applications).
+
+**2. One board, one employer**
+
+```
+python -m crawler run greenhouse --employer oura --dry-run --output out/oura.jsonl
+```
+
+**3. Save to the database, then run again - no duplicates**
+
+```
+python -m crawler run feeds
+python -m crawler run feeds        # inserted=0, unchanged=...
+```
+
+**4. Debug a parser on a saved feed**
+
+```
+python -m crawler run lever --employer alifsemi --dry-run --dump-html out/raw
+python -m crawler parse lever out\raw\lever\feed\<file>.json --kind listing --normalized
+```
+
+What happens to every feed:
+- **Fallback host:** Greenhouse and Lever accounts live in a US or an EU region. The US host is tried first,
+  then the EU one (Lever answers an empty list on the wrong region, Greenhouse 404).
+- **Filters**: only jobs in Finland are kept (any location, office or country of the job matches); "open application" postings are skipped.
+- **If one employer fails, the rest continue.** The error is shown in the summary; _--deactivate-missing_
+  is then skipped, so jobs of the failed employer are not marked inactive.
+- **Mapping:** everything goes through the same normalizer as Jobly. Specials: Greenhouse descriptions are
+  HTML entities, Lever dates are Unix milliseconds, Lever salaries in other currencies than EUR
+  stay only in _raw_data_, Teamtailor remoteStatus none/hybrid/fully -> onsite/hybrid/remote.
+
 ## How crawler works
  
 ```
