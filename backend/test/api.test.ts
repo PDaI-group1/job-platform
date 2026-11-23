@@ -72,7 +72,7 @@ describe("CORS", () => {
 });
 
 describe("database errors", () => {
-  it("hides unexpected errors behind a generic 500", async () => {
+  it.each(["/jobs", "/stats"])("GET %s hides unexpected errors behind a generic 500", async (url) => {
     const failing_db = {
       query: async () => {
         throw new Error('column "secret_column" does not exist');
@@ -80,7 +80,7 @@ describe("database errors", () => {
     } as unknown as db_client;
     const failing_app = create_app({ db: failing_db, cors_origins: [] });
 
-    const res = await request(failing_app).get("/jobs");
+    const res = await request(failing_app).get(url);
 
     expect(res.status).toBe(500);
     expect(res.body).toEqual({
@@ -102,7 +102,7 @@ describe("database errors", () => {
       expect(res.body).toEqual({ status: "error", database: "unreachable" });
     });
 
-    it.each(["/jobs", "/jobs/1"])("GET %s -> 503", async (url) => {
+    it.each(["/jobs", "/jobs/1", "/stats"])("GET %s -> 503", async (url) => {
       const res = await request(down_app).get(url);
       expect(res.status).toBe(503);
       expect(res.body.error.code).toBe("service_unavailable");

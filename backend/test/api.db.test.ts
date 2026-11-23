@@ -153,6 +153,32 @@ describe.skipIf(!database_url)("API with database", () => {
     expect(res.body).toEqual(listed);
   });
 
+  it("GET /stats returns catalog totals matching the database", async () => {
+    const expected = await pool.query<{ active: number; companies: number }>(
+      `SELECT count(*) FILTER (WHERE is_active)::int AS active,
+              count(DISTINCT lower(btrim(company_name)))
+                FILTER (WHERE btrim(company_name) <> '')::int AS companies
+       FROM jobs`,
+    );
+    const res = await request(app).get("/stats");
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      total: await count_jobs(),
+      active: expected.rows[0]!.active,
+      companies: expected.rows[0]!.companies,
+    });
+  });
+
+  it("GET /stats ignores search and filters, unlike pagination.total", async () => {
+    const stats = (await request(app).get("/stats?q=zzz-no-such-job")).body;
+    const unfiltered = (await request(app).get("/jobs")).body;
+    const filtered = (await request(app).get("/jobs?q=zzz-no-such-job")).body;
+
+    expect(stats.total).toBe(unfiltered.pagination.total);
+    expect(filtered.pagination.total).toBe(0);
+  });
+
   it("GET /jobs/:id -> 404 for a missing job", async () => {
     const max = await pool.query<{ id: number }>("SELECT coalesce(max(id), 0) AS id FROM jobs");
     const res = await request(app).get(`/jobs/${max.rows[0]!.id + 1}`);

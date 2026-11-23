@@ -107,6 +107,27 @@ export async function list_jobs(
   return { jobs: rows_result.rows, total: count_result.rows[0]?.total ?? 0 };
 }
 
+export type job_stats = {
+  total: number;
+  active: number;
+  companies: number;
+};
+
+// Totals for the whole catalog, independent of search and filters.
+// Companies are counted case- and whitespace-insensitively; jobs without a
+// company name are not counted as a company.
+export async function get_job_stats(db: db_client): Promise<job_stats> {
+  const result = await db.query<job_stats>(
+    `SELECT
+       count(*)::int AS total,
+       count(*) FILTER (WHERE is_active)::int AS active,
+       count(DISTINCT lower(btrim(company_name)))
+         FILTER (WHERE btrim(company_name) <> '')::int AS companies
+     FROM jobs`,
+  );
+  return result.rows[0] ?? { total: 0, active: 0, companies: 0 };
+}
+
 export async function find_job_by_id(
   db: db_client,
   id: string,

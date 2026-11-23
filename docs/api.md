@@ -12,6 +12,7 @@ A job object has exactly the fields described in [data-model.md](data-model.md).
 | GET | `/health` | Service status; OK only when the database is reachable |
 | GET | `/jobs` | Paginated list of jobs, newest first, with search and filters |
 | GET | `/jobs/:id` | One job by internal _id_ |
+| GET | `/stats` | Catalog totals for the dashboard cards |
 
 ### GET /health
 
@@ -65,6 +66,29 @@ Example: `GET /jobs?q=developer&employment_type=full_time&page=1&page_size=20`
 | 404 | No job with this `id` |
 
 Inactive jobs are returned too, with `"is_active": false`.
+
+### GET /stats
+
+Totals for the whole catalog. Search and filters do not affect them; the number of
+search results is `pagination.total` of `GET /jobs`. Query parameters are ignored.
+
+**Response 200:**
+
+```json
+{
+  "total": 150,
+  "active": 132,
+  "companies": 24
+}
+```
+
+| Field | Description |
+|---|---|
+| `total` | All jobs in the database, active and inactive |
+| `active` | Jobs with `is_active = true` |
+| `companies` | Distinct `company_name` values, ignoring case and surrounding spaces; jobs without a company are not counted |
+
+Errors: `503` / `500` as for the other endpoints.
 
 ## Value formats
 
