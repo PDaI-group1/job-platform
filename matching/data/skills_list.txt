@@ -1,9 +1,12 @@
-# Curated subset of ESCO skills covering IT and digital roles.
-# Source: ESCO v1.2.0 — https://esco.ec.europa.eu
-# To use the full ESCO dataset (~13 000 skills), download skills_en.csv from
+# IT skills and tools used for CV skill normalisation.
+# This is our own curated list, partly based on ESCO preferred labels.
+# Additional tools (frameworks, libraries, embedded, monitoring) were added
+# after reviewing the test CVs in matching/test_cvs/.
+#
+# To use the full ESCO dataset (~13 000 skills) instead, download skills_en.csv from
 # https://esco.ec.europa.eu/en/use-esco/download and pass its path to load_skills().
 #
-# Format: one preferred label per line; lines starting with # are comments.
+# Format: one label per line; lines starting with # are comments.
 #
 # --- Programming languages ---
 Python
