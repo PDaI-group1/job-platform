@@ -30,12 +30,28 @@ PL/SQL
 HTML
 CSS
 React
+Next.js
 Angular
 Vue.js
+Svelte
+Nuxt.js
 Node.js
+Express
+FastAPI
+Django
+Flask
+Spring Boot
+ASP.NET Core
 REST API design
 GraphQL
 WebSockets
+gRPC
+Tailwind CSS
+Bootstrap
+Webpack
+Vite
+React Native
+Flutter
 # --- Data and AI ---
 machine learning
 deep learning
@@ -53,6 +69,22 @@ MLOps
 large language models
 prompt engineering
 retrieval-augmented generation
+scikit-learn
+TensorFlow
+PyTorch
+XGBoost
+Pandas
+NumPy
+Matplotlib
+Seaborn
+Jupyter
+Apache Airflow
+dbt
+MLflow
+Hugging Face Transformers
+LangChain
+Tableau
+Power BI
 # --- Cloud and infrastructure ---
 Amazon Web Services
 Microsoft Azure
@@ -63,21 +95,58 @@ Terraform
 Ansible
 Docker
 Kubernetes
+Helm
 CI/CD pipelines
+GitHub Actions
+GitLab CI
+Jenkins
+CircleCI
+ArgoCD
 DevOps
 GitOps
 site reliability engineering
+Azure DevOps
+Nginx
 # --- Databases ---
 PostgreSQL
 MySQL
 Microsoft SQL Server
+SQLite
 MongoDB
 Redis
 Elasticsearch
+ClickHouse
+Snowflake
+BigQuery
+Apache Cassandra
+DynamoDB
+InfluxDB
 Apache Kafka
 Apache Spark
+Apache Flink
+Apache Hadoop
+# --- Monitoring and observability ---
+Prometheus
+Grafana
+Datadog
+ELK stack
+OpenTelemetry
+# --- Testing ---
+Jest
+Vitest
+Cypress
+Playwright
+pytest
+Selenium
+JUnit
+test automation
 # --- Tools and practices ---
 Git
+Jira
+Figma
+GDB
+CMake
+Postman
 Agile methodology
 Scrum
 software testing
@@ -87,12 +156,33 @@ software architecture
 microservices
 API development
 technical documentation
+containerisation
+# --- Embedded systems ---
+FreeRTOS
+Zephyr RTOS
+Zephyr
+UART
+SPI
+I2C
+CAN bus
+Bluetooth LE
+BLE
+ARM architecture
+ARM Cortex-M
+STM32
+nRF52
+VHDL
+Verilog
+SystemVerilog
 # --- Security ---
 information security
 cybersecurity
 penetration testing
 network security
 identity and access management
+OAuth
+JWT
+SSL/TLS
 # --- Soft skills (IT context) ---
 problem solving
 teamwork
