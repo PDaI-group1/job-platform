@@ -77,7 +77,7 @@ Tested on 10 real Finnish job ads from Greenhouse, Lever, and Teamtailor ATS fee
 
 ### Observations
 
-- **Seniority detection is accurate** across all ads, including lead/principal roles and a junior trainee.
+- **Seniority looked correct on inspection** (not measured against labels); the trainee ad was mapped to junior because the schema has no intern option.
 - **Finnish ads work correctly** — skills are extracted in the language of the ad without translation.
 - **Language detection is conservative** — only languages explicitly stated in the ad are returned. Ads that imply English without stating it return an empty list.
 - **Language output is not normalised** — ad 001 returns `["Finnish", "English"]`, ad 002 returns `["Suomi", "Englanti"]`. Downstream code should normalise to ISO 639-1 codes (`fi`, `en`).
