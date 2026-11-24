@@ -17,6 +17,9 @@ _PHONE_INTL_RE = re.compile(r"\+\d{1,3}(?:[\s\-]?\d){6,12}")
 # Starts at a word boundary to avoid matching digits inside larger numbers.
 _PHONE_FI_RE = re.compile(r"(?<![.\d])0\d(?:[\s\-]?\d){6,9}(?![.\d])")
 
+# Finnish domestic with parenthesised area code: (040) 123 4567.
+_PHONE_FI_PAREN_RE = re.compile(r"\(0\d+\)[\s\-]?\d[\d\s\-]{5,}")
+
 
 def redact_contacts(text: str) -> str:
     """Replace email addresses and phone numbers in *text* with placeholders.
@@ -33,4 +36,5 @@ def redact_contacts(text: str) -> str:
     text = _EMAIL_RE.sub("[email]", text)
     text = _PHONE_INTL_RE.sub("[phone]", text)
     text = _PHONE_FI_RE.sub("[phone]", text)
+    text = _PHONE_FI_PAREN_RE.sub("[phone]", text)
     return text

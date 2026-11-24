@@ -34,6 +34,9 @@ class TestFinnishPhones:
     def test_other_prefix(self):
         assert redact_contacts("044 987 6543") == "[phone]"
 
+    def test_parenthesised_area_code(self):
+        assert redact_contacts("(040) 123 4567") == "[phone]"
+
 
 class TestInternationalPhones:
     def test_finnish_international(self):
