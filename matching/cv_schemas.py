@@ -17,7 +17,7 @@ class Language(BaseModel):
 
 class SkillMatch(BaseModel):
     raw: str = Field(description="Skill as extracted from the CV")
-    esco_label: str | None = Field(None, description="Matched ESCO preferred label; null if no match above threshold")
+    label: str | None = Field(None, description="Matched label from the skills list; null if no match above threshold")
     score: float = Field(description="Cosine similarity score (0–1)")
 
 

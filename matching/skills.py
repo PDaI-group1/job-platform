@@ -53,17 +53,18 @@ def _get_model() -> SentenceTransformer:
 
 def normalise_skills(
     skills: list[str],
-    esco_path: Path | None = None,
+    skills_path: Path | None = None,
     threshold: float = _SIMILARITY_THRESHOLD,
 ) -> list[SkillMatch]:
-    """Map raw skill strings to the closest ESCO preferred label.
+    """Map raw skill strings to the closest label in the skills list.
 
-    Every skill is returned. Skills with a match above the threshold get an
-    esco_label; others get esco_label=None. No skill is ever dropped.
+    Every skill is returned. Skills with a match above the threshold get a
+    label; others get label=None. No skill is ever dropped.
 
     Args:
         skills: Raw skill strings extracted from a CV.
-        esco_path: Optional path to a custom skills file (see load_skills).
+        skills_path: Optional path to a custom skills file (see load_skills).
+                     To use the full ESCO dataset, pass the path to skills_en.csv.
         threshold: Minimum cosine similarity to accept a match (0–1).
 
     Returns:
@@ -72,13 +73,13 @@ def normalise_skills(
     if not skills:
         return []
 
-    esco_labels = load_skills(esco_path)
+    known_labels = load_skills(skills_path)
     model = _get_model()
 
     skill_vecs = model.encode(skills, convert_to_tensor=True, show_progress_bar=False)
-    esco_vecs = model.encode(esco_labels, convert_to_tensor=True, show_progress_bar=False)
+    label_vecs = model.encode(known_labels, convert_to_tensor=True, show_progress_bar=False)
 
-    similarities = cos_sim(skill_vecs, esco_vecs).numpy()
+    similarities = cos_sim(skill_vecs, label_vecs).numpy()
 
     seen: dict[str, SkillMatch] = {}
     for i, raw in enumerate(skills):
@@ -86,7 +87,7 @@ def normalise_skills(
             continue
         best_idx = int(np.argmax(similarities[i]))
         score = round(float(similarities[i][best_idx]), 3)
-        esco_label = esco_labels[best_idx] if score >= threshold else None
-        seen[raw] = SkillMatch(raw=raw, esco_label=esco_label, score=score)
+        label = known_labels[best_idx] if score >= threshold else None
+        seen[raw] = SkillMatch(raw=raw, label=label, score=score)
 
     return list(seen.values())

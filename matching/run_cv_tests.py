@@ -68,9 +68,9 @@ def main() -> None:
 
         results[cv.name] = profile.model_dump(mode="json")
         save_results(results)
-        matched = sum(1 for s in profile.skill_matches if s.esco_label is not None)
+        matched = sum(1 for s in profile.skill_matches if s.label is not None)
         print(
-            f"  skills={len(profile.skill_matches)} esco_matched={matched}/{len(profile.skill_matches)} "
+            f"  skills={len(profile.skill_matches)} matched={matched}/{len(profile.skill_matches)} "
             f"exp={len(profile.experience)} lang={profile.languages}",
             flush=True,
         )

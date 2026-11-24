@@ -119,9 +119,9 @@ Saves results incrementally to `matching/cv_test_results.json`.
 {
   "skills": ["Python", "React", "Docker"],
   "skill_matches": [
-    {"raw": "Python",    "esco_label": "Python",  "score": 1.0},
-    {"raw": "React",     "esco_label": "React",   "score": 1.0},
-    {"raw": "FreeRTOS",  "esco_label": null,       "score": 0.34}
+    {"raw": "Python",    "label": "Python",  "score": 1.0},
+    {"raw": "React",     "label": "React",   "score": 1.0},
+    {"raw": "FreeRTOS",  "label": null,      "score": 0.34}
   ],
   "experience": [
     {"title": "Senior Software Engineer", "years": 3.0},
@@ -136,7 +136,7 @@ Saves results incrementally to `matching/cv_test_results.json`.
 }
 ```
 
-`esco_label` is the matched label from `matching/data/skills_list.txt`; `null` means no match above the 0.75 cosine similarity threshold — the raw skill is kept so no information is lost.
+`label` is the matched label from `matching/data/skills_list.txt`; `null` means no match above the 0.75 cosine similarity threshold — the raw skill is kept so no information is lost.
 
 `level` is one of `native / fluent / good / basic`, or `null` if not stated in the CV.
 
