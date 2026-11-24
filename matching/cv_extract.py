@@ -12,7 +12,11 @@ import json
 from pathlib import Path
 
 from matching.cv_schemas import CVExtraction, CVProfile
+from matching.esco import normalise_skills
 from matching.llm import generate_json
+from matching.privacy import redact_contacts
+
+_MAX_TEXT_LEN = 30_000
 
 _SYSTEM = """\
 You are a CV parser. Extract the following from the CV the user provides.
@@ -50,6 +54,34 @@ def extract_cv_profile(text: str) -> CVProfile:
     return CVProfile(**extraction.model_dump())
 
 
+def build_cv_profile(text: str) -> CVProfile:
+    """Full pipeline: validate → redact → extract → normalise skills.
+
+    This is the entry point for the background worker.
+
+    Args:
+        text: Plain text of the CV.
+
+    Returns:
+        CVProfile ready for storage. Serialises cleanly with
+        ``profile.model_dump(mode="json")``.
+
+    Raises:
+        ValueError: If text is empty/whitespace or longer than 30 000 characters.
+        google.genai.errors.APIError: On API errors.
+        ValueError: If GEMINI_API_KEY is not set.
+    """
+    if not text or not text.strip():
+        raise ValueError("CV text must not be empty")
+    if len(text) > _MAX_TEXT_LEN:
+        raise ValueError(f"CV text exceeds {_MAX_TEXT_LEN} characters ({len(text)})")
+
+    clean = redact_contacts(text)
+    profile = extract_cv_profile(clean)
+    profile.skill_matches = normalise_skills(profile.skills)
+    return profile
+
+
 if __name__ == "__main__":
     import argparse
 
@@ -58,5 +90,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     cv_text = args.file.read_text(encoding="utf-8")
-    result = extract_cv_profile(cv_text)
-    print(json.dumps(result.model_dump(), ensure_ascii=False, indent=2))
+    result = build_cv_profile(cv_text)
+    print(json.dumps(result.model_dump(mode="json"), ensure_ascii=False, indent=2))

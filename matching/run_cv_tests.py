@@ -15,8 +15,7 @@ from pathlib import Path
 import httpx
 from google.genai.errors import ServerError
 
-from matching.cv_extract import extract_cv_profile
-from matching.esco import normalise_skills
+from matching.cv_extract import build_cv_profile
 
 _MAX_RETRIES = 3
 _RETRY_DELAY = 30
@@ -55,7 +54,7 @@ def main() -> None:
 
         for attempt in range(1, _MAX_RETRIES + 1):
             try:
-                profile = extract_cv_profile(text)
+                profile = build_cv_profile(text)
                 break
             except (ServerError, httpx.RequestError) as e:
                 if attempt == _MAX_RETRIES:
@@ -67,10 +66,7 @@ def main() -> None:
         if profile is None:
             continue
 
-        print(f"  Normalising {len(profile.skills)} skills with ESCO...", flush=True)
-        profile.skill_matches = normalise_skills(profile.skills)
-
-        results[cv.name] = profile.model_dump()
+        results[cv.name] = profile.model_dump(mode="json")
         save_results(results)
         matched = sum(1 for s in profile.skill_matches if s.esco_label is not None)
         print(
