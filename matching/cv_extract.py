@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 from matching.cv_schemas import CVExtraction, CVProfile
-from matching.esco import normalise_skills
+from matching.skills import normalise_skills
 from matching.llm import generate_json
 from matching.privacy import redact_contacts
 
