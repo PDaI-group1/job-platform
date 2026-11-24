@@ -38,7 +38,6 @@ def save_results(results: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--delay", type=float, default=13.0, help="seconds between requests")
-    parser.add_argument("--model", default=None, help="Gemini model ID (default: cv_extract.DEFAULT_MODEL)")
     args = parser.parse_args()
 
     results = load_results()
@@ -56,7 +55,7 @@ def main() -> None:
 
         for attempt in range(1, _MAX_RETRIES + 1):
             try:
-                profile = extract_cv_profile(text, **({} if args.model is None else {"model": args.model}))
+                profile = extract_cv_profile(text)
                 break
             except (ServerError, httpx.RequestError) as e:
                 if attempt == _MAX_RETRIES:
