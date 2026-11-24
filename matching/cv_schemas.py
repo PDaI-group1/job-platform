@@ -1,9 +1,18 @@
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 
 class Experience(BaseModel):
     title: str = Field(description="Job title or role")
-    years: float | None = Field(None, description="Years in this role; null if not stated")
+    years: float | None = Field(None, description="Years in this role; null if not stated. Convert months to years (e.g. 3 months → 0.25)")
+
+
+class Language(BaseModel):
+    code: str = Field(description="ISO 639-1 language code, e.g. 'fi', 'en', 'sv'")
+    level: Literal["native", "fluent", "good", "basic"] | None = Field(
+        None, description="Proficiency level; null if not stated"
+    )
 
 
 class SkillMatch(BaseModel):
@@ -24,7 +33,7 @@ class CVExtraction(BaseModel):
     education: list[str] = Field(
         description="Degrees, qualifications or fields of study"
     )
-    languages: list[str] = Field(
+    languages: list[Language] = Field(
         description="Human languages the candidate speaks or mentions"
     )
 

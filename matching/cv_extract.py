@@ -19,9 +19,14 @@ You are a CV parser. Extract the following from the CV the user provides.
 The CV may be written in Finnish, English, Swedish, or a mix.
 
 - skills: all technical and professional skills mentioned, in their original wording
-- experience: each work experience entry as a job title and number of years (null if not stated)
+- experience: each work experience entry as a job title and years (null if not stated).
+  Convert months to years: e.g. "3 months" → 0.25, "6 months" → 0.5.
 - education: degrees, qualifications or fields of study
-- languages: human languages the candidate speaks or mentions
+- languages: human languages the candidate speaks or mentions.
+  Output each as an ISO 639-1 code (e.g. "fi", "en", "sv", "zh", "ar").
+  Map stated proficiency to: native / fluent / good / basic. Set level to null if not stated.
+  Examples: "äidinkieli" or "native" → native; "fluent" or "sujuva" → fluent;
+  "good" or "hyvä" → good; "basic" or "perustaso" → basic.
 
 Do not infer or add anything not stated in the CV.\
 """
