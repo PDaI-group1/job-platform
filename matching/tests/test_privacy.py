@@ -64,6 +64,19 @@ class TestNoContacts:
         assert redact_contacts("Python 3.11") == "Python 3.11"
 
 
+class TestNoLineBreakCrossing:
+    def test_paren_phone_does_not_eat_next_line(self):
+        text = "(040) 123 4567\n2019 - 2021 Developer"
+        assert redact_contacts(text) == "[phone]\n2019 - 2021 Developer"
+
+    def test_paren_phone_mid_line(self):
+        assert redact_contacts("Puh (09) 123 4567, Helsinki") == "Puh [phone], Helsinki"
+
+    def test_fi_phone_does_not_eat_next_line(self):
+        text = "040 123 4567\n2019 Developer"
+        assert redact_contacts(text) == "[phone]\n2019 Developer"
+
+
 class TestMixed:
     def test_email_and_phone_in_same_text(self):
         text = "sara.makinen@example.com | +358 40 1234567"
