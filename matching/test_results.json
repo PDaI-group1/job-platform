@@ -1,0 +1,327 @@
+{
+  "001_greenhouse_ai_architect.txt": {
+    "must_have_skills": [
+      [
+        "AI/ML"
+      ],
+      [
+        "Generative AI",
+        "LLM"
+      ],
+      [
+        "Azure OpenAI",
+        "Azure Foundry",
+        "Databricks Agent Bricks",
+        "LangChain",
+        "Semantic Kernel"
+      ],
+      [
+        "Cloud Infrastructure",
+        "Azure",
+        "AWS",
+        "GCP"
+      ],
+      [
+        "IaC"
+      ],
+      [
+        "MLOps",
+        "LLMOps"
+      ],
+      [
+        "CI/CD",
+        "DevOps"
+      ],
+      [
+        "Python"
+      ]
+    ],
+    "nice_to_have_skills": [
+      [
+        "Java"
+      ],
+      [
+        "C#"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": [
+      {
+        "code": "fi",
+        "requirement": "required"
+      },
+      {
+        "code": "en",
+        "requirement": "required"
+      }
+    ]
+  },
+  "002_greenhouse_cloud_engineer_aws_azure.txt": {
+    "must_have_skills": [
+      [
+        "AWS",
+        "Azure"
+      ],
+      [
+        "Terraform",
+        "AWS CDK"
+      ],
+      [
+        "GitHub Actions",
+        "Jenkins"
+      ],
+      [
+        "CI/CD"
+      ]
+    ],
+    "nice_to_have_skills": [
+      [
+        "Consulting"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": [
+      {
+        "code": "fi",
+        "requirement": "required"
+      },
+      {
+        "code": "en",
+        "requirement": "required"
+      }
+    ]
+  },
+  "003_greenhouse_ai_full_stack_developer.txt": {
+    "must_have_skills": [
+      [
+        "Java",
+        "TypeScript",
+        "C#",
+        "Python"
+      ],
+      [
+        "GitHub Copilot",
+        "Claude Code"
+      ]
+    ],
+    "nice_to_have_skills": [
+      [
+        "AWS Bedrock",
+        "Google AI",
+        "LangChain",
+        "MCP",
+        "AI Foundry"
+      ],
+      [
+        "AWS",
+        "Azure"
+      ],
+      [
+        "DevOps"
+      ],
+      [
+        "IaC"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": [
+      {
+        "code": "en",
+        "requirement": "required"
+      },
+      {
+        "code": "fi",
+        "requirement": "advantage"
+      }
+    ]
+  },
+  "004_greenhouse_principal_engineer_platform.txt": {
+    "must_have_skills": [],
+    "nice_to_have_skills": [
+      [
+        "ClickHouse",
+        "BigQuery",
+        "Snowflake"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": []
+  },
+  "005_greenhouse_senior_ml_biosignal_scientist.txt": {
+    "must_have_skills": [
+      [
+        "Machine learning",
+        "biosignal processing",
+        "sensor fusion"
+      ],
+      [
+        "PyTorch"
+      ],
+      [
+        "NumPy",
+        "SciPy",
+        "pandas",
+        "scikit-learn"
+      ]
+    ],
+    "nice_to_have_skills": [
+      [
+        "consumer health tech",
+        "wearable hardware",
+        "digital health applications"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": []
+  },
+  "006_greenhouse_internal_communications_employer_br.txt": {
+    "must_have_skills": [],
+    "nice_to_have_skills": [
+      [
+        "Internal communications",
+        "Employer branding"
+      ],
+      [
+        "Office 365",
+        "SharePoint",
+        "OneDrive"
+      ]
+    ],
+    "seniority": "intern",
+    "required_languages": []
+  },
+  "007_greenhouse_engineering_manager_chat_platform.txt": {
+    "must_have_skills": [
+      [
+        "Leadership"
+      ],
+      [
+        "Software development"
+      ],
+      [
+        "Backend development"
+      ],
+      [
+        "Production environments"
+      ]
+    ],
+    "nice_to_have_skills": [
+      [
+        "Kubernetes"
+      ],
+      [
+        "AWS"
+      ],
+      [
+        "AI tools"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": []
+  },
+  "008_lever_senior_design_verification_enginee.txt": {
+    "must_have_skills": [
+      [
+        "UVM"
+      ],
+      [
+        "SystemVerilog"
+      ],
+      [
+        "C"
+      ],
+      [
+        "Testbench architecture"
+      ],
+      [
+        "RTL design"
+      ],
+      [
+        "Clock Domain Crossing"
+      ],
+      [
+        "serial protocols"
+      ],
+      [
+        "Constrained random verification"
+      ],
+      [
+        "ARM microcontrollers"
+      ]
+    ],
+    "nice_to_have_skills": [
+      [
+        "GLS"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": []
+  },
+  "009_lever_member_of_technical_staff_data_scie.txt": {
+    "must_have_skills": [
+      [
+        "Python",
+        "TypeScript"
+      ],
+      [
+        "Bayesian inference",
+        "convex optimization",
+        "classical ML",
+        "LLM",
+        "SQL"
+      ]
+    ],
+    "nice_to_have_skills": [
+      [
+        "AWS Sagemaker",
+        "AWS Glue",
+        "AWS ECR",
+        "AWS Fargate",
+        "GCP",
+        "Azure"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": []
+  },
+  "010_teamtailor_senior_cloud_devops_engineer.txt": {
+    "must_have_skills": [
+      [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      [
+        "Terraform",
+        "Bicep"
+      ],
+      [
+        "Python",
+        "TypeScript",
+        "Go"
+      ]
+    ],
+    "nice_to_have_skills": [
+      [
+        "GitHub Actions",
+        "Azure DevOps"
+      ],
+      [
+        "Azure OpenAI",
+        "API Management",
+        "RAG pipelines"
+      ]
+    ],
+    "seniority": "senior",
+    "required_languages": [
+      {
+        "code": "en",
+        "requirement": "required"
+      },
+      {
+        "code": "fi",
+        "requirement": "advantage"
+      }
+    ]
+  }
+}

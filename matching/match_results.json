@@ -1,0 +1,3094 @@
+{
+  "pairs": [
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "001_greenhouse_ai_architect.txt",
+      "score": 10.0,
+      "must_have": [
+        {
+          "skill": [
+            "AI/ML"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.31
+        },
+        {
+          "skill": [
+            "Generative AI",
+            "LLM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.28
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "Azure Foundry",
+            "Databricks Agent Bricks",
+            "LangChain",
+            "Semantic Kernel"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.279
+        },
+        {
+          "skill": [
+            "Cloud Infrastructure",
+            "Azure",
+            "AWS",
+            "GCP"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.259
+        },
+        {
+          "skill": [
+            "MLOps",
+            "LLMOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.279
+        },
+        {
+          "skill": [
+            "CI/CD",
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.449
+        },
+        {
+          "skill": [
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Java"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.45
+        },
+        {
+          "skill": [
+            "C#"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.355
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "native"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "good"
+        }
+      ]
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "002_greenhouse_cloud_engineer_aws_azure.txt",
+      "score": 10.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.359
+        },
+        {
+          "skill": [
+            "Terraform",
+            "AWS CDK"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        },
+        {
+          "skill": [
+            "GitHub Actions",
+            "Jenkins"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.586
+        },
+        {
+          "skill": [
+            "CI/CD"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.306
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Consulting"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.235
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "native"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "good"
+        }
+      ]
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "003_greenhouse_ai_full_stack_developer.txt",
+      "score": 60.0,
+      "must_have": [
+        {
+          "skill": [
+            "Java",
+            "TypeScript",
+            "C#",
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "TypeScript",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "GitHub Copilot",
+            "Claude Code"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.573
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Bedrock",
+            "Google AI",
+            "LangChain",
+            "MCP",
+            "AI Foundry"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.407
+        },
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.359
+        },
+        {
+          "skill": [
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.449
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.259
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "good"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "native"
+        }
+      ]
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "004_greenhouse_principal_engineer_platform.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "ClickHouse",
+            "BigQuery",
+            "Snowflake"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.332
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "005_greenhouse_senior_ml_biosignal_scientist.txt",
+      "score": 13.0,
+      "must_have": [
+        {
+          "skill": [
+            "Machine learning",
+            "biosignal processing",
+            "sensor fusion"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.361
+        },
+        {
+          "skill": [
+            "PyTorch"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.43
+        },
+        {
+          "skill": [
+            "NumPy",
+            "SciPy",
+            "pandas",
+            "scikit-learn"
+          ],
+          "status": "partial",
+          "matched_by": "Python",
+          "score": 0.633
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "consumer health tech",
+            "wearable hardware",
+            "digital health applications"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.251
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "006_greenhouse_internal_communications_employer_br.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Internal communications",
+            "Employer branding"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.226
+        },
+        {
+          "skill": [
+            "Office 365",
+            "SharePoint",
+            "OneDrive"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.433
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "007_greenhouse_engineering_manager_chat_platform.txt",
+      "score": 0.0,
+      "must_have": [
+        {
+          "skill": [
+            "Leadership"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.252
+        },
+        {
+          "skill": [
+            "Software development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.377
+        },
+        {
+          "skill": [
+            "Backend development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.403
+        },
+        {
+          "skill": [
+            "Production environments"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.282
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Kubernetes"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.315
+        },
+        {
+          "skill": [
+            "AWS"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.359
+        },
+        {
+          "skill": [
+            "AI tools"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.41
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "008_lever_senior_design_verification_enginee.txt",
+      "score": 0.0,
+      "must_have": [
+        {
+          "skill": [
+            "UVM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.248
+        },
+        {
+          "skill": [
+            "SystemVerilog"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.315
+        },
+        {
+          "skill": [
+            "C"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.368
+        },
+        {
+          "skill": [
+            "Testbench architecture"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.22
+        },
+        {
+          "skill": [
+            "RTL design"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.127
+        },
+        {
+          "skill": [
+            "Clock Domain Crossing"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.167
+        },
+        {
+          "skill": [
+            "serial protocols"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.239
+        },
+        {
+          "skill": [
+            "Constrained random verification"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.123
+        },
+        {
+          "skill": [
+            "ARM microcontrollers"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.203
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GLS"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.345
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "009_lever_member_of_technical_staff_data_scie.txt",
+      "score": 60.0,
+      "must_have": [
+        {
+          "skill": [
+            "Python",
+            "TypeScript"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "Bayesian inference",
+            "convex optimization",
+            "classical ML",
+            "LLM",
+            "SQL"
+          ],
+          "status": "partial",
+          "matched_by": "PostgreSQL",
+          "score": 0.509
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Sagemaker",
+            "AWS Glue",
+            "AWS ECR",
+            "AWS Fargate",
+            "GCP",
+            "Azure"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "001_junior_developer_fi.txt",
+      "ad": "010_teamtailor_senior_cloud_devops_engineer.txt",
+      "score": 32.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure",
+            "GCP"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        },
+        {
+          "skill": [
+            "Terraform",
+            "Bicep"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        },
+        {
+          "skill": [
+            "Python",
+            "TypeScript",
+            "Go"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GitHub Actions",
+            "Azure DevOps"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.586
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "API Management",
+            "RAG pipelines"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.261
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "good"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "native"
+        }
+      ]
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "001_greenhouse_ai_architect.txt",
+      "score": 15.0,
+      "must_have": [
+        {
+          "skill": [
+            "AI/ML"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.41
+        },
+        {
+          "skill": [
+            "Generative AI",
+            "LLM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.392
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "Azure Foundry",
+            "Databricks Agent Bricks",
+            "LangChain",
+            "Semantic Kernel"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.358
+        },
+        {
+          "skill": [
+            "Cloud Infrastructure",
+            "Azure",
+            "AWS",
+            "GCP"
+          ],
+          "status": "partial",
+          "matched_by": "Google Cloud Platform",
+          "score": 0.645
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.228
+        },
+        {
+          "skill": [
+            "MLOps",
+            "LLMOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.3
+        },
+        {
+          "skill": [
+            "CI/CD",
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.449
+        },
+        {
+          "skill": [
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Java"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.45
+        },
+        {
+          "skill": [
+            "C#"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.355
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "good"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        }
+      ]
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "002_greenhouse_cloud_engineer_aws_azure.txt",
+      "score": 20.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "partial",
+          "matched_by": "Amazon Web Services (S3, SageMaker, Redshift)",
+          "score": 0.538
+        },
+        {
+          "skill": [
+            "Terraform",
+            "AWS CDK"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.418
+        },
+        {
+          "skill": [
+            "GitHub Actions",
+            "Jenkins"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.586
+        },
+        {
+          "skill": [
+            "CI/CD"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.27
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Consulting"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.259
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "good"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        }
+      ]
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "003_greenhouse_ai_full_stack_developer.txt",
+      "score": 63.0,
+      "must_have": [
+        {
+          "skill": [
+            "Java",
+            "TypeScript",
+            "C#",
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "GitHub Copilot",
+            "Claude Code"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.573
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Bedrock",
+            "Google AI",
+            "LangChain",
+            "MCP",
+            "AI Foundry"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.436
+        },
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "partial",
+          "matched_by": "Amazon Web Services (S3, SageMaker, Redshift)",
+          "score": 0.538
+        },
+        {
+          "skill": [
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.449
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.228
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "good"
+        }
+      ]
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "004_greenhouse_principal_engineer_platform.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "ClickHouse",
+            "BigQuery",
+            "Snowflake"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.353
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "005_greenhouse_senior_ml_biosignal_scientist.txt",
+      "score": 53.0,
+      "must_have": [
+        {
+          "skill": [
+            "Machine learning",
+            "biosignal processing",
+            "sensor fusion"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.401
+        },
+        {
+          "skill": [
+            "PyTorch"
+          ],
+          "status": "matched",
+          "matched_by": "PyTorch",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "NumPy",
+            "SciPy",
+            "pandas",
+            "scikit-learn"
+          ],
+          "status": "matched",
+          "matched_by": "scikit-learn",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "consumer health tech",
+            "wearable hardware",
+            "digital health applications"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.352
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "006_greenhouse_internal_communications_employer_br.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Internal communications",
+            "Employer branding"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.198
+        },
+        {
+          "skill": [
+            "Office 365",
+            "SharePoint",
+            "OneDrive"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.437
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "007_greenhouse_engineering_manager_chat_platform.txt",
+      "score": 3.0,
+      "must_have": [
+        {
+          "skill": [
+            "Leadership"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.295
+        },
+        {
+          "skill": [
+            "Software development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.377
+        },
+        {
+          "skill": [
+            "Backend development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.308
+        },
+        {
+          "skill": [
+            "Production environments"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.282
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Kubernetes"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.343
+        },
+        {
+          "skill": [
+            "AWS"
+          ],
+          "status": "partial",
+          "matched_by": "Amazon Web Services (S3, SageMaker, Redshift)",
+          "score": 0.538
+        },
+        {
+          "skill": [
+            "AI tools"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.434
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "008_lever_senior_design_verification_enginee.txt",
+      "score": 4.0,
+      "must_have": [
+        {
+          "skill": [
+            "UVM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.358
+        },
+        {
+          "skill": [
+            "SystemVerilog"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.315
+        },
+        {
+          "skill": [
+            "C"
+          ],
+          "status": "partial",
+          "matched_by": "R",
+          "score": 0.552
+        },
+        {
+          "skill": [
+            "Testbench architecture"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.263
+        },
+        {
+          "skill": [
+            "RTL design"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.226
+        },
+        {
+          "skill": [
+            "Clock Domain Crossing"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.191
+        },
+        {
+          "skill": [
+            "serial protocols"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.239
+        },
+        {
+          "skill": [
+            "Constrained random verification"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.145
+        },
+        {
+          "skill": [
+            "ARM microcontrollers"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.203
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GLS"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.342
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "009_lever_member_of_technical_staff_data_scie.txt",
+      "score": 90.0,
+      "must_have": [
+        {
+          "skill": [
+            "Python",
+            "TypeScript"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "Bayesian inference",
+            "convex optimization",
+            "classical ML",
+            "LLM",
+            "SQL"
+          ],
+          "status": "matched",
+          "matched_by": "SQL",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Sagemaker",
+            "AWS Glue",
+            "AWS ECR",
+            "AWS Fargate",
+            "GCP",
+            "Azure"
+          ],
+          "status": "partial",
+          "matched_by": "Amazon Web Services (S3, SageMaker, Redshift)",
+          "score": 0.666
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "002_senior_data_scientist_en.txt",
+      "ad": "010_teamtailor_senior_cloud_devops_engineer.txt",
+      "score": 45.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure",
+            "GCP"
+          ],
+          "status": "partial",
+          "matched_by": "Google Cloud Platform",
+          "score": 0.603
+        },
+        {
+          "skill": [
+            "Terraform",
+            "Bicep"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        },
+        {
+          "skill": [
+            "Python",
+            "TypeScript",
+            "Go"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GitHub Actions",
+            "Azure DevOps"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.586
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "API Management",
+            "RAG pipelines"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.347
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "good"
+        }
+      ]
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "001_greenhouse_ai_architect.txt",
+      "score": 25.0,
+      "must_have": [
+        {
+          "skill": [
+            "AI/ML"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.31
+        },
+        {
+          "skill": [
+            "Generative AI",
+            "LLM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.286
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "Azure Foundry",
+            "Databricks Agent Bricks",
+            "LangChain",
+            "Semantic Kernel"
+          ],
+          "status": "partial",
+          "matched_by": "Microsoft Azure",
+          "score": 0.748
+        },
+        {
+          "skill": [
+            "Cloud Infrastructure",
+            "Azure",
+            "AWS",
+            "GCP"
+          ],
+          "status": "matched",
+          "matched_by": "Microsoft Azure",
+          "score": 0.961
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.379
+        },
+        {
+          "skill": [
+            "MLOps",
+            "LLMOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.39
+        },
+        {
+          "skill": [
+            "CI/CD",
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.49
+        },
+        {
+          "skill": [
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Java"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.45
+        },
+        {
+          "skill": [
+            "C#"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.355
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "native"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        }
+      ]
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "002_greenhouse_cloud_engineer_aws_azure.txt",
+      "score": 60.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "matched",
+          "matched_by": "Microsoft Azure",
+          "score": 0.961
+        },
+        {
+          "skill": [
+            "Terraform",
+            "AWS CDK"
+          ],
+          "status": "matched",
+          "matched_by": "Terraform",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "GitHub Actions",
+            "Jenkins"
+          ],
+          "status": "matched",
+          "matched_by": "GitHub Actions",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "CI/CD"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.382
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Consulting"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.263
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "native"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        }
+      ]
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "003_greenhouse_ai_full_stack_developer.txt",
+      "score": 65.0,
+      "must_have": [
+        {
+          "skill": [
+            "Java",
+            "TypeScript",
+            "C#",
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "GitHub Copilot",
+            "Claude Code"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.573
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Bedrock",
+            "Google AI",
+            "LangChain",
+            "MCP",
+            "AI Foundry"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.453
+        },
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "matched",
+          "matched_by": "Microsoft Azure",
+          "score": 0.961
+        },
+        {
+          "skill": [
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.49
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.379
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "native"
+        }
+      ]
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "004_greenhouse_principal_engineer_platform.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "ClickHouse",
+            "BigQuery",
+            "Snowflake"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.308
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "005_greenhouse_senior_ml_biosignal_scientist.txt",
+      "score": 13.0,
+      "must_have": [
+        {
+          "skill": [
+            "Machine learning",
+            "biosignal processing",
+            "sensor fusion"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.361
+        },
+        {
+          "skill": [
+            "PyTorch"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.43
+        },
+        {
+          "skill": [
+            "NumPy",
+            "SciPy",
+            "pandas",
+            "scikit-learn"
+          ],
+          "status": "partial",
+          "matched_by": "Python",
+          "score": 0.633
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "consumer health tech",
+            "wearable hardware",
+            "digital health applications"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.248
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "006_greenhouse_internal_communications_employer_br.txt",
+      "score": 25.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Internal communications",
+            "Employer branding"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.2
+        },
+        {
+          "skill": [
+            "Office 365",
+            "SharePoint",
+            "OneDrive"
+          ],
+          "status": "partial",
+          "matched_by": "Microsoft Azure",
+          "score": 0.546
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "007_greenhouse_engineering_manager_chat_platform.txt",
+      "score": 10.0,
+      "must_have": [
+        {
+          "skill": [
+            "Leadership"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.292
+        },
+        {
+          "skill": [
+            "Software development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.377
+        },
+        {
+          "skill": [
+            "Backend development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.343
+        },
+        {
+          "skill": [
+            "Production environments"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.369
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Kubernetes"
+          ],
+          "status": "matched",
+          "matched_by": "Kubernetes",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "AWS"
+          ],
+          "status": "partial",
+          "matched_by": "Amazon Web Services",
+          "score": 0.661
+        },
+        {
+          "skill": [
+            "AI tools"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.41
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "008_lever_senior_design_verification_enginee.txt",
+      "score": 0.0,
+      "must_have": [
+        {
+          "skill": [
+            "UVM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.392
+        },
+        {
+          "skill": [
+            "SystemVerilog"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.315
+        },
+        {
+          "skill": [
+            "C"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.368
+        },
+        {
+          "skill": [
+            "Testbench architecture"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.2
+        },
+        {
+          "skill": [
+            "RTL design"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.159
+        },
+        {
+          "skill": [
+            "Clock Domain Crossing"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.093
+        },
+        {
+          "skill": [
+            "serial protocols"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.239
+        },
+        {
+          "skill": [
+            "Constrained random verification"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.123
+        },
+        {
+          "skill": [
+            "ARM microcontrollers"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.223
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GLS"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.336
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "009_lever_member_of_technical_staff_data_scie.txt",
+      "score": 60.0,
+      "must_have": [
+        {
+          "skill": [
+            "Python",
+            "TypeScript"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "Bayesian inference",
+            "convex optimization",
+            "classical ML",
+            "LLM",
+            "SQL"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.3
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Sagemaker",
+            "AWS Glue",
+            "AWS ECR",
+            "AWS Fargate",
+            "GCP",
+            "Azure"
+          ],
+          "status": "matched",
+          "matched_by": "Microsoft Azure",
+          "score": 0.961
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "003_devops_engineer_en.txt",
+      "ad": "010_teamtailor_senior_cloud_devops_engineer.txt",
+      "score": 95.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure",
+            "GCP"
+          ],
+          "status": "matched",
+          "matched_by": "Microsoft Azure",
+          "score": 0.961
+        },
+        {
+          "skill": [
+            "Terraform",
+            "Bicep"
+          ],
+          "status": "matched",
+          "matched_by": "Terraform",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "Python",
+            "TypeScript",
+            "Go"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GitHub Actions",
+            "Azure DevOps"
+          ],
+          "status": "matched",
+          "matched_by": "GitHub Actions",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "API Management",
+            "RAG pipelines"
+          ],
+          "status": "partial",
+          "matched_by": "Microsoft Azure",
+          "score": 0.702
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "native"
+        }
+      ]
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "001_greenhouse_ai_architect.txt",
+      "score": 5.0,
+      "must_have": [
+        {
+          "skill": [
+            "AI/ML"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.229
+        },
+        {
+          "skill": [
+            "Generative AI",
+            "LLM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.23
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "Azure Foundry",
+            "Databricks Agent Bricks",
+            "LangChain",
+            "Semantic Kernel"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.347
+        },
+        {
+          "skill": [
+            "Cloud Infrastructure",
+            "Azure",
+            "AWS",
+            "GCP"
+          ],
+          "status": "partial",
+          "matched_by": "Google Cloud Platform",
+          "score": 0.645
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.259
+        },
+        {
+          "skill": [
+            "MLOps",
+            "LLMOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.285
+        },
+        {
+          "skill": [
+            "CI/CD",
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.449
+        },
+        {
+          "skill": [
+            "Python"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.298
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Java"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.305
+        },
+        {
+          "skill": [
+            "C#"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.301
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "native"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        }
+      ]
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "002_greenhouse_cloud_engineer_aws_azure.txt",
+      "score": 10.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.421
+        },
+        {
+          "skill": [
+            "Terraform",
+            "AWS CDK"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        },
+        {
+          "skill": [
+            "GitHub Actions",
+            "Jenkins"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.586
+        },
+        {
+          "skill": [
+            "CI/CD"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.237
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Consulting"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.21
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "native"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        }
+      ]
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "003_greenhouse_ai_full_stack_developer.txt",
+      "score": 60.0,
+      "must_have": [
+        {
+          "skill": [
+            "Java",
+            "TypeScript",
+            "C#",
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "TypeScript",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "GitHub Copilot",
+            "Claude Code"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.573
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Bedrock",
+            "Google AI",
+            "LangChain",
+            "MCP",
+            "AI Foundry"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.368
+        },
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.421
+        },
+        {
+          "skill": [
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.449
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.259
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "native"
+        }
+      ]
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "004_greenhouse_principal_engineer_platform.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "ClickHouse",
+            "BigQuery",
+            "Snowflake"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.348
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "005_greenhouse_senior_ml_biosignal_scientist.txt",
+      "score": 0.0,
+      "must_have": [
+        {
+          "skill": [
+            "Machine learning",
+            "biosignal processing",
+            "sensor fusion"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.323
+        },
+        {
+          "skill": [
+            "PyTorch"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.221
+        },
+        {
+          "skill": [
+            "NumPy",
+            "SciPy",
+            "pandas",
+            "scikit-learn"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.303
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "consumer health tech",
+            "wearable hardware",
+            "digital health applications"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.251
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "006_greenhouse_internal_communications_employer_br.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Internal communications",
+            "Employer branding"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.295
+        },
+        {
+          "skill": [
+            "Office 365",
+            "SharePoint",
+            "OneDrive"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.495
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "007_greenhouse_engineering_manager_chat_platform.txt",
+      "score": 0.0,
+      "must_have": [
+        {
+          "skill": [
+            "Leadership"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.298
+        },
+        {
+          "skill": [
+            "Software development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.377
+        },
+        {
+          "skill": [
+            "Backend development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.403
+        },
+        {
+          "skill": [
+            "Production environments"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.282
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Kubernetes"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.315
+        },
+        {
+          "skill": [
+            "AWS"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.418
+        },
+        {
+          "skill": [
+            "AI tools"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.271
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "008_lever_senior_design_verification_enginee.txt",
+      "score": 0.0,
+      "must_have": [
+        {
+          "skill": [
+            "UVM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.326
+        },
+        {
+          "skill": [
+            "SystemVerilog"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.348
+        },
+        {
+          "skill": [
+            "C"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.312
+        },
+        {
+          "skill": [
+            "Testbench architecture"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.311
+        },
+        {
+          "skill": [
+            "RTL design"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.228
+        },
+        {
+          "skill": [
+            "Clock Domain Crossing"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.192
+        },
+        {
+          "skill": [
+            "serial protocols"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.212
+        },
+        {
+          "skill": [
+            "Constrained random verification"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.137
+        },
+        {
+          "skill": [
+            "ARM microcontrollers"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.203
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GLS"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.425
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "009_lever_member_of_technical_staff_data_scie.txt",
+      "score": 70.0,
+      "must_have": [
+        {
+          "skill": [
+            "Python",
+            "TypeScript"
+          ],
+          "status": "matched",
+          "matched_by": "TypeScript",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "Bayesian inference",
+            "convex optimization",
+            "classical ML",
+            "LLM",
+            "SQL"
+          ],
+          "status": "partial",
+          "matched_by": "PostgreSQL",
+          "score": 0.509
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Sagemaker",
+            "AWS Glue",
+            "AWS ECR",
+            "AWS Fargate",
+            "GCP",
+            "Azure"
+          ],
+          "status": "partial",
+          "matched_by": "Google Cloud Platform",
+          "score": 0.603
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "004_fullstack_developer_mixed.txt",
+      "ad": "010_teamtailor_senior_cloud_devops_engineer.txt",
+      "score": 50.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure",
+            "GCP"
+          ],
+          "status": "partial",
+          "matched_by": "Google Cloud Platform",
+          "score": 0.603
+        },
+        {
+          "skill": [
+            "Terraform",
+            "Bicep"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        },
+        {
+          "skill": [
+            "Python",
+            "TypeScript",
+            "Go"
+          ],
+          "status": "matched",
+          "matched_by": "TypeScript",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GitHub Actions",
+            "Azure DevOps"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.586
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "API Management",
+            "RAG pipelines"
+          ],
+          "status": "partial",
+          "matched_by": "REST API design",
+          "score": 0.567
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "native"
+        }
+      ]
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "001_greenhouse_ai_architect.txt",
+      "score": 30.0,
+      "must_have": [
+        {
+          "skill": [
+            "AI/ML"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.355
+        },
+        {
+          "skill": [
+            "Generative AI",
+            "LLM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.346
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "Azure Foundry",
+            "Databricks Agent Bricks",
+            "LangChain",
+            "Semantic Kernel"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.307
+        },
+        {
+          "skill": [
+            "Cloud Infrastructure",
+            "Azure",
+            "AWS",
+            "GCP"
+          ],
+          "status": "partial",
+          "matched_by": "GDB",
+          "score": 0.55
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "partial",
+          "matched_by": "I2C",
+          "score": 0.538
+        },
+        {
+          "skill": [
+            "MLOps",
+            "LLMOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.304
+        },
+        {
+          "skill": [
+            "CI/CD",
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.449
+        },
+        {
+          "skill": [
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Java"
+          ],
+          "status": "partial",
+          "matched_by": "C++",
+          "score": 0.507
+        },
+        {
+          "skill": [
+            "C#"
+          ],
+          "status": "partial",
+          "matched_by": "C++",
+          "score": 0.536
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "native"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        }
+      ]
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "002_greenhouse_cloud_engineer_aws_azure.txt",
+      "score": 10.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.362
+        },
+        {
+          "skill": [
+            "Terraform",
+            "AWS CDK"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.393
+        },
+        {
+          "skill": [
+            "GitHub Actions",
+            "Jenkins"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.586
+        },
+        {
+          "skill": [
+            "CI/CD"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.392
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Consulting"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.242
+        }
+      ],
+      "languages": [
+        {
+          "code": "fi",
+          "requirement": "required",
+          "cv_level": "native"
+        },
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        }
+      ]
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "003_greenhouse_ai_full_stack_developer.txt",
+      "score": 63.0,
+      "must_have": [
+        {
+          "skill": [
+            "Java",
+            "TypeScript",
+            "C#",
+            "Python"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "GitHub Copilot",
+            "Claude Code"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.573
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Bedrock",
+            "Google AI",
+            "LangChain",
+            "MCP",
+            "AI Foundry"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.394
+        },
+        {
+          "skill": [
+            "AWS",
+            "Azure"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.362
+        },
+        {
+          "skill": [
+            "DevOps"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.449
+        },
+        {
+          "skill": [
+            "IaC"
+          ],
+          "status": "partial",
+          "matched_by": "I2C",
+          "score": 0.538
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "native"
+        }
+      ]
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "004_greenhouse_principal_engineer_platform.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "ClickHouse",
+            "BigQuery",
+            "Snowflake"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.407
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "005_greenhouse_senior_ml_biosignal_scientist.txt",
+      "score": 13.0,
+      "must_have": [
+        {
+          "skill": [
+            "Machine learning",
+            "biosignal processing",
+            "sensor fusion"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.367
+        },
+        {
+          "skill": [
+            "PyTorch"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.471
+        },
+        {
+          "skill": [
+            "NumPy",
+            "SciPy",
+            "pandas",
+            "scikit-learn"
+          ],
+          "status": "partial",
+          "matched_by": "Python",
+          "score": 0.633
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "consumer health tech",
+            "wearable hardware",
+            "digital health applications"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.279
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "006_greenhouse_internal_communications_employer_br.txt",
+      "score": 0.0,
+      "must_have": [],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Internal communications",
+            "Employer branding"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.262
+        },
+        {
+          "skill": [
+            "Office 365",
+            "SharePoint",
+            "OneDrive"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.49
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "007_greenhouse_engineering_manager_chat_platform.txt",
+      "score": 0.0,
+      "must_have": [
+        {
+          "skill": [
+            "Leadership"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.341
+        },
+        {
+          "skill": [
+            "Software development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.422
+        },
+        {
+          "skill": [
+            "Backend development"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.308
+        },
+        {
+          "skill": [
+            "Production environments"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.282
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "Kubernetes"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.315
+        },
+        {
+          "skill": [
+            "AWS"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.359
+        },
+        {
+          "skill": [
+            "AI tools"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.41
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "008_lever_senior_design_verification_enginee.txt",
+      "score": 13.0,
+      "must_have": [
+        {
+          "skill": [
+            "UVM"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.372
+        },
+        {
+          "skill": [
+            "SystemVerilog"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.368
+        },
+        {
+          "skill": [
+            "C"
+          ],
+          "status": "matched",
+          "matched_by": "C",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "Testbench architecture"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.265
+        },
+        {
+          "skill": [
+            "RTL design"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.25
+        },
+        {
+          "skill": [
+            "Clock Domain Crossing"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.186
+        },
+        {
+          "skill": [
+            "serial protocols"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.417
+        },
+        {
+          "skill": [
+            "Constrained random verification"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.149
+        },
+        {
+          "skill": [
+            "ARM microcontrollers"
+          ],
+          "status": "partial",
+          "matched_by": "ARM Cortex-M",
+          "score": 0.546
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GLS"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.453
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "009_lever_member_of_technical_staff_data_scie.txt",
+      "score": 50.0,
+      "must_have": [
+        {
+          "skill": [
+            "Python",
+            "TypeScript"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        },
+        {
+          "skill": [
+            "Bayesian inference",
+            "convex optimization",
+            "classical ML",
+            "LLM",
+            "SQL"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.346
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "AWS Sagemaker",
+            "AWS Glue",
+            "AWS ECR",
+            "AWS Fargate",
+            "GCP",
+            "Azure"
+          ],
+          "status": "partial",
+          "matched_by": "GDB",
+          "score": 0.55
+        }
+      ],
+      "languages": []
+    },
+    {
+      "cv": "005_embedded_engineer_en.txt",
+      "ad": "010_teamtailor_senior_cloud_devops_engineer.txt",
+      "score": 45.0,
+      "must_have": [
+        {
+          "skill": [
+            "AWS",
+            "Azure",
+            "GCP"
+          ],
+          "status": "partial",
+          "matched_by": "GDB",
+          "score": 0.55
+        },
+        {
+          "skill": [
+            "Terraform",
+            "Bicep"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.399
+        },
+        {
+          "skill": [
+            "Python",
+            "TypeScript",
+            "Go"
+          ],
+          "status": "matched",
+          "matched_by": "Python",
+          "score": 1.0
+        }
+      ],
+      "nice_to_have": [
+        {
+          "skill": [
+            "GitHub Actions",
+            "Azure DevOps"
+          ],
+          "status": "partial",
+          "matched_by": "Git",
+          "score": 0.586
+        },
+        {
+          "skill": [
+            "Azure OpenAI",
+            "API Management",
+            "RAG pipelines"
+          ],
+          "status": "missing",
+          "matched_by": null,
+          "score": 0.252
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "requirement": "required",
+          "cv_level": "fluent"
+        },
+        {
+          "code": "fi",
+          "requirement": "advantage",
+          "cv_level": "native"
+        }
+      ]
+    }
+  ]
+}
