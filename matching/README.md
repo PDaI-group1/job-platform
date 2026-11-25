@@ -47,14 +47,18 @@ Saves results incrementally to `matching/test_results.json` — safe to re-run a
 
 ```json
 {
-  "must_have_skills": ["Python", "Terraform", "CI/CD"],
-  "nice_to_have_skills": ["Java"],
+  "must_have_skills": [["Python"], ["Terraform", "Bicep"], ["CI/CD"]],
+  "nice_to_have_skills": [["Java", "Kotlin"]],
   "seniority": "senior",
-  "required_languages": ["Finnish", "English"]
+  "required_languages": [
+    {"code": "fi", "requirement": "required"},
+    {"code": "en", "requirement": "advantage"}
+  ]
 }
 ```
 
-`seniority` is one of `junior / mid / senior / lead`, or `null` if not stated.
+Each skill entry is a list of acceptable alternatives for one requirement.
+`seniority` is one of `junior / mid / senior / lead / intern`, or `null` if not stated.
 
 ## Test results
 
@@ -80,7 +84,7 @@ Tested on 10 real Finnish job ads from Greenhouse, Lever, and Teamtailor ATS fee
 - **Seniority looked correct on inspection** (not measured against labels); the trainee ad was mapped to junior because the schema has no intern option.
 - **Finnish ads work correctly** — skills are extracted in the language of the ad without translation.
 - **Language detection is conservative** — only languages explicitly stated in the ad are returned. Ads that imply English without stating it return an empty list.
-- **Language output is not normalised** — ad 001 returns `["Finnish", "English"]`, ad 002 returns `["Suomi", "Englanti"]`. Downstream code should normalise to ISO 639-1 codes (`fi`, `en`).
+- **Languages are returned as ISO 639-1 codes** with a `required` / `advantage` distinction.
 - **Skill granularity reflects the source ad** — a detailed ML role lists 13 tool-level skills; an engineering manager role lists 3 high-level competencies. Both are correct extractions.
 - **Finnish-language skills are extracted as they are** — ad 002 skills are full Finnish sentences rather than short labels. A normalisation step would be needed for consistent cross-ad matching.
 
