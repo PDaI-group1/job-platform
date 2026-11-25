@@ -1,0 +1,676 @@
+{
+  "001_junior_developer_fi.txt": {
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "React",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "MongoDB",
+      "Git",
+      "Docker",
+      "Jira",
+      "Jest",
+      "Cypress"
+    ],
+    "experience": [
+      {
+        "title": "Junior-ohjelmistokehittäjä",
+        "years": 1.0
+      },
+      {
+        "title": "Harjoittelija",
+        "years": 0.25
+      }
+    ],
+    "education": [
+      "Tietojenkäsittelytieteen kandidaatti"
+    ],
+    "languages": [
+      {
+        "code": "fi",
+        "level": "native"
+      },
+      {
+        "code": "en",
+        "level": "good"
+      },
+      {
+        "code": "sv",
+        "level": "basic"
+      }
+    ],
+    "skill_matches": [
+      {
+        "raw": "JavaScript",
+        "label": "JavaScript",
+        "score": 1.0
+      },
+      {
+        "raw": "TypeScript",
+        "label": "TypeScript",
+        "score": 1.0
+      },
+      {
+        "raw": "Python",
+        "label": "Python",
+        "score": 1.0
+      },
+      {
+        "raw": "React",
+        "label": "React",
+        "score": 1.0
+      },
+      {
+        "raw": "Node.js",
+        "label": "Node.js",
+        "score": 1.0
+      },
+      {
+        "raw": "Express",
+        "label": "Express",
+        "score": 1.0
+      },
+      {
+        "raw": "PostgreSQL",
+        "label": "PostgreSQL",
+        "score": 1.0
+      },
+      {
+        "raw": "MongoDB",
+        "label": "MongoDB",
+        "score": 1.0
+      },
+      {
+        "raw": "Git",
+        "label": "Git",
+        "score": 1.0
+      },
+      {
+        "raw": "Docker",
+        "label": "Docker",
+        "score": 1.0
+      },
+      {
+        "raw": "Jira",
+        "label": "Jira",
+        "score": 1.0
+      },
+      {
+        "raw": "Jest",
+        "label": "Jest",
+        "score": 1.0
+      },
+      {
+        "raw": "Cypress",
+        "label": "Cypress",
+        "score": 1.0
+      }
+    ]
+  },
+  "002_senior_data_scientist_en.txt": {
+    "skills": [
+      "Python",
+      "R",
+      "SQL",
+      "scikit-learn",
+      "TensorFlow",
+      "PyTorch",
+      "XGBoost",
+      "Apache Spark",
+      "Apache Kafka",
+      "dbt",
+      "Amazon Web Services (S3, SageMaker, Redshift)",
+      "Google Cloud Platform",
+      "Git",
+      "Docker",
+      "Jupyter",
+      "Airflow",
+      "Tableau",
+      "Matplotlib",
+      "Seaborn"
+    ],
+    "experience": [
+      {
+        "title": "Senior Data Scientist",
+        "years": 5.0
+      },
+      {
+        "title": "Data Scientist",
+        "years": 3.0
+      }
+    ],
+    "education": [
+      "M.Sc. in Computer Science (Machine Learning)",
+      "B.Sc. in Mathematics"
+    ],
+    "languages": [
+      {
+        "code": "en",
+        "level": "fluent"
+      },
+      {
+        "code": "fi",
+        "level": "good"
+      },
+      {
+        "code": "zh",
+        "level": "native"
+      }
+    ],
+    "skill_matches": [
+      {
+        "raw": "Python",
+        "label": "Python",
+        "score": 1.0
+      },
+      {
+        "raw": "R",
+        "label": "R",
+        "score": 1.0
+      },
+      {
+        "raw": "SQL",
+        "label": "SQL",
+        "score": 1.0
+      },
+      {
+        "raw": "scikit-learn",
+        "label": "scikit-learn",
+        "score": 1.0
+      },
+      {
+        "raw": "TensorFlow",
+        "label": "TensorFlow",
+        "score": 1.0
+      },
+      {
+        "raw": "PyTorch",
+        "label": "PyTorch",
+        "score": 1.0
+      },
+      {
+        "raw": "XGBoost",
+        "label": "XGBoost",
+        "score": 1.0
+      },
+      {
+        "raw": "Apache Spark",
+        "label": "Apache Spark",
+        "score": 1.0
+      },
+      {
+        "raw": "Apache Kafka",
+        "label": "Apache Kafka",
+        "score": 1.0
+      },
+      {
+        "raw": "dbt",
+        "label": "dbt",
+        "score": 1.0
+      },
+      {
+        "raw": "Amazon Web Services (S3, SageMaker, Redshift)",
+        "label": null,
+        "score": 0.736
+      },
+      {
+        "raw": "Google Cloud Platform",
+        "label": "Google Cloud Platform",
+        "score": 1.0
+      },
+      {
+        "raw": "Git",
+        "label": "Git",
+        "score": 1.0
+      },
+      {
+        "raw": "Docker",
+        "label": "Docker",
+        "score": 1.0
+      },
+      {
+        "raw": "Jupyter",
+        "label": "Jupyter",
+        "score": 1.0
+      },
+      {
+        "raw": "Airflow",
+        "label": "Apache Airflow",
+        "score": 0.76
+      },
+      {
+        "raw": "Tableau",
+        "label": "Tableau",
+        "score": 1.0
+      },
+      {
+        "raw": "Matplotlib",
+        "label": "Matplotlib",
+        "score": 1.0
+      },
+      {
+        "raw": "Seaborn",
+        "label": "Seaborn",
+        "score": 1.0
+      }
+    ]
+  },
+  "003_devops_engineer_en.txt": {
+    "skills": [
+      "Microsoft Azure",
+      "Amazon Web Services",
+      "Kubernetes",
+      "Docker",
+      "Terraform",
+      "Ansible",
+      "GitHub Actions",
+      "Jenkins",
+      "GitLab CI",
+      "Prometheus",
+      "Grafana",
+      "ELK stack",
+      "Bash",
+      "Python",
+      "Git"
+    ],
+    "experience": [
+      {
+        "title": "Senior DevOps Engineer",
+        "years": 4.0
+      },
+      {
+        "title": "DevOps Engineer",
+        "years": 3.0
+      }
+    ],
+    "education": [
+      "B.Eng. in Information Technology"
+    ],
+    "languages": [
+      {
+        "code": "en",
+        "level": "fluent"
+      },
+      {
+        "code": "fi",
+        "level": "native"
+      }
+    ],
+    "skill_matches": [
+      {
+        "raw": "Microsoft Azure",
+        "label": "Microsoft Azure",
+        "score": 1.0
+      },
+      {
+        "raw": "Amazon Web Services",
+        "label": "Amazon Web Services",
+        "score": 1.0
+      },
+      {
+        "raw": "Kubernetes",
+        "label": "Kubernetes",
+        "score": 1.0
+      },
+      {
+        "raw": "Docker",
+        "label": "Docker",
+        "score": 1.0
+      },
+      {
+        "raw": "Terraform",
+        "label": "Terraform",
+        "score": 1.0
+      },
+      {
+        "raw": "Ansible",
+        "label": "Ansible",
+        "score": 1.0
+      },
+      {
+        "raw": "GitHub Actions",
+        "label": "GitHub Actions",
+        "score": 1.0
+      },
+      {
+        "raw": "Jenkins",
+        "label": "Jenkins",
+        "score": 1.0
+      },
+      {
+        "raw": "GitLab CI",
+        "label": "GitLab CI",
+        "score": 1.0
+      },
+      {
+        "raw": "Prometheus",
+        "label": "Prometheus",
+        "score": 1.0
+      },
+      {
+        "raw": "Grafana",
+        "label": "Grafana",
+        "score": 1.0
+      },
+      {
+        "raw": "ELK stack",
+        "label": "ELK stack",
+        "score": 1.0
+      },
+      {
+        "raw": "Bash",
+        "label": "Bash",
+        "score": 1.0
+      },
+      {
+        "raw": "Python",
+        "label": "Python",
+        "score": 1.0
+      },
+      {
+        "raw": "Git",
+        "label": "Git",
+        "score": 1.0
+      }
+    ]
+  },
+  "004_fullstack_developer_mixed.txt": {
+    "skills": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "Express",
+      "GraphQL",
+      "REST API design",
+      "PostgreSQL",
+      "Redis",
+      "MongoDB",
+      "Google Cloud Platform",
+      "Git",
+      "Docker",
+      "Figma",
+      "Jest",
+      "Vitest",
+      "Playwright"
+    ],
+    "experience": [
+      {
+        "title": "Full Stack Developer",
+        "years": 3.0
+      },
+      {
+        "title": "Junior Developer",
+        "years": 2.0
+      }
+    ],
+    "education": [
+      "Tieto- ja viestintätekniikan insinööri (AMK)"
+    ],
+    "languages": [
+      {
+        "code": "fi",
+        "level": "native"
+      },
+      {
+        "code": "en",
+        "level": "fluent"
+      },
+      {
+        "code": "sv",
+        "level": "basic"
+      }
+    ],
+    "skill_matches": [
+      {
+        "raw": "React",
+        "label": "React",
+        "score": 1.0
+      },
+      {
+        "raw": "Next.js",
+        "label": "Next.js",
+        "score": 1.0
+      },
+      {
+        "raw": "Vue.js",
+        "label": "Vue.js",
+        "score": 1.0
+      },
+      {
+        "raw": "TypeScript",
+        "label": "TypeScript",
+        "score": 1.0
+      },
+      {
+        "raw": "HTML",
+        "label": "HTML",
+        "score": 1.0
+      },
+      {
+        "raw": "CSS",
+        "label": "CSS",
+        "score": 1.0
+      },
+      {
+        "raw": "Node.js",
+        "label": "Node.js",
+        "score": 1.0
+      },
+      {
+        "raw": "Express",
+        "label": "Express",
+        "score": 1.0
+      },
+      {
+        "raw": "GraphQL",
+        "label": "GraphQL",
+        "score": 1.0
+      },
+      {
+        "raw": "REST API design",
+        "label": "REST API design",
+        "score": 1.0
+      },
+      {
+        "raw": "PostgreSQL",
+        "label": "PostgreSQL",
+        "score": 1.0
+      },
+      {
+        "raw": "Redis",
+        "label": "Redis",
+        "score": 1.0
+      },
+      {
+        "raw": "MongoDB",
+        "label": "MongoDB",
+        "score": 1.0
+      },
+      {
+        "raw": "Google Cloud Platform",
+        "label": "Google Cloud Platform",
+        "score": 1.0
+      },
+      {
+        "raw": "Git",
+        "label": "Git",
+        "score": 1.0
+      },
+      {
+        "raw": "Docker",
+        "label": "Docker",
+        "score": 1.0
+      },
+      {
+        "raw": "Figma",
+        "label": "Figma",
+        "score": 1.0
+      },
+      {
+        "raw": "Jest",
+        "label": "Jest",
+        "score": 1.0
+      },
+      {
+        "raw": "Vitest",
+        "label": "Vitest",
+        "score": 1.0
+      },
+      {
+        "raw": "Playwright",
+        "label": "Playwright",
+        "score": 1.0
+      }
+    ]
+  },
+  "005_embedded_engineer_en.txt": {
+    "skills": [
+      "C",
+      "C++",
+      "Python",
+      "FreeRTOS",
+      "Zephyr",
+      "SPI",
+      "I2C",
+      "UART",
+      "CAN bus",
+      "BLE",
+      "ARM Cortex-M",
+      "STM32",
+      "nRF52",
+      "Git",
+      "GDB",
+      "CMake",
+      "Docker",
+      "Unity",
+      "pytest"
+    ],
+    "experience": [
+      {
+        "title": "Senior Embedded Software Engineer",
+        "years": 6.0
+      },
+      {
+        "title": "Embedded Software Engineer",
+        "years": 3.0
+      }
+    ],
+    "education": [
+      "M.Sc. in Electrical Engineering (Embedded Systems)"
+    ],
+    "languages": [
+      {
+        "code": "fi",
+        "level": "native"
+      },
+      {
+        "code": "en",
+        "level": "fluent"
+      }
+    ],
+    "skill_matches": [
+      {
+        "raw": "C",
+        "label": "C",
+        "score": 1.0
+      },
+      {
+        "raw": "C++",
+        "label": "C++",
+        "score": 1.0
+      },
+      {
+        "raw": "Python",
+        "label": "Python",
+        "score": 1.0
+      },
+      {
+        "raw": "FreeRTOS",
+        "label": "FreeRTOS",
+        "score": 1.0
+      },
+      {
+        "raw": "Zephyr",
+        "label": "Zephyr",
+        "score": 1.0
+      },
+      {
+        "raw": "SPI",
+        "label": "SPI",
+        "score": 1.0
+      },
+      {
+        "raw": "I2C",
+        "label": "I2C",
+        "score": 1.0
+      },
+      {
+        "raw": "UART",
+        "label": "UART",
+        "score": 1.0
+      },
+      {
+        "raw": "CAN bus",
+        "label": "CAN bus",
+        "score": 1.0
+      },
+      {
+        "raw": "BLE",
+        "label": "BLE",
+        "score": 1.0
+      },
+      {
+        "raw": "ARM Cortex-M",
+        "label": "ARM Cortex-M",
+        "score": 1.0
+      },
+      {
+        "raw": "STM32",
+        "label": "STM32",
+        "score": 1.0
+      },
+      {
+        "raw": "nRF52",
+        "label": "nRF52",
+        "score": 1.0
+      },
+      {
+        "raw": "Git",
+        "label": "Git",
+        "score": 1.0
+      },
+      {
+        "raw": "GDB",
+        "label": "GDB",
+        "score": 1.0
+      },
+      {
+        "raw": "CMake",
+        "label": "CMake",
+        "score": 1.0
+      },
+      {
+        "raw": "Docker",
+        "label": "Docker",
+        "score": 1.0
+      },
+      {
+        "raw": "Unity",
+        "label": null,
+        "score": 0.405
+      },
+      {
+        "raw": "pytest",
+        "label": "pytest",
+        "score": 1.0
+      }
+    ]
+  }
+}
