@@ -66,18 +66,20 @@ Tested on 10 real Finnish job ads from Greenhouse, Lever, and Teamtailor ATS fee
 
 | Ad | Source | Seniority | Must-have | Nice-to-have | Languages |
 |----|--------|-----------|-----------|--------------|-----------|
-| 001 AI Architect | Greenhouse | senior | 11 | 2 | Finnish, English |
-| 002 Cloud Engineer AWS/Azure | Greenhouse | senior | 6 | 2 | Finnish, English |
-| 003 AI Full-Stack Developer | Greenhouse | senior | 4 | 4 | — |
-| 004 Principal Engineer Platform | Greenhouse | lead | 5 | 4 | — |
-| 005 Senior ML Biosignal Scientist | Greenhouse | senior | 13 | 3 | — |
-| 006 Internal Communications (trainee) | Greenhouse | junior | 2 | 2 | — |
-| 007 Engineering Manager Chat | Greenhouse | lead | 3 | 4 | — |
-| 008 Senior Design Verification Engineer | Lever | senior | 11 | 1 | — |
-| 009 Member of Technical Staff Data Science | Lever | senior | 14 | 3 | — |
-| 010 Senior Cloud DevOps Engineer | Teamtailor | senior | 4 | 1 | English |
+| 001 AI Architect | Greenhouse | senior | 8 | 2 | fi (required), en (required) |
+| 002 Cloud Engineer AWS/Azure | Greenhouse | senior | 4 | 1 | fi (required), en (required) |
+| 003 AI Full-Stack Developer | Greenhouse | senior | 2 | 4 | en (required), fi (advantage) |
+| 004 Principal Engineer Platform | Greenhouse | senior | 0 | 1 | — |
+| 005 Senior ML Biosignal Scientist | Greenhouse | senior | 3 | 1 | — |
+| 006 Internal Communications (trainee) | Greenhouse | intern | 0 | 2 | — |
+| 007 Engineering Manager Chat | Greenhouse | senior | 4 | 3 | — |
+| 008 Senior Design Verification Engineer | Lever | senior | 9 | 1 | — |
+| 009 Member of Technical Staff Data Science | Lever | senior | 2 | 1 | — |
+| 010 Senior Cloud DevOps Engineer | Teamtailor | senior | 3 | 2 | en (required), fi (advantage) |
 
 **10/10 ads processed successfully.**
+
+> Must-have and nice-to-have counts are requirements (groups of alternatives), not individual skill names. Lower counts than the previous schema are expected — e.g. `[NumPy, SciPy, pandas, scikit-learn]` counts as one requirement.
 
 ### Observations
 
