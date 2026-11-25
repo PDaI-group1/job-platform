@@ -81,12 +81,11 @@ Tested on 10 real Finnish job ads from Greenhouse, Lever, and Teamtailor ATS fee
 
 ### Observations
 
-- **Seniority looked correct on inspection** (not measured against labels); the trainee ad was mapped to junior because the schema has no intern option.
-- **Finnish ads work correctly** — skills are extracted in the language of the ad without translation.
-- **Language detection is conservative** — only languages explicitly stated in the ad are returned. Ads that imply English without stating it return an empty list.
-- **Languages are returned as ISO 639-1 codes** with a `required` / `advantage` distinction.
-- **Skill granularity reflects the source ad** — a detailed ML role lists 13 tool-level skills; an engineering manager role lists 3 high-level competencies. Both are correct extractions.
-- **Finnish-language skills are extracted as they are** — ad 002 skills are full Finnish sentences rather than short labels. A normalisation step would be needed for consistent cross-ad matching.
+- **Seniority looked correct on inspection** (not measured against labels). `intern` is now a valid value — the trainee ad maps to it.
+- **Finnish ads work correctly** — the prompt asks for English skill names, so Finnish ads produce normalised labels suitable for cross-ad matching.
+- **Language detection is conservative** — only languages explicitly stated in the ad are returned. Languages are ISO 639-1 codes with a `required` / `advantage` distinction.
+- **Skill granularity reflects the source ad** — a detailed ML role lists many tool-level skills; an engineering manager role lists high-level competencies. Both are correct extractions.
+- **Skill-free ads score 0** — ad 004 (Principal Engineer Platform) requires seniority and experience rather than named tools, so `must_have_skills` is empty and all CVs score 0 against it. This is correct behaviour.
 
 ---
 
@@ -152,4 +151,54 @@ Tested on 5 fictional CVs covering junior dev, senior data scientist, DevOps, fu
 
 **After adding tools from the test CVs:** 79/86 matched.
 
-> **Note:** The 79/86 figure is not representative. The skills list (`matching/data/skills_list.txt`) was expanded by reviewing the same CVs used for testing, so the number overstates real-world coverage. Fuzzy/partial matching is deferred to issue #20.
+> **Note:** The 79/86 figure is not representative. The skills list (`matching/data/skills_list.txt`) was expanded by reviewing the same CVs used for testing, so the number overstates real-world coverage.
+
+---
+
+## Matching
+
+### Entry point
+
+```python
+from matching.match import match_cv_to_job
+
+result = match_cv_to_job(profile, requirements)
+# profile: CVProfile from build_cv_profile()
+# requirements: JobRequirements from extract_requirements()
+```
+
+### Output schema
+
+```json
+{
+  "score": 85,
+  "must_have": [
+    {"skill": ["Python"],              "status": "matched", "matched_by": "Python",  "score": 1.0},
+    {"skill": ["Terraform", "Bicep"],  "status": "partial", "matched_by": "Ansible", "score": 0.61},
+    {"skill": ["COBOL"],               "status": "missing", "matched_by": null,       "score": 0.12}
+  ],
+  "nice_to_have": [
+    {"skill": ["Java", "Kotlin"], "status": "matched", "matched_by": "Java", "score": 1.0}
+  ],
+  "languages": [
+    {"code": "fi", "requirement": "required",  "cv_level": "native"},
+    {"code": "en", "requirement": "advantage", "cv_level": "fluent"}
+  ]
+}
+```
+
+`score` is 0–100, based on skills only (languages are reported separately and do not affect the score).
+
+Scoring: must-haves 80 %, nice-to-haves 20 %. If there are no nice-to-haves, score is based on must-haves alone. `matched` = 1 point, `partial` = 0.5, `missing` = 0.
+
+Matching tries exact case-insensitive comparison first (CV label, then raw). Embeddings (`all-MiniLM-L6-v2`) are used only for skills that did not match exactly. A requirement is satisfied if **any** of its alternatives matches. Thresholds: `matched` ≥ 0.75, `partial` ≥ 0.50 — untuned until the evaluation set (#22) is ready.
+
+### Run the full matrix
+
+Matches all CVs in `cv_test_results.json` against all ads in `test_results.json` (5 × 10 = 50 pairs):
+
+```bash
+python -m matching.run_match_tests
+```
+
+Saves results to `matching/match_results.json` and prints a score table.
