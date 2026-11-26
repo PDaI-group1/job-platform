@@ -1,9 +1,11 @@
+from __future__ import annotations
+
 import re
 from pathlib import Path
 from typing import Literal
 
 import yaml
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 CONFIG_DIR = Path(__file__).resolve().parent
 SOURCES_DIR = CONFIG_DIR / "sources"
@@ -35,6 +37,7 @@ class HttpConfig(_Strict):
     max_retries: int = Field(3, ge=0, le=10)
     backoff_seconds: float = Field(2.0, ge=0)
     respect_robots_txt: bool = True
+    accept: str = "text/html,application/xhtml+xml"
 
 
 class IdPattern(_Strict):
@@ -77,6 +80,32 @@ class DetailConfig(_Strict):
         return index
 
 
+class Employer(_Strict):
+    name: str
+    token: str | None = None
+    url: str | None = None
+
+    @model_validator(mode="after")
+    def _one_of(self) -> Employer:
+        if not (self.token or self.url):
+            raise ValueError(f"employer {self.name!r} needs a token or a url")
+        return self
+
+    @property
+    def key(self) -> str:
+        if self.token:
+            return self.token
+        host = re.sub(r"^https?://", "", self.url or "").split("/")[0]
+        return host.split(".")[0] if host.endswith(".teamtailor.com") else host.removeprefix("careers.").removeprefix("career.").split(".")[0]
+
+
+class FeedConfig(_Strict):
+    format: Literal["json", "rss"]
+    urls: list[str] = Field(min_length=1)
+    finland_only: bool = True
+    skip_open_applications: bool = True
+
+
 class SourceConfig(_Strict):
     name: str
     display_name: str
@@ -84,8 +113,21 @@ class SourceConfig(_Strict):
     fetcher: Literal["http", "playwright"] = "http"
     html_parser: Literal["html5lib", "html.parser", "lxml"] = "html5lib"
     http: HttpConfig
-    listing: ListingConfig
-    detail: DetailConfig
+    listing: ListingConfig | None = None
+    detail: DetailConfig | None = None
+    feed: FeedConfig | None = None
+    employers: list[Employer] = []
+
+    @model_validator(mode="after")
+    def _kind(self) -> SourceConfig:
+        if self.feed is None and (self.listing is None or self.detail is None):
+            raise ValueError("a source needs either `feed` + `employers` or `listing` + `detail`")
+        if self.feed is not None and not self.employers:
+            raise ValueError("a feed source needs at least one entry in `employers`")
+        keys = [e.key for e in self.employers]
+        if len(keys) != len(set(keys)):
+            raise ValueError(f"duplicate employers: {keys}")
+        return self
 
 
 class NegationRules(_Strict):
@@ -110,16 +152,34 @@ class SalaryRules(_Strict):
     heuristic: SalaryHeuristic = SalaryHeuristic()
 
 
+class FeedFilters(_Strict):
+    finland_pattern: str
+    skip_title_patterns: list[str] = []
+
+    @field_validator("finland_pattern")
+    @classmethod
+    def _valid_one(cls, v: str) -> str:
+        _check_regexes([v])
+        return v
+
+    @field_validator("skip_title_patterns")
+    @classmethod
+    def _valid(cls, v: list[str]) -> list[str]:
+        return _check_regexes(v)
+
+
 class NormalizationRules(_Strict):
     timezone: str = "Europe/Helsinki"
     max_description_length: int = 50000
     negation: NegationRules = NegationRules()
     remote_type: dict[Literal["onsite", "hybrid", "remote"], list[str]]
+    remote_type_description: dict[Literal["onsite", "hybrid", "remote"], list[str]]
     employment_type: dict[Literal["full_time", "part_time", "internship", "temporary", "contract"], list[str]]
     language: LanguageRules
     salary: SalaryRules
+    feed_filters: FeedFilters
 
-    @field_validator("remote_type", "employment_type")
+    @field_validator("remote_type", "remote_type_description", "employment_type")
     @classmethod
     def _valid(cls, v: dict[str, list[str]]) -> dict[str, list[str]]:
         for patterns in v.values():

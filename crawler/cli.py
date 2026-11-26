@@ -7,12 +7,13 @@ from pathlib import Path
 
 from crawler import __version__
 from crawler.config import ConfigError, load_normalization_rules, load_source_config
+from crawler.core.feed import FeedSource
 from crawler.core.http import create_fetcher
 from crawler.core.pipeline import Mode, Pipeline, RunOptions
 from crawler.core.storage import JsonlWriter, PostgresStorage, StorageError
 from crawler.normalize import NormalizationError, normalize_job
 from crawler.schemas import RawJob
-from crawler.sources import SOURCES, get_source_class
+from crawler.sources import GROUPS, SOURCES, expand_sources, get_source_class
 
 log = logging.getLogger("crawler")
 
@@ -40,7 +41,10 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("sources", help="list available sources")
 
     run = sub.add_parser("run", help="crawl a source and save jobs", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    run.add_argument("source", choices=sorted(SOURCES))
+    run.add_argument("source", nargs="+", choices=[*sorted(SOURCES), *GROUPS],
+                     help="one or more sources; 'feeds' = greenhouse lever teamtailor, 'all' = every source")
+    run.add_argument("--employer", action="append", metavar="KEY",
+                     help="feed sources only: crawl just this employer (repeatable), e.g. --employer oura")
     run.add_argument("--mode", type=Mode, choices=[m.value for m in Mode], default=Mode.INCREMENTAL.value,
                      help="listing: list pages only; incremental: detail pages for new jobs; full: everything")
     run.add_argument("--limit", type=_positive_int, help="stop after this many jobs")
@@ -61,20 +65,47 @@ def build_parser() -> argparse.ArgumentParser:
     parse.add_argument("source", choices=sorted(SOURCES))
     parse.add_argument("file", type=Path)
     parse.add_argument("--kind", choices=["listing", "detail"], required=True)
-    parse.add_argument("--url", default="https://example.com/job-0", help="page URL")
+    parse.add_argument("--url", default="https://example.com/job-0",
+                       help="page URL (detail pages), or the feed URL to pick the employer (feed sources)")
     parse.add_argument("--normalized", action="store_true", help="print normalized records instead of raw")
     return parser
 
 
 def cmd_sources() -> int:
-    for name in sorted(SOURCES):
+    for name in SOURCES:
         cfg = load_source_config(name)
-        print(f"{name:12} {cfg.display_name:20} {cfg.listing.start_url}")
+        if cfg.feed:
+            print(f"{name:12} {cfg.display_name:12} {len(cfg.employers)} employers: "
+                  f"{', '.join(e.key for e in cfg.employers)}")
+        else:
+            print(f"{name:12} {cfg.display_name:12} {cfg.listing.start_url}")
     return 0
 
 
 def cmd_run(args: argparse.Namespace) -> int:
-    config = load_source_config(args.source, args.config)
+    names = expand_sources(args.source)
+    if args.config and len(names) > 1:
+        log.error("--config works with a single source")
+        return 2
+    feed_names = [n for n in names if issubclass(get_source_class(n), FeedSource)]
+    if args.employer and len(feed_names) != 1:
+        log.error("--employer needs exactly one feed source, e.g. run greenhouse --employer oura")
+        return 2
+
+    writer = JsonlWriter(args.output) if args.output else None
+    codes = []
+    try:
+        for name in names:
+            codes.append(run_source(name, args, writer))
+    finally:
+        if writer:
+            writer.close()
+    # 130 if interrupted, 1 if any source failed completely, else 0
+    return 130 if 130 in codes else max(codes)
+
+
+def run_source(name: str, args: argparse.Namespace, writer: JsonlWriter | None) -> int:
+    config = load_source_config(name, args.config)
     http_overrides = {}
     if args.delay is not None:
         http_overrides["delay_seconds"] = args.delay
@@ -91,7 +122,6 @@ def cmd_run(args: argparse.Namespace) -> int:
             log.error("no database: set DATABASE_URL, pass --database-url, or use --dry-run")
             return 1
         storage = PostgresStorage(dsn)
-    writer = JsonlWriter(args.output) if args.output else None
     fetcher = create_fetcher(config.fetcher, config.http)
 
     options = RunOptions(
@@ -103,24 +133,35 @@ def cmd_run(args: argparse.Namespace) -> int:
         deactivate_missing=args.deactivate_missing,
         fail_fast=args.fail_fast,
     )
-    source = get_source_class(args.source)(config, fetcher, dump_dir=args.dump_html)
+    source_cls = get_source_class(name)
+    if issubclass(source_cls, FeedSource):
+        try:
+            source = source_cls(config, fetcher, dump_dir=args.dump_html, employers=args.employer, rules=rules)
+        except ValueError as exc:
+            fetcher.close()
+            if storage:
+                storage.close()
+            log.error("%s", exc)
+            return 2
+    else:
+        source = source_cls(config, fetcher, dump_dir=args.dump_html)
     log.info("crawling %s: mode=%s limit=%s pages=%s dry_run=%s",
-             args.source, options.mode.value, options.limit, options.max_pages or "all", args.dry_run)
+             name, options.mode.value, options.limit, options.max_pages or "all", args.dry_run)
     try:
         stats = Pipeline(source, rules, storage, writer).run(options)
     finally:
         fetcher.close()
         if storage:
             storage.close()
-        if writer:
-            writer.close()
 
     summary = stats.summary()
-    log.info("done: %s", ", ".join(f"{k}={v}" for k, v in summary.items() if v not in (0, False, None)))
+    log.info("done %s: %s", name, ", ".join(f"{k}={v}" for k, v in summary.items() if v not in (0, False, None)))
     for error in stats.errors[:10]:
         log.info("  error: %s", error)
     if args.stats_json:
-        args.stats_json.write_text(json.dumps({**summary, "error_messages": stats.errors}, indent=2), encoding="utf-8")
+        path = args.stats_json if len(expand_sources(args.source)) == 1 else \
+            args.stats_json.with_name(f"{args.stats_json.stem}_{name}{args.stats_json.suffix}")
+        path.write_text(json.dumps({**summary, "error_messages": stats.errors}, indent=2), encoding="utf-8")
     if stats.interrupted:
         return 130
     return 1 if stats.listed == 0 and stats.errors else 0
@@ -130,7 +171,12 @@ def cmd_parse(args: argparse.Namespace) -> int:
     config = load_source_config(args.source)
     source = get_source_class(args.source)(config, fetcher=None)
     html = args.file.read_text(encoding="utf-8")
-    if args.kind == "listing":
+    if isinstance(source, FeedSource):
+        if args.kind != "listing":
+            log.error("%s is a feed source: use --kind listing", args.source)
+            return 2
+        raws, _ = source.parse_listing_page(html, args.url)
+    elif args.kind == "listing":
         raws, _ = source.parse_listing_page(html, config.listing.start_url)
     else:
         job_id = args.url.rstrip("/").rsplit("-", 1)[-1]

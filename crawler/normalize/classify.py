@@ -64,12 +64,17 @@ def classify_remote(texts: Iterable[str | None], rules: dict[str, list[str]], ne
 
 
 def detect_language(text: str | None, rules: LanguageRules, hint: str | None = None) -> str | None:
+    voted = _vote_language(text, rules) if text else None
+    if voted:
+        return voted
     if hint:
         code = hint.strip().lower()[:2]
         if code in rules.stopwords:
             return code
-    if not text:
-        return None
+    return None
+
+
+def _vote_language(text: str, rules: LanguageRules) -> str | None:
     words = re.findall(r"[a-zåäö]+", text.lower())
     counts = Counter(words)
     scores = {lang: sum(counts[w] for w in stop) for lang, stop in rules.stopwords.items()}

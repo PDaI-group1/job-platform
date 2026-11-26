@@ -37,7 +37,8 @@ def normalize_job(raw: RawJob, rules: NormalizationRules, scraped_at: datetime |
     description = clean_multiline(raw.description, rules.max_description_length)
     neg = rules.negation
 
-    remote_type = classify_remote([raw.work_mode_text, title, location, description], rules.remote_type, neg)
+    remote_type = classify_remote([raw.work_mode_text, title, location], rules.remote_type, neg) or \
+        classify_remote([description], rules.remote_type_description, neg)
     employment_type = classify_employment([raw.employment_type_text, title, description], rules.employment_type, neg)
     language = detect_language(f"{title}\n{description or ''}", rules.language, raw.language_hint)
     salary = parse_salary(raw.salary_text, rules.salary, raw.salary_period_text)

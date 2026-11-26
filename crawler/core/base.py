@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import logging
 import re
 from abc import ABC, abstractmethod
@@ -25,6 +27,7 @@ class BaseSource(ABC):
         self.config = config
         self.fetcher = fetcher
         self.dump_dir = dump_dir
+        self.errors = []
         self._check_config()
 
     @abstractmethod
@@ -44,22 +47,26 @@ class BaseSource(ABC):
         """Detail-page data only, identity copied from  job. Pure: no network."""
 
 
-    def get(self, url: str, kind: str) -> str:
+    errors: list[str]
+
+    def get(self, url: str, kind: str, ext: str = "html") -> str:
         if self.fetcher is None:
             raise RuntimeError(f"{self.name}: source was created without a fetcher (parse-only mode)")
         html = self.fetcher.get(url)
         if self.dump_dir:
-            self._dump(url, kind, html)
+            self._dump(url, kind, html, ext)
         return html
 
-    def _dump(self, url: str, kind: str, html: str) -> None:
+    def _dump(self, url: str, kind: str, html: str, ext: str = "html") -> None:
         name = re.sub(r"[^\w.-]+", "_", url.split("://", 1)[-1])[:150]
-        path = self.dump_dir / self.name / kind / f"{name}.html"
+        path = self.dump_dir / self.name / kind / f"{name}.{ext}"
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(html, encoding="utf-8")
 
     def _check_config(self) -> None:
-        missing = [s for s in self.required_listing_selectors if s not in self.config.listing.selectors]
-        missing += [s for s in self.required_detail_selectors if s not in self.config.detail.selectors]
+        listing = self.config.listing.selectors if self.config.listing else {}
+        detail = self.config.detail.selectors if self.config.detail else {}
+        missing = [s for s in self.required_listing_selectors if s not in listing]
+        missing += [s for s in self.required_detail_selectors if s not in detail]
         if missing:
             raise ValueError(f"{self.name}: selectors missing in config: {', '.join(missing)}")

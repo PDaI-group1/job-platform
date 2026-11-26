@@ -1,0 +1,27 @@
+name: greenhouse
+display_name: Greenhouse
+base_url: https://boards-api.greenhouse.io
+
+http:
+  user_agent: "SkillMarketBot/0.1 (+https://github.com/PDaI-group1/job-platform; student project)"
+  accept: application/json
+  timeout_seconds: 30
+  delay_seconds: 2
+  jitter_seconds: 0.5
+  max_retries: 3
+  backoff_seconds: 2.0
+  respect_robots_txt: true
+
+feed:
+  format: json
+  urls:
+    - https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true
+    - https://boards-api.eu.greenhouse.io/v1/boards/{token}/jobs?content=true
+
+employers:
+  - { name: Wolt, token: wolt }
+  - { name: Smartly.io, token: smartlyio }
+  - { name: Solita, token: solita }
+  - { name: RELEX Solutions, token: relex }
+  - { name: Supermetrics, token: supermetricsoy }
+  - { name: Oura, token: oura }
