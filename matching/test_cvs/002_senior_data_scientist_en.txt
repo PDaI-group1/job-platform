@@ -1,0 +1,30 @@
+Laura Chen
+laura.chen@example.com | Espoo, Finland
+
+EXPERIENCE
+
+Senior Data Scientist — Analytics Corp (fictitious), Helsinki (2020–present, 5 years)
+- Built and deployed machine learning models for customer churn prediction
+- Led a team of 3 data scientists, conducted code reviews and mentoring
+- Designed data pipelines using Apache Spark and Apache Kafka
+- Presented results to non-technical stakeholders
+
+Data Scientist — Research Labs Ltd (fictitious), Tampere (2017–2020, 3 years)
+- Developed NLP models for text classification using Python and scikit-learn
+- Performed statistical analysis and A/B testing
+- Created data visualisations with Tableau and Matplotlib
+
+EDUCATION
+M.Sc. in Computer Science (Machine Learning), Aalto University, 2017
+B.Sc. in Mathematics, University of Tampere, 2015
+
+SKILLS
+Languages: Python, R, SQL
+ML frameworks: scikit-learn, TensorFlow, PyTorch, XGBoost
+Data engineering: Apache Spark, Apache Kafka, dbt
+Cloud: Amazon Web Services (S3, SageMaker, Redshift), Google Cloud Platform
+Tools: Git, Docker, Jupyter, Airflow
+Visualisation: Tableau, Matplotlib, Seaborn
+
+LANGUAGES
+English (fluent), Finnish (conversational), Mandarin (native)

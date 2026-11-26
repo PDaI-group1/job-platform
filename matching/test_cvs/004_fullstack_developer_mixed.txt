@@ -1,0 +1,29 @@
+Sara Mäkinen
+sara.makinen@example.com | Tampere, Finland
+
+TYÖKOKEMUS / EXPERIENCE
+
+Full Stack Developer — WebAgency (fictitious), Tampere (2022–nykyinen, 3 years)
+- Rakennan asiakasprojekteja React- ja Next.js-frontendillä sekä Node.js-backendillä
+- Suunnittelen ja toteutan REST API- ja GraphQL-rajapintoja
+- Vastaan PostgreSQL- ja Redis-tietokantaratkaisuista
+- Toimin teknisten vaatimusten määrittelyssä yhdessä asiakkaiden kanssa
+
+Junior Developer — StartupX (fictitious), Helsinki (2020–2022, 2 years)
+- Developed Vue.js frontend components
+- Wrote unit and integration tests
+- Participated in code reviews
+
+KOULUTUS / EDUCATION
+Tieto- ja viestintätekniikan insinööri (AMK), TAMK, 2020
+
+TAIDOT / SKILLS
+Frontend: React, Next.js, Vue.js, TypeScript, HTML, CSS
+Backend: Node.js, Express, GraphQL, REST API design
+Databases: PostgreSQL, Redis, MongoDB
+Cloud: Google Cloud Platform
+Tools: Git, Docker, Figma
+Testing: Jest, Vitest, Playwright
+
+KIELET / LANGUAGES
+Finnish (native), English (fluent), Swedish (basic)

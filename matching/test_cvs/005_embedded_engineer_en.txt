@@ -1,0 +1,30 @@
+Pekka Heikkinen
+pekka.heikkinen@example.com | Oulu, Finland
+
+EXPERIENCE
+
+Senior Embedded Software Engineer — HardwareTech (fictitious), Oulu (2019–present, 6 years)
+- Developed firmware for ARM Cortex-M microcontrollers in C and C++
+- Designed real-time software using FreeRTOS for IoT sensor devices
+- Wrote device drivers for SPI, I2C, and UART peripherals
+- Collaborated with hardware engineers on PCB bring-up and signal debugging
+- Set up CI pipelines for firmware builds using GitLab CI and Docker
+
+Embedded Software Engineer — ElectronicsLab (fictitious), Tampere (2016–2019, 3 years)
+- Maintained legacy C codebase for industrial control systems
+- Performed unit testing with Unity test framework
+- Debugged hardware issues using oscilloscope and logic analyser
+
+EDUCATION
+M.Sc. in Electrical Engineering (Embedded Systems), University of Oulu, 2016
+
+SKILLS
+Languages: C, C++, Python
+RTOS: FreeRTOS, Zephyr
+Protocols: SPI, I2C, UART, CAN bus, BLE
+Hardware: ARM Cortex-M, STM32, nRF52
+Tools: Git, GDB, CMake, Docker
+Testing: Unity, pytest
+
+LANGUAGES
+Finnish (native), English (fluent)

@@ -1,26 +1,18 @@
 """
-Extract structured requirements from a job ad using Gemini Flash.
+Extract structured requirements from a job ad using Gemini.
 
 Usage:
     python -m matching.extract <path-to-job-ad.txt>
-    python -m matching.extract <path-to-job-ad.txt> --model gemini-1.5-flash
 
 Requires GEMINI_API_KEY in .env or environment.
+Model is read from GEMINI_MODEL env var (default: gemini-3.5-flash-lite).
 """
 
 import json
-import os
 from pathlib import Path
 
-from dotenv import load_dotenv
-from google import genai
-from google.genai import types
-
+from matching.llm import generate_json
 from matching.schemas import JobRequirements
-
-load_dotenv()
-
-DEFAULT_MODEL = "gemini-3.5-flash-lite"
 
 _SYSTEM = """\
 You are a job ad parser. Extract the following from the job ad the user provides.
@@ -35,12 +27,11 @@ Be precise. Only include information that is in the ad. Do not infer or add skil
 """
 
 
-def extract_requirements(text: str, model: str = DEFAULT_MODEL) -> JobRequirements:
+def extract_requirements(text: str) -> JobRequirements:
     """Extract structured requirements from a plain-text job ad.
 
     Args:
         text: Plain text of the job ad (HTML already stripped).
-        model: Gemini model ID to use.
 
     Returns:
         Validated JobRequirements.
@@ -49,25 +40,7 @@ def extract_requirements(text: str, model: str = DEFAULT_MODEL) -> JobRequiremen
         google.genai.errors.APIError: On API errors.
         ValueError: If GEMINI_API_KEY is not set.
     """
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        raise ValueError("GEMINI_API_KEY is not set")
-
-    client = genai.Client(
-        api_key=api_key,
-        http_options=types.HttpOptions(timeout=60_000),
-    )
-    response = client.models.generate_content(
-        model=model,
-        contents=text,
-        config=types.GenerateContentConfig(
-            system_instruction=_SYSTEM,
-            response_mime_type="application/json",
-            response_schema=JobRequirements,
-        ),
-    )
-
-    return JobRequirements.model_validate_json(response.text)
+    return generate_json(_SYSTEM, text, JobRequirements)
 
 
 if __name__ == "__main__":
@@ -75,9 +48,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Extract requirements from a job ad text file")
     parser.add_argument("file", type=Path, help="Path to a plain-text job ad")
-    parser.add_argument("--model", default=DEFAULT_MODEL, help="Gemini model ID")
     args = parser.parse_args()
 
     ad_text = args.file.read_text(encoding="utf-8")
-    result = extract_requirements(ad_text, model=args.model)
+    result = extract_requirements(ad_text)
     print(json.dumps(result.model_dump(), ensure_ascii=False, indent=2))
