@@ -105,7 +105,7 @@ describe.skipIf(!database_url)("API with database", () => {
     }
   });
 
-  it("q searches title, company and location case-insensitively", async () => {
+  it("q searches title, description, company and location case-insensitively", async () => {
     const sample = (await request(app).get("/jobs?page_size=1")).body.data[0] as job;
     const q = sample.title.slice(0, 5).toUpperCase();
 
@@ -114,8 +114,81 @@ describe.skipIf(!database_url)("API with database", () => {
     expect(res.status).toBe(200);
     expect(res.body.data.map((j: job) => j.id)).toContain(sample.id);
     for (const job of res.body.data as job[]) {
-      const text = [job.title, job.company_name, job.location].join(" ").toLowerCase();
+      const text = [job.title, job.description, job.company_name, job.location]
+        .join(" ")
+        .toLowerCase();
       expect(text).toContain(q.toLowerCase());
+    }
+  });
+
+  it("q finds a job by text that is only in its description", async () => {
+    const { rows } = await pool.query<{
+      id: number;
+      title: string;
+      description: string;
+      company_name: string | null;
+      location: string | null;
+    }>(
+      `SELECT id, title, description, company_name, location FROM jobs
+       WHERE description IS NOT NULL AND length(description) >= 20 ORDER BY id LIMIT 20`,
+    );
+
+    // A 12-character piece of a description that appears in no other searched field.
+    let found: { id: number; q: string } | undefined;
+    for (const row of rows) {
+      const other = [row.title, row.company_name, row.location].join(" ").toLowerCase();
+      for (let i = 0; i + 12 <= row.description.length && !found; i += 6) {
+        const piece = row.description.slice(i, i + 12);
+        if (!other.includes(piece.toLowerCase()) && piece.trim() === piece) {
+          found = { id: row.id, q: piece };
+        }
+      }
+      if (found) break;
+    }
+    expect(found, "no job with a description in the database").toBeDefined();
+
+    const res = await request(app).get("/jobs").query({ q: found!.q, page_size: 100 });
+    expect(res.body.data.map((j: job) => j.id)).toContain(found!.id);
+  });
+
+  it("filters by part of the location, case-insensitively", async () => {
+    const { rows } = await pool.query<{ id: number; location: string }>(
+      "SELECT id, location FROM jobs WHERE location IS NOT NULL ORDER BY id LIMIT 1",
+    );
+    const sample = rows[0]!;
+    const location = sample.location.slice(0, 4).toUpperCase();
+
+    const res = await request(app).get("/jobs").query({ location, page_size: 100 });
+
+    expect(res.status).toBe(200);
+    expect(res.body.data.map((j: job) => j.id)).toContain(sample.id);
+    expect(res.body.pagination.total).toBe(
+      await count_jobs("WHERE location ILIKE $1", [`%${location}%`]),
+    );
+    for (const job of res.body.data as job[]) {
+      expect(job.location!.toLowerCase()).toContain(location.toLowerCase());
+    }
+  });
+
+  it("sort=company_name orders by company name A–Z, jobs without a company last", async () => {
+    const res = await request(app).get("/jobs?sort=company_name&page_size=100");
+    const names = (res.body.data as job[]).map((j) => j.company_name?.toLowerCase() ?? null);
+
+    expect(res.status).toBe(200);
+    expect(res.body.pagination.total).toBe(await count_jobs());
+    for (let i = 1; i < names.length; i++) {
+      const prev = names[i - 1]!;
+      const cur = names[i]!;
+      if (prev === null) {
+        expect(cur, "a job with a company after one without").toBeNull();
+      } else if (cur !== null) {
+        // Same rule PostgreSQL applies: compare with the database collation.
+        const { rows } = await pool.query<{ ok: boolean }>("SELECT $1::text <= $2::text AS ok", [
+          prev,
+          cur,
+        ]);
+        expect(rows[0]!.ok, `"${prev}" should not come after "${cur}"`).toBe(true);
+      }
     }
   });
 

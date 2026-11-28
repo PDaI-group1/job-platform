@@ -6,6 +6,13 @@ export const max_page_size = 100;
 // Keeps OFFSET within a sane range; nobody pages this far.
 export const max_page = 100_000;
 export const max_search_length = 200;
+export const max_location_length = 100;
+
+// newest: published_at, newest first (default); company_name: company name A–Z.
+// Values match the sort select in frontend/job-platform/src/pages/jobs_page.tsx.
+export const job_sorts = ["newest", "company_name"] as const;
+export type job_sort = (typeof job_sorts)[number];
+export const default_sort: job_sort = "newest";
 
 // Same values as the CHECK constraints in migrations/001_create_jobs.sql.
 export const employment_types: readonly employment_type[] = [
@@ -19,6 +26,7 @@ export const remote_types: readonly remote_type[] = ["onsite", "hybrid", "remote
 
 export type job_list_filters = {
   q?: string;
+  location?: string;
   employment_type?: employment_type;
   remote_type?: remote_type;
   is_active?: boolean;
@@ -27,6 +35,7 @@ export type job_list_filters = {
 export type job_list_params = {
   page: number;
   page_size: number;
+  sort: job_sort;
   filters: job_list_filters;
 };
 
@@ -41,8 +50,10 @@ export function parse_job_list_params(query: query_values): job_list_params {
       max: max_page_size,
       fallback: default_page_size,
     }),
+    sort: parse_enum_param(query, "sort", job_sorts) ?? default_sort,
     filters: {
-      q: parse_search(query),
+      q: parse_text_param(query, "q", max_search_length),
+      location: parse_text_param(query, "location", max_location_length),
       employment_type: parse_enum_param(query, "employment_type", employment_types),
       remote_type: parse_enum_param(query, "remote_type", remote_types),
       is_active: parse_bool_param(query, "is_active"),
@@ -75,13 +86,14 @@ function read_single(query: query_values, name: string): string | undefined {
   return trimmed === "" ? undefined : trimmed;
 }
 
-function parse_search(query: query_values): string | undefined {
-  const value = read_single(query, "q");
-  if (value !== undefined && value.length > max_search_length) {
-    throw invalid_parameter(
-      "q",
-      `q must be at most ${max_search_length} characters`,
-    );
+function parse_text_param(
+  query: query_values,
+  name: string,
+  max_length: number,
+): string | undefined {
+  const value = read_single(query, name);
+  if (value !== undefined && value.length > max_length) {
+    throw invalid_parameter(name, `${name} must be at most ${max_length} characters`);
   }
   return value;
 }

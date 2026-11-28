@@ -30,12 +30,21 @@ Empty values (e.g. `q=`) are treated as not set. Each parameter may appear only 
 |---|---|---|---|
 | `page` | integer 1–100000 | `1` | Page number, 1-based |
 | `page_size` | integer 1–100 | `20` | Jobs per page |
-| `q` | string, max 200 chars | — | Case-insensitive substring search in `title`, `company_name` and `location` |
+| `q` | string, max 200 chars | — | Case-insensitive substring search in `title`, `description`, `company_name` and `location` |
+| `location` | string, max 100 chars | — | Case-insensitive substring of `location`, e.g. `oulu` matches `"Oulu"` and `"Helsinki, Oulu"` |
 | `employment_type` | enum | — | `full_time`, `part_time`, `internship`, `temporary`, `contract` |
 | `remote_type` | enum | — | `onsite`, `hybrid`, `remote` |
 | `is_active` | `true` \| `false` | — | Without it both active and inactive jobs are returned |
+| `sort` | `newest` \| `company_name` | `newest` | Order of the results, see below |
 
-**Order:** `published_at` descending, jobs without `published_at` last, then `id` descending.
+**Order:**
+
+| `sort` | Order |
+|---|---|
+| `newest` | `published_at` descending, jobs without `published_at` last |
+| `company_name` | `company_name` A–Z ignoring case, jobs without a company last; then newest first |
+
+Both end with `id` descending, so the order is stable between pages.
 
 **Response 200:**
 
@@ -55,7 +64,7 @@ Empty values (e.g. `q=`) are treated as not set. Each parameter may appear only 
 
 `total` is the number of jobs matching the filters. A page past the end returns `"data": []` with status 200.
 
-Example: `GET /jobs?q=developer&employment_type=full_time&page=1&page_size=20`
+Example: `GET /jobs?q=developer&location=oulu&employment_type=full_time&sort=company_name&page=1&page_size=20`
 
 ### GET /jobs/:id
 
