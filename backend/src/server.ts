@@ -11,7 +11,11 @@ try {
 }
 
 const pool = create_pool(config.database_url);
-const app = create_app({ db: pool, cors_origins: config.cors_origins });
+const app = create_app({
+  db: pool,
+  cors_origins: config.cors_origins,
+  cv_upload_enabled: config.cv_upload_enabled,
+});
 
 const server = app.listen(config.port, (error) => {
   if (error) {

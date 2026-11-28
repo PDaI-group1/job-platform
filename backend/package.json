@@ -17,15 +17,19 @@
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.3.0",
-    "pg": "^8.23.1"
+    "multer": "^2.5.0",
+    "pg": "^8.23.1",
+    "unpdf": "^2.2.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
     "@types/node": "^24.19.2",
     "@types/pg": "^8.23.1",
     "@types/supertest": "^7.2.1",
     "oxlint": "^1.93.0",
+    "pdf-lib": "^1.17.1",
     "supertest": "^7.3.2",
     "typescript": "~7.0.2",
     "vitest": "^5.1.0"

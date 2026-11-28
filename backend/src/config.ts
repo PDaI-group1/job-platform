@@ -2,6 +2,7 @@ export type app_config = {
   database_url: string;
   port: number;
   cors_origins: string[];
+  cv_upload_enabled: boolean;
 };
 
 const default_port = 3000;
@@ -20,7 +21,17 @@ export function load_config(env: NodeJS.ProcessEnv = process.env): app_config {
     database_url,
     port: parse_port(env.PORT),
     cors_origins: parse_origins(env.CORS_ORIGIN ?? default_cors_origin),
+    // Off until the temporary CV access token is agreed
+    // (docs/decisions/cv-temporary-access-token.md).
+    cv_upload_enabled: parse_bool(env.CV_UPLOAD_ENABLED, "CV_UPLOAD_ENABLED", false),
   };
+}
+
+function parse_bool(value: string | undefined, name: string, fallback: boolean): boolean {
+  if (value === undefined || value.trim() === "") return fallback;
+  if (value === "true") return true;
+  if (value === "false") return false;
+  throw new Error(`${name} must be true or false, got "${value}".`);
 }
 
 function parse_port(value: string | undefined): number {
