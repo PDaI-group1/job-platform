@@ -41,7 +41,7 @@ describe("parse_job_list_params", () => {
     const params = parse_job_list_params({
       page: "2",
       page_size: "50",
-      sort: "company",
+      sort: "company_name",
       q: "  react  ",
       location: " Oulu ",
       employment_type: "internship",
@@ -52,7 +52,7 @@ describe("parse_job_list_params", () => {
     expect(params).toEqual({
       page: 2,
       page_size: 50,
-      sort: "company",
+      sort: "company_name",
       filters: {
         q: "react",
         location: "Oulu",
@@ -103,11 +103,11 @@ describe("parse_job_list_params", () => {
     expect_invalid(() => parse_job_list_params({ location: "a".repeat(101) }), "location");
   });
 
-  it.each(["newest", "company"])("accepts sort=%s", (sort) => {
+  it.each(["newest", "company_name"])("accepts sort=%s", (sort) => {
     expect(parse_job_list_params({ sort }).sort).toBe(sort);
   });
 
-  it.each(["title", "Company", "-newest"])("rejects sort=%s", (sort) => {
+  it.each(["title", "company", "Company_name", "-newest"])("rejects sort=%s", (sort) => {
     expect_invalid(() => parse_job_list_params({ sort }), "sort");
   });
 

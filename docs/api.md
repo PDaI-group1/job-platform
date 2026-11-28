@@ -35,14 +35,14 @@ Empty values (e.g. `q=`) are treated as not set. Each parameter may appear only 
 | `employment_type` | enum | — | `full_time`, `part_time`, `internship`, `temporary`, `contract` |
 | `remote_type` | enum | — | `onsite`, `hybrid`, `remote` |
 | `is_active` | `true` \| `false` | — | Without it both active and inactive jobs are returned |
-| `sort` | `newest` \| `company` | `newest` | Order of the results, see below |
+| `sort` | `newest` \| `company_name` | `newest` | Order of the results, see below |
 
 **Order:**
 
 | `sort` | Order |
 |---|---|
 | `newest` | `published_at` descending, jobs without `published_at` last |
-| `company` | `company_name` A–Z ignoring case, jobs without a company last; then newest first |
+| `company_name` | `company_name` A–Z ignoring case, jobs without a company last; then newest first |
 
 Both end with `id` descending, so the order is stable between pages.
 
@@ -64,7 +64,7 @@ Both end with `id` descending, so the order is stable between pages.
 
 `total` is the number of jobs matching the filters. A page past the end returns `"data": []` with status 200.
 
-Example: `GET /jobs?q=developer&location=oulu&employment_type=full_time&sort=company&page=1&page_size=20`
+Example: `GET /jobs?q=developer&location=oulu&employment_type=full_time&sort=company_name&page=1&page_size=20`
 
 ### GET /jobs/:id
 

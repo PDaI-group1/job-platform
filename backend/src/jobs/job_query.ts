@@ -8,8 +8,9 @@ export const max_page = 100_000;
 export const max_search_length = 200;
 export const max_location_length = 100;
 
-// newest: published_at, newest first (default); company: company name A–Z.
-export const job_sorts = ["newest", "company"] as const;
+// newest: published_at, newest first (default); company_name: company name A–Z.
+// Values match the sort select in frontend/job-platform/src/pages/jobs_page.tsx.
+export const job_sorts = ["newest", "company_name"] as const;
 export type job_sort = (typeof job_sorts)[number];
 export const default_sort: job_sort = "newest";
 

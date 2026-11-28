@@ -53,7 +53,7 @@ describe("build_job_order", () => {
   });
 
   it("orders by company name A–Z, then newest first", () => {
-    expect(build_job_order("company")).toBe(
+    expect(build_job_order("company_name")).toBe(
       "lower(company_name) ASC NULLS LAST, published_at DESC NULLS LAST, id DESC",
     );
   });

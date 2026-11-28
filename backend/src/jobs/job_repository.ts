@@ -34,10 +34,10 @@ const job_columns = [
 // ORDER BY for each sort value. Only these fixed strings ever reach the SQL.
 // Every order ends with newest first and id, so it is stable between pages.
 // newest: jobs without a publish date go last.
-// company: case-insensitive A–Z, jobs without a company go last.
+// company_name: case-insensitive A–Z, jobs without a company go last.
 const job_orders: Record<job_sort, string> = {
   newest: "published_at DESC NULLS LAST, id DESC",
-  company: "lower(company_name) ASC NULLS LAST, published_at DESC NULLS LAST, id DESC",
+  company_name: "lower(company_name) ASC NULLS LAST, published_at DESC NULLS LAST, id DESC",
 };
 
 export function build_job_order(sort: job_sort): string {

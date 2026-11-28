@@ -170,8 +170,8 @@ describe.skipIf(!database_url)("API with database", () => {
     }
   });
 
-  it("sort=company orders by company name A–Z, jobs without a company last", async () => {
-    const res = await request(app).get("/jobs?sort=company&page_size=100");
+  it("sort=company_name orders by company name A–Z, jobs without a company last", async () => {
+    const res = await request(app).get("/jobs?sort=company_name&page_size=100");
     const names = (res.body.data as job[]).map((j) => j.company_name?.toLowerCase() ?? null);
 
     expect(res.status).toBe(200);
