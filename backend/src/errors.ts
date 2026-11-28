@@ -3,8 +3,15 @@ import type { ErrorRequestHandler, RequestHandler, Response } from "express";
 export type error_code =
   | "bad_request"
   | "invalid_parameter"
+  | "unauthorized"
   | "not_found"
+  | "file_too_large"
+  | "unsupported_file_type"
+  | "invalid_pdf"
+  | "cv_no_text"
+  | "cv_text_too_long"
   | "internal_error"
+  | "feature_disabled"
   | "service_unavailable";
 
 export type error_body = {
@@ -71,6 +78,21 @@ export function is_db_unavailable(error: unknown): boolean {
   );
 }
 
+// What may be written to the log for an unexpected error. PostgreSQL errors carry
+// fields such as `detail` ("Failing row contains (...)") that can include user
+// data, e.g. CV text, so only the code, the constraint and the message are kept.
+export function error_for_log(error: unknown): unknown {
+  if (error instanceof Error && "severity" in error) {
+    const { code, constraint, table } = error as Error & {
+      code?: string;
+      constraint?: string;
+      table?: string;
+    };
+    return { name: error.name, code, constraint, table, message: error.message };
+  }
+  return error;
+}
+
 const send_error = (res: Response, status: number, body: error_body) => {
   res.status(status).json(body);
 };
@@ -109,7 +131,7 @@ export const error_handler: ErrorRequestHandler = (error, req, res, _next) => {
   }
 
   // Never leak SQL or stack traces to the client; log them on the server.
-  console.error(`${req.method} ${req.originalUrl}: unexpected error:`, error);
+  console.error(`${req.method} ${req.originalUrl}: unexpected error:`, error_for_log(error));
   send_error(res, 500, {
     error: { code: "internal_error", message: "Internal server error" },
   });

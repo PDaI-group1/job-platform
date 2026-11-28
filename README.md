@@ -54,6 +54,24 @@ Endpoints are described in [docs/api.md](docs/api.md).
 | npm run lint | Oxlint |
 | npm test | Unit and API tests; tests that need the database run only when _DATABASE_URL_ is set |
 
+The CV tests write to the database, so they run only against a separate test database
+(_TEST_DATABASE_URL_, whose name must contain "test") or in CI. One-time setup with Docker:
+
+```
+docker compose exec db psql -U jobplatform-admin -d postgres -c "CREATE DATABASE jobplatform_test"
+docker compose exec db psql -U jobplatform-admin -d jobplatform_test -f /migrations/001_create_jobs.sql
+docker compose exec db psql -U jobplatform-admin -d jobplatform_test -f /seeds/001_jobs_seed.sql
+docker compose exec db psql -U jobplatform-admin -d jobplatform_test -f /migrations/002_cvs.sql
+```
+
+Then set _TEST_DATABASE_URL_ in _.env_ (see _.env.example_).
+
+New migrations are applied automatically only to an empty volume. To add _002_cvs.sql_ to an
+existing local database without losing data:
+_docker compose exec db psql -U jobplatform-admin -d jobplatform-db -f /migrations/002_cvs.sql_
+
+CV upload (_POST /cvs_) is off unless _CV_UPLOAD_ENABLED=true_.
+
 On Windows, if every test file fails with _Cannot read properties of undefined (reading 'config')_,
 the terminal opened the folder with a lowercase drive letter (_d:\\..._). Vitest then loads itself twice.
 Run the tests from PowerShell or after _cd D:\\Workfield\\job-platform\\backend_ with an uppercase letter.
